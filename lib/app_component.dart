@@ -3,41 +3,44 @@
 
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
-
+import 'components/about_component.dart';
 
 @Component(
   selector: 'dnp1-app',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css', 'app_menu.css'],
-  directives: const [CORE_DIRECTIVES]
+  directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
+  providers: const [ROUTER_PROVIDERS],
 )
 @RouteConfig(
   const [
-    /*
+
   const Route(
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: DashboardComponent,
+      path: '/article',
+      name: 'Articles',
+      component: AboutComponent,
       useAsDefault: true),
-  const Route(
-      path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent),
-  const Route(path: '/heroes', name: 'Heroes', component: HeroesComponent)*/
+  const Route(path: '/article/:id', name: 'Article', component: AboutComponent),
+  const Route(path: '/archive', name: 'Archive', component: AboutComponent),
+  const Route(path: '/about', name: 'About', component: AboutComponent),
+  const Route(path: '/login', name: 'Login', component: AboutComponent),
+  const Route(path: '/logout', name: 'Logout', component: AboutComponent),
 ])
 class AppComponent {
   var name = 'Angular';
   final List<MenuItem> items = [
-    new MenuItem("dnp1-posts-link","/articles","postagens"),
-    new MenuItem("dnp1-archive-link","/archive","arquivo"),
-    new MenuItem("dnp1-about-link","/about","about"),
-    new MenuItem("dnp1-logout-link","/logout","logout"),
-    new MenuItem("dnp1-logout-link","/login","login"),
+    new MenuItem("dnp1-posts-link","Articles","postagens"),
+    new MenuItem("dnp1-archive-link","Archive","arquivo"),
+    new MenuItem("dnp1-about-link","About","about"),
+    new MenuItem("dnp1-logout-link","Logout","logout"),
+    new MenuItem("dnp1-login-link","Login","login"),
   ];
 }
 
 class MenuItem {
   final String domClass;
-  final String href;
+  final String route;
   final String label;
 
-  MenuItem(this.domClass, this.href, this.label);
+  MenuItem(this.domClass, this.route, this.label);
 }
