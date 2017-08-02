@@ -4,7 +4,7 @@
 			<nav id="dnp1-menu">
 			  <ul>
 			  <li *ngFor="let item of items">
-			      <a class='dnp1-menu-link {{ item.domClass }}' href='{{item.href}}'>
+			      <a class='dnp1-menu-link {{ item.domClass }}' [routerLink]="['{{item.href}}']">
 			          {{item.label}}
 			      </a>
 			  </li>
@@ -15,4 +15,5 @@
 			<div id="dnp1-inner-content">
       </div>
     </section>
+	<router-outlet></router-outlet>
 </section>

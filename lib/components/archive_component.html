@@ -1,0 +1,33 @@
+<section id='dn-archive-content'>
+	<header id="dn-archive-title">
+		Arquivo do blog
+	</header>
+	{{template "_archiveTree" .}}
+    <ul id='dnp1-archive-tree'>
+        {{range .Data }}
+        <li>
+            <span class="dnp1-archive-year">
+                {{.Year}}
+            </span>
+            <ul class="dnp1-archive-month-ul">
+                {{range .Months}}
+                <li>
+                    <span class="dnp1-archive-month">
+                        {{.StringOfMonth}}
+                    </span>
+                    <ul class="dnp1-archive-day-ul">
+                        {{range .Articles}}
+                        <li>
+                           <a href="/article/{{.ArticleID}}" class="dnp1-archive-article-link">
+                               {{.Day}} -  {{.Title}}
+                           </a>
+                        </li>
+                        {{end}}
+                    </ul>
+                </li>
+                {{end}}
+            </ul>
+        </li>
+        {{end}}
+    </ul>
+</section>

@@ -1,3 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
 body {
   margin: 0;
+}
+
+
+a {
+    color: #00b7ff;
+    outline: none;
+}
+
+body,
+div,
+section,
+article {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.2em;
+    border-bottom : solid 1px #a9a9a9;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol, ul {
+    list-style-position: inside;
+}
+
+::selection {/* WebKit/Blink Browsers */
+    background: rgba(192,192,192,.6);
+}
+
+::-moz-selection {/* Gecko Browsers */
+    background: rgba(192,192,192,.6);
+}
+
+.highlighted {
+    color:#CC5555;
+}
+
+.loanwords {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+label {
+    position: relative;
+    display: block;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #555;
+    padding-bottom: 4px;
 }
