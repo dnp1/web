@@ -1,0 +1,56 @@
+.dnp1-tags {
+    display: inline-block;
+    padding:0 16px;
+}
+
+
+#tags-content {
+    margin-top:48px;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+.dnp1-tag-link {
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin: 0 4px;
+    padding: 3px;
+    color: #777;
+    font-weight: 500;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.dnp1-tag-link:first-child {
+    margin: 0;
+}
+
+.dnp1-tag-link:hover {
+    color: #555;
+    border-radius: 5px;
+    background: #D6D8D6;
+}
+
+.dnp1-tag-desc {
+    width:300px;
+    display: inline-block;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    height: 180px;
+    border: 1px dashed #AAA;
+    vertical-align: middle;
+    margin: 15px 10px 20px;
+}
+
+.dnp1-tag-title {
+    position: relative;
+    top:0;
+    display: block;
+    margin:8px 15px 15px;
+}
+
+.dnp1-tag-info {
+    display: inline-block;
+    width:192px;
+}

@@ -1,0 +1,14 @@
+.dnp1-login-content {
+    border-radius: 2px 2px 2px 2px;
+    background-color: #f5f5f5;
+    padding: 8px 10px 10px;
+    border: dashed 1px #AAA;
+    margin: 60px auto -1px;
+    text-align:center;
+    min-height: 480px;
+}
+
+#login-form {
+    margin: 0 auto;
+    max-width:220px;
+}

@@ -1,0 +1,32 @@
+@media (max-width: 640px) {
+    .dnp1-content-metadata {
+        width: 100%;
+        height: 48px;
+        padding: 0;
+        line-height: 60px;
+
+    }
+
+    .dnp1-metadata-share {
+        float: right;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        display: inline-block;
+        margin: 8px 10px 0;
+
+    }
+
+    #dnp1-content-wrapper {
+        padding: 50px 1px 0;
+    }
+
+    .dnp1-post {
+        padding-left: 0;
+        padding-top: 60px;
+    }
+
+    .dnp1-post:not(:first-child) {
+        margin-top: 1px;
+    }
+}

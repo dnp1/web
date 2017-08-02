@@ -1,0 +1,95 @@
+html {
+    overflow-y: scroll;
+}
+
+a {
+    color: #00b7ff;
+    outline: none;
+}
+
+body,
+div,
+section,
+article {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.2em;
+    border-bottom : solid 1px #a9a9a9;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol, ul {
+    list-style-position: inside;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::selection {/* WebKit/Blink Browsers */
+    background: rgba(192,192,192,.6);
+}
+
+::-moz-selection {/* Gecko Browsers */
+    background: rgba(192,192,192,.6);
+}
+
+.highlighted {
+    color:#CC5555;
+}
+
+.loanwords {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+label {
+    position: relative;
+    display: block;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #555;
+    padding-bottom: 4px;
+}
+
+.dnp1-title {
+    margin-left: 3px;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+
+.dnp1-header-title {
+    font-size: 1.8em;
+    font-weight: bolder;
+    border-bottom: solid 1px #d3d3d3;
+    text-decoration: none;
+    display: block;
+    width: auto;
+    padding: 0 16px;
+    color: #444;
+
+}
+
+#dnp1-body {
+    box-sizing: border-box;
+    padding: 1px 0;
+    text-align: center;
+    font-size: 1em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    min-width: 320px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #7f7f7f;
+    z-index: -1;
+}

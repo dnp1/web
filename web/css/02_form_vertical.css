@@ -1,0 +1,30 @@
+.dnp1-vertical-form {
+    display: block;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.dnp1-vertical-form > input {
+    display: block;
+    margin: 3px 3px;
+}
+
+.dnp1-vertical-form > label {
+    display: block;
+    margin: 13px auto 2px 3px;
+    text-align: left;
+}
+
+.dnp1-vertical-form > input[type='submit'] {
+    margin-top: 16px;
+    margin-right: 8px;
+}
+
+.dnp1-validation-error {
+    color: red;
+    box-shadow: 0 1px 2px rgba(2, 2, 2, 0.2);
+}
+
+.dnp1-center-form {
+    width: 100%;
+}
