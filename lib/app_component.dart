@@ -5,13 +5,15 @@ import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
 import 'package:danilo_info/components/about_component.dart';
 import 'package:danilo_info/components/archive_component.dart';
+import 'package:danilo_info/components/article_listing_component.dart';
+import "package:danilo_info/services/article_service.dart";
 
 @Component(
   selector: 'dnp1-app',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css', 'app_menu.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
-  providers: const [ROUTER_PROVIDERS],
+  providers: const [ROUTER_PROVIDERS, ArticleService],
 )
 @RouteConfig(
   const [
@@ -19,7 +21,7 @@ import 'package:danilo_info/components/archive_component.dart';
   const Route(
       path: '/article',
       name: 'Articles',
-      component: AboutComponent,
+      component: ArticleListingComponent,
       useAsDefault: true),
   const Route(path: '/article/:id', name: 'Article', component: AboutComponent),
   const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),

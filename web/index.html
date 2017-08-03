@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> {{.PageTitle}} </title>
   <script>
+    if (typeof navigator.geolocation == "undefined") {
+        navigator.geolocation = {};
+    }
     // WARNING: DO NOT set the <base href> like this in production!
     // Details: https://webdev.dartlang.org/angular/guide/router
     (function () {
