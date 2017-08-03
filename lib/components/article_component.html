@@ -1,4 +1,4 @@
-<article id='article-{{id}}' class='dnp1-post' published-date='{{publishedOn}}'>
+<article class='dnp1-post'>
   <div class='dnp1-content-metadata'>
     <img class='dnp1-metadata-share' src="/img/social/facebook.png" alt="fb"/>
     <img class='dnp1-metadata-share' src="/img/social/googleplus.png" alt="fb"/>
@@ -8,15 +8,14 @@
 		<div class="dnp1-post-datetime">
 			{{ editedOn }}
 		</div>
-
-		<a class='dnp1-post-title' href='/article/{{id}}'>
+		<a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: id}]" >
 			{{ title }}
 		</a>
-        <div class="dnp1-tags">
-            <a class='dnp1-tag-link' *ngFor="let tag of tags" href='/articles/by-tag/{{tag.encodedName}}'>
-                #{{ tag.name }}
-            </a>
-        </div>
+    <div class="dnp1-tags">
+        <a class='dnp1-tag-link' *ngFor="let tag of tags" href='/articles?tag={{tag.name}}'>
+            #{{ tag.name }}
+        </a>
+    </div>
 	</header>
 	<div class='dnp1-post-content'>
 		{{ content }}

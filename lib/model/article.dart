@@ -7,4 +7,6 @@ class Article {
   String title;
   List<Tag> tags;
   String content;
+
+  Article(this.id, this.publishedOn, this.editedOn, this.title, this.tags, this.content);
 }

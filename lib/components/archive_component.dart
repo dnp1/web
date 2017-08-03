@@ -18,6 +18,7 @@ class Year<T> {
 @Component(
   selector: 'dnp1-archive',
   templateUrl: 'archive_component.html',
+  styleUrls: const ["archive_component.css"],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
 )
 class ArchiveComponent implements OnInit {
@@ -27,7 +28,7 @@ class ArchiveComponent implements OnInit {
   ArchiveComponent(this._articleService);
 
   Future<Null> ngOnInit() async {
-      var articles = (await _articleService.get()).toList();
+      var articles = (await _articleService.archive()).toList();
       var list = new List<Year<Article>>();
       Article previous = null;
 
@@ -36,30 +37,18 @@ class ArchiveComponent implements OnInit {
 
       for (var article in articles) {
           if (year == null || article.publishedOn.year != previous.publishedOn.year) { // Ano mudou
-            if (year != null) {
-              list.add(year);
-            }
             year = new Year(article.publishedOn.year);
-            month = null;
+            list.add(year);
           }
 
           if (month == null || article.publishedOn.month != previous.publishedOn.month) { // Mês mudou
-            if (month != null) {
-                year.months.add(month);
-            }
             month = new MonthData(article.publishedOn.month);
+            year.months.add(month);
           }
 
           month.items.add(article);
           previous = article;
       }
-      if (year != null) {
-        if (month != null) {
-          year.months.add(month);
-        }
-        list.add(year);
-      }
-
       this.years = list;
     }
 }

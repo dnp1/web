@@ -6,6 +6,7 @@ import 'package:angular2/router.dart';
 import 'package:danilo_info/components/about_component.dart';
 import 'package:danilo_info/components/archive_component.dart';
 import 'package:danilo_info/components/article_listing_component.dart';
+import 'package:danilo_info/components/article_page_component.dart';
 import "package:danilo_info/services/article_service.dart";
 
 @Component(
@@ -23,7 +24,7 @@ import "package:danilo_info/services/article_service.dart";
       name: 'Articles',
       component: ArticleListingComponent,
       useAsDefault: true),
-  const Route(path: '/article/:id', name: 'Article', component: AboutComponent),
+  const Route(path: '/article/:id', name: 'ArticlePage', component: ArticlePageComponent),
   const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),
   const Route(path: '/about', name: 'About', component: AboutComponent),
   const Route(path: '/login', name: 'Login', component: AboutComponent),
@@ -34,9 +35,9 @@ class AppComponent {
   final List<MenuItem> items = [
     new MenuItem("dnp1-posts-link","Articles","postagens"),
     new MenuItem("dnp1-archive-link","Archive","arquivo"),
-    new MenuItem("dnp1-about-link","About","about"),
-    new MenuItem("dnp1-logout-link","Logout","logout"),
-    new MenuItem("dnp1-login-link","Login","login"),
+    new MenuItem("dnp1-about-link","About","sobre"),
+    new MenuItem("dnp1-login-link","Login","conecte-se"),
+    new MenuItem("dnp1-logout-link","Logout","sair"),
   ];
 }
 
