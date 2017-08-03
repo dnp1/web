@@ -2,32 +2,25 @@
 	<header id="dnp1-archive-title">
 		Arquivo do blog
 	</header>
-	{{template "_archiveTree" .}}
     <ul id='dnp1-archive-tree'>
-        {{range .Data }}
-        <li>
+        <li *ngFor="let year of years">
             <span class="dnp1-archive-year">
-                {{.Year}}
+                {{year.year}}
             </span>
             <ul class="dnp1-archive-month-ul">
-                {{range .Months}}
-                <li>
+                <li *ngFor="let month of year.months">
                     <span class="dnp1-archive-month">
-                        {{.StringOfMonth}}
+                        {{ month.month }}
                     </span>
                     <ul class="dnp1-archive-day-ul">
-                        {{range .Articles}}
-                        <li>
-                           <a href="/article/{{.ArticleID}}" class="dnp1-archive-article-link">
-                               {{.Day}} -  {{.Title}}
+                        <li *ngFor="let article of month.items">
+                           <a href="/article/{{article.id}}" class="dnp1-archive-article-link">
+                               {{article.publishedOn}} -  {{article.title}}
                            </a>
                         </li>
-                        {{end}}
                     </ul>
                 </li>
-                {{end}}
             </ul>
         </li>
-        {{end}}
     </ul>
 </section>

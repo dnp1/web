@@ -3,7 +3,8 @@
 
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
-import 'components/about_component.dart';
+import 'package:danilo_info/components/about_component.dart';
+import 'package:danilo_info/components/archive_component.dart';
 
 @Component(
   selector: 'dnp1-app',
@@ -21,7 +22,7 @@ import 'components/about_component.dart';
       component: AboutComponent,
       useAsDefault: true),
   const Route(path: '/article/:id', name: 'Article', component: AboutComponent),
-  const Route(path: '/archive', name: 'Archive', component: AboutComponent),
+  const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),
   const Route(path: '/about', name: 'About', component: AboutComponent),
   const Route(path: '/login', name: 'Login', component: AboutComponent),
   const Route(path: '/logout', name: 'Logout', component: AboutComponent),
