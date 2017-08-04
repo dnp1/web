@@ -1,5 +1,4 @@
 import 'package:angular2/angular2.dart';
-import 'package:angular2/router.dart';
 
 import 'package:danilo_info/components/article_component.dart';
 import 'package:danilo_info/components/comment_component.dart';
