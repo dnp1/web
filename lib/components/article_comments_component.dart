@@ -7,7 +7,7 @@ import 'package:danilo_info/services/comment_service.dart';
 @Component(
   selector: 'dnp1-article-comments',
   templateUrl: 'article_comments_component.html',
-  // styleUrls: const ['article__component.css'],
+  styleUrls: const ['article_comments_component.css'],
   directives: const [
     CORE_DIRECTIVES,
     ArticleComponent,
