@@ -1,7 +1,7 @@
 <section class='dnp1-archive-content'>
-	<header class="dnp1-archive-title">
-		Arquivo do blog
-	</header>
+    <header class="dnp1-archive-title">
+        Arquivo do blog
+    </header>
     <ul class='dnp1-archive-tree'>
         <li *ngFor="let year of years">
             <span class="dnp1-archive-year">
@@ -14,9 +14,9 @@
                     </span>
                     <ul class="dnp1-archive-day-ul">
                         <li *ngFor="let article of month.items">
-                           <a href="/article/{{article.id}}" class="dnp1-archive-article-link">
-                               {{article.publishedOn}} -  {{article.title}}
-                           </a>
+                            <a href="/article/{{article.id}}" class="dnp1-archive-article-link">
+                                {{article.publishedOn.day}} - {{article.title}}
+                            </a>
                         </li>
                     </ul>
                 </li>

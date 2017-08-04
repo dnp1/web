@@ -1,6 +1,9 @@
-<section id = 'comment-{{ id }}' class='dnp1-comment'>
-  <dnp1-user [id]="userId"></dnp1-user>
-  <div class='dnp1-comment-content'>
-    {{ content }}
-  </div>
+<section id='comment-{{ id }}' class='dnp1-comment'>
+    <div class='dnp1-comment-author-info'>
+        <dnp1-user-avatar></dnp1-user-avatar>
+    </div>
+    <div class='dnp1-comment-content'>s
+        <b>{{ name }}{{" "}}</b>
+        {{ content }}
+    </div>
 </section>

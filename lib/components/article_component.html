@@ -1,26 +1,26 @@
 <article class='dnp1-post'>
-  <div class='dnp1-content-metadata'>
-    <img class='dnp1-metadata-share' src="/img/social/facebook.png" alt="fb"/>
-    <img class='dnp1-metadata-share' src="/img/social/googleplus.png" alt="fb"/>
-    <img class='dnp1-metadata-share' src="/img/social/twitter.png" alt="fb"/>
-  </div>
-	<header class='dnp1-post-header'>
-		<div class="dnp1-post-datetime">
-			{{ editedOn }}
-		</div>
-		<a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: id}]" >
-			{{ title }}
-		</a>
-    <div class="dnp1-tags">
-        <a class='dnp1-tag-link' *ngFor="let tag of tags" href='/articles?tag={{tag.name}}'>
-            #{{ tag.name }}
-        </a>
+    <div class='dnp1-content-metadata'>
+        <img class='dnp1-metadata-share' src="/img/social/facebook.png" alt="fb"/>
+        <img class='dnp1-metadata-share' src="/img/social/googleplus.png" alt="fb"/>
+        <img class='dnp1-metadata-share' src="/img/social/twitter.png" alt="fb"/>
     </div>
-	</header>
-	<div class='dnp1-post-content'>
-		{{ content }}
-	</div>
-	<footer class='dnp1-post-footer'>
+    <header class='dnp1-post-header'>
+        <div class="dnp1-post-datetime">
+            {{ editedOn }}
+        </div>
+        <a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: id}]">
+            {{ title }}
+        </a>
+        <div class="dnp1-tags">
+            <a class='dnp1-tag-link' *ngFor="let tag of tags" href='/articles?tag={{tag.name}}'>
+                #{{ tag.name }}
+            </a>
+        </div>
+    </header>
+    <div class='dnp1-post-content'>
+        {{ content }}
+    </div>
+    <footer class='dnp1-post-footer'>
 
-	</footer>
+    </footer>
 </article>

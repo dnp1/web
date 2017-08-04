@@ -9,5 +9,4 @@ import 'package:angular2/router.dart';
   styleUrls: const ['about_component.css'],
 )
 class AboutComponent {
-
 }

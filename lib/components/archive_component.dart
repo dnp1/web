@@ -28,27 +28,29 @@ class ArchiveComponent implements OnInit {
   ArchiveComponent(this._articleService);
 
   Future<Null> ngOnInit() async {
-      var articles = (await _articleService.archive()).toList();
-      var list = new List<Year<Article>>();
-      Article previous = null;
+    var articles = (await _articleService.archive()).toList();
+    var list = new List<Year<Article>>();
+    Article previous = null;
 
-      Year<Article> year = null;
-      MonthData<Article> month = null;
+    Year<Article> year = null;
+    MonthData<Article> month = null;
 
-      for (var article in articles) {
-          if (year == null || article.publishedOn.year != previous.publishedOn.year) { // Ano mudou
-            year = new Year(article.publishedOn.year);
-            list.add(year);
-          }
-
-          if (month == null || article.publishedOn.month != previous.publishedOn.month) { // Mês mudou
-            month = new MonthData(article.publishedOn.month);
-            year.months.add(month);
-          }
-
-          month.items.add(article);
-          previous = article;
+    for (var article in articles) {
+      if (year == null ||
+          article.publishedOn.year != previous.publishedOn.year) { // Ano mudou
+        year = new Year(article.publishedOn.year);
+        list.add(year);
       }
-      this.years = list;
+
+      if (month == null || article.publishedOn.month !=
+          previous.publishedOn.month) { // Mês mudou
+        month = new MonthData(article.publishedOn.month);
+        year.months.add(month);
+      }
+
+      month.items.add(article);
+      previous = article;
     }
+    this.years = list;
+  }
 }

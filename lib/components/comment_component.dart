@@ -1,4 +1,5 @@
 import 'package:angular2/angular2.dart';
+import 'package:danilo_info/components/user_avatar_component.dart';
 
 @Component(
   selector: 'dnp1-comment',
@@ -6,6 +7,7 @@ import 'package:angular2/angular2.dart';
   // styleUrls: const ['article__component.css'],
   directives: const [
     CORE_DIRECTIVES,
+    UserAvatarComponent,
   ],
 )
 class CommentComponent {
@@ -15,6 +17,4 @@ class CommentComponent {
   String parentCommentId;
   String userId;
   String content;
-
-
 }

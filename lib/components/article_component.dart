@@ -13,7 +13,8 @@ import 'package:danilo_info/services/article_service.dart';
   styleUrls: const ['article_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
 )
-class ArticleComponent implements OnInit {
+class ArticleComponent
+    implements OnInit {
   final ArticleService _articleService;
   @Input()
   String id;
@@ -26,11 +27,11 @@ class ArticleComponent implements OnInit {
   ArticleComponent(this._articleService);
 
   Future<Null> ngOnInit() async {
-        var article = (await _articleService.get(id));
-        this.publishedOn = article.publishedOn;
-        this.editedOn = article.editedOn;
-        this.title = article.title;
-        this.tags = article.tags;
-        this.content = article.content;
-    }
+    var article = (await _articleService.get(id));
+    this.publishedOn = article.publishedOn;
+    this.editedOn = article.editedOn;
+    this.title = article.title;
+    this.tags = article.tags;
+    this.content = article.content;
+  }
 }

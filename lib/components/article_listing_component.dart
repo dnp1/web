@@ -13,12 +13,12 @@ import 'package:danilo_info/components/article_component.dart';
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, ArticleComponent],
 )
 class ArticleListingComponent implements OnInit {
-    final ArticleService _articleService;
-    List<String> articles;
+  final ArticleService _articleService;
+  List<String> articles;
 
-    ArticleListingComponent(this._articleService);
+  ArticleListingComponent(this._articleService);
 
-    Future<Null> ngOnInit() async {
-        articles = (await _articleService.list()).toList();
-    }
+  Future<Null> ngOnInit() async {
+    articles = (await _articleService.list()).toList();
+  }
 }

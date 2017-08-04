@@ -1,13 +1,13 @@
 .dnp1-metadata-share {
-    width:36px;
+    width: 36px;
     border-radius: 50%;
     margin-bottom: 15px;
-    background-color: rgba(172,172,172,0.5);
+    background-color: rgba(172, 172, 172, 0.5);
     cursor: pointer;
 }
 
 .dnp1-metadata-share:hover {
-    background-color: rgba(190,170,155,0.7);
+    background-color: rgba(190, 170, 155, 0.7);
 }
 
 .dnp1-content-metadata {
@@ -20,7 +20,7 @@
     text-align: center;
     padding-top: 21px;
     background: #26160A none repeat scroll 0 0;
-    border:solid 1px #26160A;
+    border: solid 1px #26160A;
     opacity: .92;
 }
 
@@ -79,7 +79,7 @@
     color: #344;
     background-color: #D4D4D4;
     border-bottom: solid 1px transparent;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 .dnp1-post-link:hover {
@@ -89,8 +89,8 @@
 
 .dnp1-post-datetime {
     display: inline-block;
-    padding:4px 16px;
-    color:#555;
+    padding: 4px 16px;
+    color: #555;
     font-weight: 300;
     letter-spacing: 2px;
 }
@@ -101,7 +101,7 @@
 
 .dnp1-tags {
     display: inline-block;
-    padding:0 16px;
+    padding: 0 16px;
 }
 
 .dnp1-tag-link {
