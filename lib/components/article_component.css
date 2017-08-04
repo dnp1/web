@@ -11,7 +11,7 @@
 }
 
 .dnp1-content-metadata {
-    border-radius: 8px 0px 0px 2px;
+    border-radius: 8px 0 0 2px;
     position: absolute;
     top: 0;
     left: 0;
@@ -19,7 +19,7 @@
     width: 60px;
     text-align: center;
     padding-top: 21px;
-    background: #26160A none repeat scroll 0% 0%;
+    background: #26160A none repeat scroll 0 0;
     border:solid 1px #26160A;
     opacity: .92;
 }
@@ -33,17 +33,8 @@
     background-color: #F5F5F5;
     padding: 8px 4px 60px 64px;
     margin: 2px 0px 0px;
-    border-radius: 8px 0 2px 0;
+    border-radius: 6px;
     text-align: justify;
-}
-
-dnp1-article:first-child .dnp1-post {
-    border-radius: 8px 4px 2px 0;
-}
-
-dnp1-article:last-child .dnp1-post {
-    margin-bottom: 16px;
-    border-radius: 8px 0 8px 8px;
 }
 
 .dnp1-post-content {

@@ -8,13 +8,14 @@ import 'package:danilo_info/components/archive_component.dart';
 import 'package:danilo_info/components/article_listing_component.dart';
 import 'package:danilo_info/components/article_page_component.dart';
 import "package:danilo_info/services/article_service.dart";
+import 'package:danilo_info/services/comment_service.dart';
 
 @Component(
   selector: 'dnp1-app',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css', 'app_menu.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
-  providers: const [ROUTER_PROVIDERS, ArticleService],
+  providers: const [ROUTER_PROVIDERS, ArticleService, CommentService],
 )
 @RouteConfig(
   const [

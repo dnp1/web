@@ -14,7 +14,7 @@ import 'package:danilo_info/components/article_component.dart';
 )
 class ArticleListingComponent implements OnInit {
     final ArticleService _articleService;
-    List<int> articles;
+    List<String> articles;
 
     ArticleListingComponent(this._articleService);
 

@@ -1,9 +1,6 @@
 <section id = 'comment-{{ id }}' class='dnp1-comment'>
-  <div class='dnp1-comment-author-info'>
-    <img class='dnp1-comment-avatar' str='{{ user.pictureUrl }}'/>
-  </div>
+  <dnp1-user [id]="userId"></dnp1-user>
   <div class='dnp1-comment-content'>
-    <b>{{ user.name }}{{"  "}}</b>
     {{ content }}
   </div>
 </section>

@@ -16,7 +16,7 @@ import 'package:danilo_info/services/article_service.dart';
 class ArticleComponent implements OnInit {
   final ArticleService _articleService;
   @Input()
-  int id;
+  String id;
   DateTime publishedOn;
   DateTime editedOn;
   String title;
