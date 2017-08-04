@@ -13,5 +13,4 @@ import 'package:angular2/angular2.dart';
 class UserAvatarComponent {
   @Input()
   String id;
-  String name;
 }

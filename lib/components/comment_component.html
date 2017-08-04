@@ -1,9 +1,9 @@
 <section id='comment-{{ id }}' class='dnp1-comment'>
     <div class='dnp1-comment-author-info'>
-        <dnp1-user-avatar></dnp1-user-avatar>
+        <dnp1-user-avatar [id]="userId"></dnp1-user-avatar>
     </div>
     <div class='dnp1-comment-content'>s
-        <b>{{ name }}{{" "}}</b>
+        <b>{{ userName }}{{" "}}</b>
         {{ content }}
     </div>
 </section>

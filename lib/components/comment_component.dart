@@ -16,5 +16,6 @@ class CommentComponent {
   String articleId;
   String parentCommentId;
   String userId;
+  String userName;
   String content;
 }
