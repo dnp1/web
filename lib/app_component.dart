@@ -14,7 +14,10 @@ import 'package:danilo_info/services/comment_service.dart';
   selector: 'dnp1-app',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css', 'app_menu.css'],
-  directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
+  directives: const [
+    CORE_DIRECTIVES,
+    ROUTER_DIRECTIVES,
+  ],
   providers: const [ArticleService, CommentService, ROUTER_PROVIDERS],
 )
 @RouteConfig(

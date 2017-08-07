@@ -23,7 +23,7 @@ class ArticlePageComponent implements OnInit {
   ArticlePageComponent(this._routeParams);
 
   @override
-  Future<Null >ngOnInit() async {
+  Future<Null> ngOnInit() async {
     articleId = _routeParams.get('id');
   }
 }

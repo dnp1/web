@@ -1,4 +1,4 @@
-<article class='dnp1-post'>
+<article class='dnp1-post' *ngIf="article != null">
     <div class='dnp1-content-metadata'>
         <img class='dnp1-metadata-share' src="/img/social/facebook.png" alt="fb"/>
         <img class='dnp1-metadata-share' src="/img/social/googleplus.png" alt="fb"/>
@@ -8,7 +8,7 @@
         <div class="dnp1-post-datetime">
             {{ article.editedOn }}
         </div>
-        <a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: id}]">
+        <a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: article.id}]">
             {{ article.title }}
         </a>
         <div class="dnp1-tags">

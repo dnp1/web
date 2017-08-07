@@ -17,16 +17,19 @@ import 'package:danilo_info/services/comment_service.dart';
 )
 class ArticleCommentsComponent implements OnInit {
   @Input()
-  String articleId;
+  String _articleId;
+  void set articleId(String id) {
+    _articleId = id;
+  }
+
   List<String> comments;
 
   final CommentService _commentService;
 
   ArticleCommentsComponent(this._commentService);
 
-
   @override
   Future<Null> ngOnInit() async {
-    comments = await _commentService.ofArticle(articleId);
+    comments = await _commentService.ofArticle(_articleId);
   }
 }

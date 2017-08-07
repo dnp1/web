@@ -20,6 +20,6 @@ class ArticleListingComponent implements OnInit {
   ArticleListingComponent(this._articleService);
 
   Future<Null> ngOnInit() async {
-    articles = (await _articleService.list()).toList();
+    articles = (await _articleService.list());
   }
 }
