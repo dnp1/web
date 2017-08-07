@@ -1,5 +1,3 @@
-
-
 class Comment {
   String id;
   String articleId;

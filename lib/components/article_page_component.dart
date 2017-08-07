@@ -13,8 +13,7 @@ import 'package:danilo_info/components/article_comments_component.dart';
     CORE_DIRECTIVES,
     ArticleCommentsComponent,
     ArticleComponent,
-  ],
-  pipes: const [COMMON_PIPES],
+  ]
 )
 class ArticlePageComponent implements OnInit {
   String articleId;
