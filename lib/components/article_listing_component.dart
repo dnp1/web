@@ -11,6 +11,7 @@ import 'package:danilo_info/components/article_component.dart';
   templateUrl: 'article_listing_component.html',
   styleUrls: const ['article_listing_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, ArticleComponent],
+  pipes: const [COMMON_PIPES],
 )
 class ArticleListingComponent implements OnInit {
   final ArticleService _articleService;

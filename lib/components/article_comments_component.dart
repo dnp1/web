@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:angular2/angular2.dart';
 
 import 'package:danilo_info/components/article_component.dart';
@@ -10,9 +11,9 @@ import 'package:danilo_info/services/comment_service.dart';
   styleUrls: const ['article_comments_component.css'],
   directives: const [
     CORE_DIRECTIVES,
-    ArticleComponent,
     CommentComponent,
   ],
+  pipes: const [COMMON_PIPES]
 )
 class ArticleCommentsComponent implements OnInit {
   @Input()
@@ -25,7 +26,7 @@ class ArticleCommentsComponent implements OnInit {
 
 
   @override
-  ngOnInit() async {
-    comments = (await _commentService.ofArticle(articleId));
+  Future<Null> ngOnInit() async {
+    comments = await _commentService.ofArticle(articleId);
   }
 }

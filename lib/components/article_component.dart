@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
 
+import 'package:danilo_info/model/article.dart';
 import "package:danilo_info/model/tag.dart";
 import 'package:danilo_info/services/article_service.dart';
 
@@ -18,20 +19,11 @@ class ArticleComponent
   final ArticleService _articleService;
   @Input()
   String id;
-  DateTime publishedOn;
-  DateTime editedOn;
-  String title;
-  List<Tag> tags;
-  String content;
+  Article article;
 
   ArticleComponent(this._articleService);
 
   Future<Null> ngOnInit() async {
-    var article = (await _articleService.get(id));
-    this.publishedOn = article.publishedOn;
-    this.editedOn = article.editedOn;
-    this.title = article.title;
-    this.tags = article.tags;
-    this.content = article.content;
+    article = await _articleService.get(id);
   }
 }
