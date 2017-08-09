@@ -4,6 +4,7 @@ import 'package:angular2/angular2.dart';
 import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/components/user_avatar_component.dart';
+import 'package:danilo_info/components/user_name_component.dart';
 
 @Component(
     selector: 'dnp1-comment',
@@ -11,6 +12,7 @@ import 'package:danilo_info/components/user_avatar_component.dart';
     styleUrls: const ['comment_component.css'],
     directives: const [
       UserAvatarComponent,
+      UserNameComponent,
       COMMON_DIRECTIVES,
     ]
 )

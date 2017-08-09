@@ -7,7 +7,7 @@ import 'package:danilo_info/services/user_service.dart';
 @Component(
   selector: 'dnp1-user-avatar',
   template: '''
-  <img class='dnp1-comment-avatar' src='/user/{{ id }}/avatar'/>
+  <img class='dnp1-comment-avatar' src='{{ url }}'/>
   ''',
   styles: const ['''
   .dnp1-comment-avatar {
@@ -24,10 +24,16 @@ import 'package:danilo_info/services/user_service.dart';
   ],
 )
 class UserAvatarComponent implements OnInit {
+  String url = "/img/author.png";
+
   String _id;
   @Input()
   void set id(String id) {
     _id = id;
+  }
+
+  String get id {
+    return _id;
   }
 
   User user;
@@ -38,5 +44,8 @@ class UserAvatarComponent implements OnInit {
 
   Future<Null> ngOnInit() async {
     user = await _userService.get(_id);
+    if (user == null && user.avatarId != null) {
+      url = "/user/"+id+"/avatar";
+    }
   }
 }

@@ -3,7 +3,7 @@
         <dnp1-user-avatar [id]="comment.userId"></dnp1-user-avatar>
     </div>
     <div class='dnp1-comment-content'>
-        <b>{{ comment.userName }}{{" "}}</b>
+        <b><dnp1-user-name [id]="comment.userId"></dnp1-user-name>{{" "}}</b>
         {{ comment.content }}
     </div>
 </section>
