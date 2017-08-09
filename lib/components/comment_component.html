@@ -1,8 +1,8 @@
 <section class='dnp1-comment' *ngIf="comment != null">
     <div class='dnp1-comment-author-info'>
-        <!--<dnp1-user-avatar [id]="userId"></dnp1-user-avatar>-->
+        <dnp1-user-avatar [id]="comment.userId"></dnp1-user-avatar>
     </div>
-    <div class='dnp1-comment-content'>s
+    <div class='dnp1-comment-content'>
         <b>{{ comment.userName }}{{" "}}</b>
         {{ comment.content }}
     </div>

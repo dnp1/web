@@ -29,14 +29,6 @@
     border-radius: .12em;
 }
 
-.dnp1-comment-avatar {
-    display: block;
-    height: 2em;
-    width: 2em;
-    border-radius: .12em;
-    margin: .06em .06em .06em .06em;
-}
-
 .dnp1-comment:last-child {
     border-radius: 0 0 .25em .25em;
 }

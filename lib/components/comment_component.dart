@@ -3,12 +3,14 @@ import 'package:angular2/angular2.dart';
 
 import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/services/comment_service.dart';
+import 'package:danilo_info/components/user_avatar_component.dart';
 
 @Component(
     selector: 'dnp1-comment',
     templateUrl: 'comment_component.html',
     styleUrls: const ['comment_component.css'],
     directives: const [
+      UserAvatarComponent,
       COMMON_DIRECTIVES,
     ]
 )
