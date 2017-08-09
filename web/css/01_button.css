@@ -7,16 +7,16 @@ button,
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font: 14px Arial, Helvetica, sans-serif;
-    padding: 3px 8px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    font: 0.87em Arial, Helvetica, sans-serif;
+    padding: 0.19em .5em;
+    text-shadow: 0 0.06em 0.06em rgba(0, 0, 0, 0.3);
     background-color: #555;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.06em 0.12em rgba(0, 0, 0, 0.2);
     color: #fff;
     font-weight: bolder;
     appearance: none;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25em;
 }
 
 .dnp1-button:hover {
@@ -25,7 +25,7 @@ button,
 
 .dnp1-button:active {
     position: relative;
-    top: 1px;
+    top: 0.06em;
 }
 
 .dnp1-button:hover {

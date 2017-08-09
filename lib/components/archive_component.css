@@ -1,47 +1,47 @@
 .dnp1-archive-content {
-    border-radius: 8px;
+    border-radius: .5em;
     background-color: #f5f5f5;
-    padding: 8px 6px 10px;
-    border: solid 1px #AAA;
-    margin: 60px 4px -1px;
+    padding: .5em .37em .62em;
+    border: solid .06em #AAA;
+    margin: 3.75em .25em -.06em;
 }
 
 .dnp1-archive-title {
     font-size: 1.8em;
     font-weight: bolder;
-    border-bottom: solid 1px #d3d3d3;
+    border-bottom: solid .06em #d3d3d3;
     text-decoration: none;
     display: block;
     width: auto;
-    padding: 0 16px;
+    padding: 0 1em;
     color: #444;
 }
 
 .dnp1-archive-tree {
     display: block;
-    margin: 20px 5px;
+    margin: 1.25em .31em;
     color: #444;
-    max-width: 400px;
+    max-width: 25em;
     font-family: "Lucida Console", Monaco, monospace;
 }
 
 .dnp1-archive-tree > li {
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
     font-weight: bold;
     font-size: 1.1em;
-    letter-spacing: 1px;
-    padding: 2px;
+    letter-spacing: .06em;
+    padding: .12em;
 }
 
 .dnp1-archive-month-ul > li {
-    margin: 10px 2px 4px 10px;
+    margin: .62em .12em .25em .62em;
     letter-spacing: normal;
     font-size: 0.9em;
     list-style-image: none;
 }
 
 .dnp1-archive-day-ul > li {
-    margin: 6px 2px 4px 15px;
+    margin: .37em .12em .25em .93em;
     font-size: 1em;
     font-weight: bolder;
     color: #454;
@@ -51,8 +51,8 @@
 .dnp1-archive-article-link {
     text-decoration: none;
     color: #587;
-    padding: 5px;
-    border-radius: 4px;
+    padding: .31em;
+    border-radius: .25em;
 }
 
 .dnp1-archive-article-link:hover {

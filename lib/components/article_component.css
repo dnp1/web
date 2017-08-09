@@ -1,7 +1,7 @@
 .dnp1-metadata-share {
-    width: 36px;
+    width: 2.25em;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
     background-color: rgba(172, 172, 172, 0.5);
     cursor: pointer;
 }
@@ -11,75 +11,74 @@
 }
 
 .dnp1-content-metadata {
-    border-radius: 6px 0 0 2px;
+    border-radius: .37em 0 0 .12em;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 60px;
+    width: 3.75em;
     text-align: center;
-    padding-top: 21px;
+    padding-top: 1.31em;
     background: #26160A none repeat scroll 0 0;
-    border: solid 1px #26160A;
-    opacity: .92;
+    border: solid .06em #26160A;
 }
 
 /* Now is related to article actually */
 .dnp1-post {
     position: relative;
-    max-width: 1140px;
-    min-width: 300px;
+    max-width: 72em;
+    min-width: 16em;
     /*background-color: #fdf5e6;*/
     background-color: #F5F5F5;
-    padding: 8px 4px 60px 64px;
-    margin: 2px 0px 0px;
-    border-radius: 6px;
+    padding: .5em .25em 3.75em 4em;
+    margin: .12em 0 0;
+    border-radius: .37em;
     text-align: justify;
 }
 
 .dnp1-post-content {
-    padding: 1em 12px;
+    padding: 1em .75em;
     font-size: 1.2em;
-    margin: 4px auto 12px;
-    min-width: 295px;
+    margin: .25em auto .75em;
+    min-width: 15em;
     font-family: Georgia, serif;
     color: #555;
 }
 
 .dnp1-post-footer {
-    min-height: 25px;
-    margin: 33px auto 8px;
+    min-height: 1.5em;
+    margin: 2em auto .5em;
     width: 95%
 }
 
 .dnp1-post-header {
     margin-top: 0;
-    padding: 4px 0 6px;
-    text-shadow: 3px 2px 2px rgba(229, 242, 217, 0.5);
+    padding: .25em 0 .37em;
+    text-shadow: .2em .12em .12em rgba(229, 242, 217, 0.5);
 }
 
 .dnp1-pubtime {
-    margin-top: 20px;
-    margin-left: 16px;
+    margin-top: 1.25em;
+    margin-left: 1em;
 }
 
 .dnp1-post-title {
     font-size: 1.8em;
     font-weight: bolder;
-    border-bottom: solid 1px #d3d3d3;
+    border-bottom: solid .06em #d3d3d3;
     text-decoration: none;
     display: block;
     width: auto;
-    padding: 0 16px;
+    padding: 0 1em;
     color: #444;
-    margin-bottom: 6px;
+    margin-bottom: .37em;
 }
 
 .dnp1-post-title:hover {
     color: #344;
     background-color: #D4D4D4;
-    border-bottom: solid 1px transparent;
-    border-radius: 5px;
+    border-bottom: solid .06em transparent;
+    border-radius: .31em;
 }
 
 .dnp1-post-link:hover {
@@ -89,22 +88,22 @@
 
 .dnp1-post-datetime {
     display: inline-block;
-    padding: 4px 16px;
+    padding: .25em 1em;
     color: #555;
     font-weight: 300;
-    letter-spacing: 2px;
+    letter-spacing: .12em;
 }
 
 .dnp1-tags {
     display: inline-block;
-    padding: 0 16px;
+    padding: 0 1em;
 }
 
 .dnp1-tag-link {
     box-sizing: border-box;
-    border-radius: 2px;
-    margin: 0 4px;
-    padding: 3px;
+    border-radius: .12em;
+    margin: 0 .25em;
+    padding: .2em;
     color: #777;
     font-weight: 500;
     font-size: 1em;
@@ -119,6 +118,6 @@
 
 .dnp1-tag-link:hover {
     color: #555;
-    border-radius: 5px;
+    border-radius: .31em;
     background: #D6D8D6;
 }
