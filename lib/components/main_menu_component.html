@@ -1,0 +1,9 @@
+<nav id="dnp1-menu">
+    <ul>
+        <li *ngFor="let item of items">
+            <a class='dnp1-menu-link {{ item.domClass }}' [routerLink]="[item.route]" >
+                {{item.label}}
+            </a>
+        </li>
+    </ul>
+</nav>
