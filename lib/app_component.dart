@@ -10,6 +10,7 @@ import 'package:danilo_info/components/article_page_component.dart';
 import 'package:danilo_info/components/main_menu_component.dart';
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
+import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
@@ -21,7 +22,7 @@ import 'package:danilo_info/services/user_service.dart';
     ROUTER_DIRECTIVES,
     MainMenuComponent,
   ],
-  providers: const [UserService, ArticleService, CommentService, ROUTER_PROVIDERS],
+  providers: const [UserService, ArticleService, CommentService, SessionService, ROUTER_PROVIDERS],
 )
 @RouteConfig(
   const [

@@ -1,23 +1,22 @@
 #dnp1-inner-content {
     position: relative;
-    padding: 0 0 20px;
+    padding: 0 0 1.25em;
     overflow-wrap: break-word;
     word-wrap: break-word;
     /*word-break: break-word;*/
-    max-width: 960px;
+    max-width: 60em;
     margin: 0 auto;
     text-align: justify;
-    min-width: 320px;
+    min-width: 20em;
 }
 #dnp1-content-wrapper {
-
     position: relative;
     text-align: left;
     box-sizing: border-box;
-    padding: 50px 1em 0;
+    padding: 3.12em 1em 0;
     margin: 0 auto;
     width: auto;
-    min-width: 320px;
+    min-width: 20em;
 }
 
 /**/
@@ -25,17 +24,18 @@
     position: fixed;
     top: 0;
     box-sizing: border-box;
-    line-height: 32px;
+    line-height: 2em;
     text-align: left;
     color: #fff;
     width: 100%;
-    min-width: 320px;
+    min-width: 20em;
     border-radius: 0;
     z-index: 20;
     font-family: "Lucida Console", Monaco, monospace;
     color: rgba(20, 58, 38, 0.86);
     background-color: rgba(34, 61, 52, 1);
-    height: 50px;
+    height: 3.12em;
     padding: 0;
     overflow: hidden;
+    font-size:1em;
 }

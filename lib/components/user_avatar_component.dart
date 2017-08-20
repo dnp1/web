@@ -12,8 +12,8 @@ import 'package:danilo_info/services/user_service.dart';
   styles: const ['''
   .dnp1-comment-avatar {
       display: block;
-      height: 2em;
-      width: 2em;
+      height: 4em;
+      width: 4em;
       border-radius: .12em;
       margin: .06em .06em .06em .06em;
   }

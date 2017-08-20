@@ -1,26 +1,41 @@
 #dnp1-menu li {
     display: inline-block;
+}
+
+nav#dnp1-menu {
+    display: inline-block;
+}
+nav#dnp1-menu ul
+{
+    display: block;
+    position: relative;
+    line-height: 3.12em;
+    height: 3.12em;
 
 }
 
-.dnp1-menu-link:link,
+.dnp1-menu-link:hover,
+.dnp1-menu-link:active,
 .dnp1-menu-link:visited,
 .dnp1-menu-link {
     display: block;
     box-sizing: border-box;
     text-decoration: none;
-    letter-spacing: 2px;
-    font-size: 1.3em;
     color: #fff;
     text-align: left;
     margin: 0 auto;
     vertical-align: middle;
     outline: none;
-    height: 50px;
-    line-height: 50px;
-    border-left: solid #5B7466 1px;
-    border-left: solid #5B7466 1px;
-    padding: 0 8px;
+    height: 3.12em;
+    line-height: 3.12em;
+    border-left: solid #5B7466 .06em;
+    border-left: solid #5B7466 .06em;
+    padding: 0 .5em;
+}
+
+.dnp1-menu-link span {
+    letter-spacing: .12em;
+    font-size: 1.3em;
 }
 
 .dnp1-menu-link:hover {

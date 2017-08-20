@@ -35,9 +35,9 @@ article {
 
 legend {
     font-size: 1.2em;
-    border-bottom: solid 1px #a9a9a9;
-    padding: 8px;
-    margin-bottom: 10px;
+    border-bottom: solid .06em #a9a9a9;
+    padding: .5em;
+    margin-bottom: .62em;
 }
 
 ul {
@@ -68,7 +68,7 @@ ol, ul {
 label {
     position: relative;
     display: block;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 .06em .06em rgba(0, 0, 0, 0.2);
     color: #555;
-    padding-bottom: 4px;
+    padding-bottom: .25em;
 }
