@@ -56,19 +56,29 @@ ol, ul {
     background: rgba(192, 192, 192, .6);
 }
 
-.highlighted {
-    color: #CC5555;
+
+input[type='text'],
+input[type='password'] {
+    box-sizing: border-box;
+    color: #444;
+    display: inline-block;
+    font-size: .96em;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 2em;
+    padding: .2em .25em;
 }
 
-.loanwords {
-    font-style: italic;
-    font-weight: lighter;
-}
-
-label {
-    position: relative;
-    display: block;
-    text-shadow: 0 .06em .06em rgba(0, 0, 0, 0.2);
-    color: #555;
-    padding-bottom: .25em;
+input[type='submit'],
+button
+{
+    box-sizing: border-box;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .96em;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 2em;
+    text-align: center;
+    padding: .2em .25em;
+    vertical-align: middle;
 }

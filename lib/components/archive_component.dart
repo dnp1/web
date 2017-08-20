@@ -11,7 +11,6 @@ import 'package:danilo_info/services/article_service.dart';
 class Year<T> {
   int year;
   List<MonthData<T>> months = new List();
-
   Year(this.year);
 }
 

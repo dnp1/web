@@ -49,3 +49,9 @@ nav#dnp1-menu ul
     background-color: rgba(11, 26, 18, 1);
 }
 
+@media (max-width: 50em) {
+    nav#dnp1-menu {
+        display: none;
+    }
+}
+

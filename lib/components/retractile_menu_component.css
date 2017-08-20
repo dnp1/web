@@ -57,3 +57,9 @@
     font-weight: lighter;
     background-color: rgba(11, 26, 18, 1);
 }
+@media (min-width: 50em) {
+    .dnp1-retractile-menu-btn,.dnp1-retractile-menu
+    {
+        display: none;
+    }
+}

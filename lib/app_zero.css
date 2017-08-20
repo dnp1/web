@@ -23,3 +23,21 @@
     margin: 0 auto;
     z-index: -1;
 }
+
+
+.highlighted {
+    color: #CC5555;
+}
+
+.loanwords {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+label {
+    position: relative;
+    display: block;
+    text-shadow: 0 .06em .06em rgba(0, 0, 0, 0.2);
+    color: #555;
+    padding-bottom: .25em;
+}

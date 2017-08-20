@@ -39,3 +39,8 @@
     overflow: hidden;
     font-size:1em;
 }
+@media (max-width: 40em) {
+    #dnp1-content-wrapper {
+        padding: 3em .06em 0;
+    }
+}
