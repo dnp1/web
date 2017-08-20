@@ -1,9 +1,10 @@
 <nav id="dnp1-menu">
     <ul>
         <li *ngFor="let item of items">
-            <a class='dnp1-menu-link {{ item.domClass }}' [routerLink]="[item.route]" >
+            <a class='dnp1-menu-link {{ item.domClass }}' [routerLink]="[item.route]">
                 <span> {{item.label}} </span>
             </a>
         </li>
     </ul>
 </nav>
+<dnp1-retractile-menu [items]="items"></dnp1-retractile-menu>

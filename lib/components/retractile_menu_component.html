@@ -1,0 +1,13 @@
+<nav class="dnp1-retractile-menu-btn">
+    <img src="/img/ic_action.png" class="dnp1-retractile-menu-img">
+    <div *ngIf="visible" class="dnp1-retractile-menu">
+        <ul>
+            <li *ngFor="let item of items">
+                <a class='dnp1-retractile-menu-link {{ item.domClass }}' [routerLink]="[item.route]">
+                    <span> {{item.label}} </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:html';
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
+import 'package:danilo_info/components/retractile_menu_component.dart';
+import 'package:danilo_info/model/menu_item.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/services/session_service.dart';
 
@@ -10,7 +12,7 @@ import 'package:danilo_info/services/session_service.dart';
     selector: 'dnp1-main-menu',
     templateUrl: 'main_menu_component.html',
     styleUrls: const['main_menu_component.css'],
-    directives: const [COMMON_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: const [COMMON_DIRECTIVES, ROUTER_DIRECTIVES, RetractileMenuComponent]
 )
 class MainMenuComponent implements OnInit {
   final SessionService _sessionService;
@@ -22,22 +24,6 @@ class MainMenuComponent implements OnInit {
 
   double menuLength() {
     return items.map((menu) => menu.getMenuWidth()).reduce((w0, w1) => w0 + w1);
-  }
-
-  @Directive(
-    selector: '#dnp1-menu',
-  )
-  @HostListener('click', const [r'$event'])
-  void onClick(event) {
-    print(event);
-  }
-
-  @Directive(
-    selector: 'window',
-  )
-  @HostListener('resize', const [r'$event'])
-  void onResize(event) {
-    print(event);
   }
 
   List<MenuItem> allItems() {
@@ -85,31 +71,5 @@ class MainMenuComponent implements OnInit {
     item.showCondition ==
         MenuItemShowCondition.always || item.showCondition == condition);
   }
-
-
 }
 
-class MenuItem {
-  final String domClass;
-  final String route;
-  final String label;
-  final MenuItemShowCondition showCondition;
-
-  MenuItem(this.domClass, this.route, this.label, this.showCondition);
-
-  double getMenuWidth() {
-    final border = .06;
-    final padding = 1;
-    final fontSize = 1.3;
-    final fontRatio = .72;
-    final charWidth = fontSize * fontRatio;
-    final textWidth = this.label.length;
-    return textWidth + padding + border;
-  }
-}
-
-enum MenuItemShowCondition {
-  always,
-  authenticated,
-  unauthenticated,
-}
