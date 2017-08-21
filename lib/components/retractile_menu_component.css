@@ -4,7 +4,7 @@
     position: fixed;
     right:0;
     float: right;
-    padding-right: 5px;
+    padding-right: .3em;
     cursor: pointer;
     z-index:21;
 }
@@ -15,12 +15,13 @@
     height: auto;
     margin-left: auto;
     left: 8%;
-    top: 52px;
-    border-radius: 5px;
+    top: 3.3em;
+    border-radius: .3em;
     background: #325b4d;
     width: 84%;
     overflow: hidden;
     font-family: "Lucida Console", Monaco, monospace;
+    line-height: 2em;
 
 }
 
@@ -47,12 +48,12 @@
     outline: none;
     text-decoration: none;
     color: white;
-    padding: 4px 10px;
+    padding: .25em .5em;
     border-left: solid 4px transparent;
 }
 .dnp1-retractile-menu-link:active,
 .dnp1-retractile-menu-link:hover {
-    border-left: solid #ccc 4px;
+    border-left: solid #ccc .25em;
 }
 
 .dnp1-retractile-menu-link:active {
