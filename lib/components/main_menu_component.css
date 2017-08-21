@@ -9,8 +9,8 @@ nav#dnp1-menu ul
 {
     display: block;
     position: relative;
-    line-height: 3.12em;
-    height: 3.12em;
+    line-height: 3em;
+    height: 3em;
 
 }
 
@@ -26,8 +26,8 @@ nav#dnp1-menu ul
     margin: 0 auto;
     vertical-align: middle;
     outline: none;
-    height: 3.12em;
-    line-height: 3.12em;
+    height: 3em;
+    line-height: 3em;
     border-left: solid #5B7466 .06em;
     border-left: solid #5B7466 .06em;
     padding: 0 .5em;
@@ -54,4 +54,3 @@ nav#dnp1-menu ul
         display: none;
     }
 }
-

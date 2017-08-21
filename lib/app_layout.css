@@ -13,14 +13,14 @@
     position: relative;
     text-align: left;
     box-sizing: border-box;
-    padding: 3.12em 1em 0;
+    padding: 3em 1em 0;
     margin: 0 auto;
     width: auto;
     min-width: 20em;
 }
 
 /**/
-#dnp1-top-bar {
+.dnp1-top-bar {
     position: fixed;
     top: 0;
     box-sizing: border-box;
@@ -30,15 +30,23 @@
     width: 100%;
     min-width: 20em;
     border-radius: 0;
-    z-index: 20;
+    z-index: 18;
     font-family: "Lucida Console", Monaco, monospace;
     color: rgba(20, 58, 38, 0.86);
-    background-color: rgba(34, 61, 52, 1);
-    height: 3.12em;
+    height: 3em;
     padding: 0;
     overflow: hidden;
     font-size:1em;
+    background-color: rgba(34, 61, 52, .15);
 }
+
+.dnp1-main-bar {
+  position:relative;
+  background-color: rgba(34, 61, 52, 1);
+  height: 3em;
+  z-index: 20;
+}
+
 @media (max-width: 40em) {
     #dnp1-content-wrapper {
         padding: 3em .06em 0;

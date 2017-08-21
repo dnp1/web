@@ -1,13 +1,13 @@
 .dnp1-logo {
     display: inline-block;
     width: auto;
-    line-height: 3.12em;
+    line-height: 3em;
     font-weight: bolder;
     font-family: "Lucida Console", Monaco, monospace;
     letter-spacing: .06em;
     color: white;
     text-shadow: .2em .12em .12em rgba(84, 97, 84, 0.9);
-    height:3.12em;
+    height:3em;
     padding:0 .62em;
 }
 

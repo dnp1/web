@@ -6,6 +6,7 @@
     float: right;
     padding-right: 5px;
     cursor: pointer;
+    z-index:21;
 }
 
 
@@ -58,8 +59,8 @@
     background-color: rgba(11, 26, 18, 1);
 }
 @media (min-width: 50em) {
-    .dnp1-retractile-menu-btn,.dnp1-retractile-menu
+    .dnp1-retractile-menu-btn
     {
-        display: none;
+        z-index: 15
     }
 }

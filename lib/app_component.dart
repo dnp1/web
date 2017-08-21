@@ -9,10 +9,12 @@ import 'package:danilo_info/components/article_listing_component.dart';
 import 'package:danilo_info/components/article_page_component.dart';
 import 'package:danilo_info/components/login_component.dart';
 import 'package:danilo_info/components/main_menu_component.dart';
+import 'package:danilo_info/components/retractile_menu_component.dart';
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/user_service.dart';
+import 'package:danilo_info/services/menu_item_service.dart';
 
 @Component(
   selector: 'dnp1-app',
@@ -22,8 +24,17 @@ import 'package:danilo_info/services/user_service.dart';
     CORE_DIRECTIVES,
     ROUTER_DIRECTIVES,
     MainMenuComponent,
+    RetractileMenuComponent
   ],
-  providers: const [UserService, ArticleService, CommentService, SessionService, ROUTER_PROVIDERS],
+  providers: const [
+    UserService,
+    ArticleService,
+    CommentService,
+    SessionService,
+    MenuItemService,
+    ROUTER_PROVIDERS,
+
+   ],
 )
 @RouteConfig(
   const [
@@ -41,4 +52,3 @@ import 'package:danilo_info/services/user_service.dart';
 class AppComponent {
   var name = 'Angular';
 }
-
