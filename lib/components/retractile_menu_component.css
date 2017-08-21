@@ -20,6 +20,7 @@
     background: #325b4d;
     width: 84%;
     overflow: hidden;
+    font-family: "Lucida Console", Monaco, monospace;
 
 }
 
@@ -61,6 +62,6 @@
 @media (min-width: 50em) {
     .dnp1-retractile-menu-btn
     {
-        z-index: 15
+        z-index: 19
     }
 }
