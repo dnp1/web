@@ -14,3 +14,11 @@
 .dnp1-logo span {
     font-size: 1.8em;
 }
+
+@media (max-width: 50em) {
+    .dnp1-logo {
+        border-right: ridge #5B7466 .1em;
+        border-radius: 0 .1em .1em 0;
+        padding-right: 1em;
+    }
+}
