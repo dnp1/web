@@ -1,7 +1,8 @@
+import 'dart:async';
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart';
 import 'package:danilo_info/model/menu_item.dart';
-
+import 'package:danilo_info/services/menu_item_service.dart';
 
 @Component(
     selector: 'dnp1-retractile-menu',
@@ -9,9 +10,12 @@ import 'package:danilo_info/model/menu_item.dart';
     styleUrls: const ['retractile_menu_component.css'],
     directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 )
-class RetractileMenuComponent {
+class RetractileMenuComponent implements OnInit {
+  final MenuItemService _menuItemService;
+
+  RetractileMenuComponent(this._menuItemService);
+
   bool visible;
-  @Input()
   List<MenuItem> items;
 
   @Directive(
@@ -20,5 +24,11 @@ class RetractileMenuComponent {
   @HostListener('click', const [r'$event'])
   void showMenu(event) {
     visible = !visible;
+  }
+
+  @override
+  Future<Null> ngOnInit() async {
+    //    window.onResize.listen(); See...
+    items = await _menuItemService.getMenuItems();
   }
 }
