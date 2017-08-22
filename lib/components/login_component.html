@@ -2,15 +2,9 @@
     <header class="dnp1-login-title">
         Conecte-se
     </header>
-    <form class='dnp1-form' id='login-form' method="post">
-
-        <input id="login_email" type="text" name="Login_Email" required value="" autocomplete='off' required autofocus placeholder="Entre com seu email"/>
-
-        <input id="login-password" type="password" name="Login_Password" placeholder="Entre com sua senha" value="" required />
-
-
+    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+        <input type="text" required autocomplete='off' autofocus placeholder="Entre com seu email" [(ngModel)]="login.email" />
+        <input type="password" required placeholder="Entre com sua senha" [(ngModel)]="login.password"  />
         <input type="submit" class="dnp1-form-submit" value="Autenticar"/>
-
-
     </form>
 </section>
