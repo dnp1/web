@@ -23,18 +23,6 @@
     border: solid .06em #26160A;
 }
 
-/* Now is related to article actually */
-.dnp1-post {
-    position: relative;
-    max-width: 72em;
-    min-width: 16em;
-    /*background-color: #fdf5e6;*/
-    background-color: #F5F5F5;
-    padding: .5em .25em 3.75em 4em;
-    margin: .12em 0 0;
-    border-radius: .37em;
-    text-align: justify;
-}
 
 .dnp1-post-content {
     padding: 1em .75em;
@@ -142,7 +130,6 @@
     }
 
     .dnp1-post {
-        padding-left: 0;
         padding-top: .25em;
     }
 

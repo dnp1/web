@@ -9,7 +9,7 @@ import 'package:danilo_info/services/article_service.dart';
 @Component(
   selector: 'dnp1-article',
   templateUrl: 'article_component.html',
-  styleUrls: const ['article_component.css'],
+  styleUrls: const ['article_component.css', "styles/dnp1_page.css"],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
 )
 class ArticleComponent implements OnInit  {

@@ -6,7 +6,7 @@ import 'package:angular2/router.dart';
   selector: 'dnp1-about',
   templateUrl: 'about_component.html',
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
-  styleUrls: const ['about_component.css'],
+  styleUrls: const ['about_component.css', 'styles/dnp1_page.css'],
 )
 class AboutComponent {
 }
