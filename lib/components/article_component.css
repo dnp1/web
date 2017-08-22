@@ -143,7 +143,7 @@
 
     .dnp1-post {
         padding-left: 0;
-        padding-top: 4em;
+        padding-top: .25em;
     }
 
     .dnp1-post:not(:first-child) {
