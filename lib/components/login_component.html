@@ -5,6 +5,6 @@
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
         <input type="text" required autocomplete='off' autofocus placeholder="Entre com seu email" [(ngModel)]="login.email" />
         <input type="password" required placeholder="Entre com sua senha" [(ngModel)]="login.password"  />
-        <input type="submit" class="dnp1-form-submit" value="Autenticar"/>
+        <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
     </form>
 </section>

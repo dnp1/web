@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:angular2/angular2.dart';
 import 'package:danilo_info/model/login.dart';
 
@@ -9,9 +10,15 @@ import 'package:danilo_info/model/login.dart';
 )
 class LoginComponent {
   Login login = new Login();
+  bool sending;
 
-  onSubmit() {
-    print('teste');
-    login.email += 'e';
+  Future<Null> onSubmit() async {
+    if (!sending) {
+      sending = true;
+      print('teste');
+      login.email += 'e';
+      await (new Future.delayed(const Duration(seconds: 6), () => print("foi")));
+      sending = false;
+    }
   }
 }
