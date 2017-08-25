@@ -7,7 +7,7 @@ import 'package:angular2/angular2.dart';
 class MenuItemService {
     SessionService _sessionService;
     MenuItemService(this._sessionService);
-    
+
     List<MenuItem> _allItems() {
       return [
         new MenuItem(
@@ -39,7 +39,7 @@ class MenuItemService {
     }
 
     Future<List<MenuItem>> getMenuItems() async {
-      var session = await _sessionService.getCurrentSession();
+      var session = await _sessionService.getCurrent();
       MenuItemShowCondition condition;
       if (session.user != null) {
         condition = MenuItemShowCondition.authenticated;

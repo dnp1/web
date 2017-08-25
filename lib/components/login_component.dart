@@ -15,8 +15,6 @@ class LoginComponent {
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      print('teste');
-      login.email += 'e';
       await (new Future.delayed(const Duration(seconds: 6), () => print("foi")));
       sending = false;
     }
