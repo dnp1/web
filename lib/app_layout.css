@@ -17,6 +17,7 @@
     margin: 0 auto;
     width: auto;
     min-width: 20em;
+    top:3em;
 }
 
 /**/
@@ -41,10 +42,9 @@
 }
 
 .dnp1-main-bar {
-  position:relative;
+  /*position:relative;*/
   background-color: rgba(34, 61, 52, 1);
   height: 3em;
-  z-index: 20;
 }
 
 @media (max-width: 50em) {

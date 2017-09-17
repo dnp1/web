@@ -1,10 +1,13 @@
-<section class='dnp1-login-content dnp1-page'>
-    <header class="dnp1-login-title">
+<section class='dnp1-sign-up-content dnp1-page'>
+    <header class="dnp1-sign-up-title">
         Identifique-se 
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
-        <input type="text" required autocomplete='off' autofocus placeholder="Entre com seu email" [(ngModel)]="login.email" />
-        <input type="password" required placeholder="Entre com sua senha" [(ngModel)]="login.password"  />
-        <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
+        <input type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName" />
+        <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName" />
+        <input type="text" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email" />
+        <input type="password" required placeholder="Senha" [(ngModel)]="signUp.password"/>
+        <input type="password" required placeholder="Senha" [(ngModel)]="signUp.passwordConfirmation"/>
+        <input type="submit" class="dnp1-form-submit" value="Cadastrar" [disabled]="sending"/>
     </form> 
 </section>

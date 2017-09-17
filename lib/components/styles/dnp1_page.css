@@ -1,9 +1,9 @@
 .dnp1-page {
   background-color: #F5F5F5;
   border-radius: .15em;
-  border: solid .06em #AAA;
+/*  border: solid .06em #AAA; */
   color: #444;
-  margin: .12em .25em 0;
+  /* margin: .12em .25em 0;*/
   max-width: 72em;
   min-width: 16em;
   min-height: 50%;

@@ -1,7 +1,7 @@
 <section class='dnp1-comments' >
-    <section class='dnp1-comments-header'>
-        Comentários:
-    </section>
+    <header class='dnp1-comments-header'>
+            <legend>Comentários:</legend>
+    </header>
     <dnp1-comment *ngIf="comments != null" *ngFor="let comment of comments" [id]="comment"></dnp1-comment>
     <section class="dnp1-no-comment" *ngIf="comments != null && comments.isEmpty">
         Não há comentários. Seja o primeiro!

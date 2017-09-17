@@ -11,11 +11,10 @@
 .dnp1-comment {
     box-sizing: border-box;
     margin: 0 .06em;
-    font-size: .81em;
     min-height: 4.37em;
     padding: .62em .25em;
     border-bottom: solid .06em #ccc;
-    background-color: #f5f5f5;
+    background-color: inherit;
 }
 
 .dnp1-comment-author {

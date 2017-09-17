@@ -3,5 +3,5 @@ class SignUp {
   String lastName;
   String email;
   String password;
-  String confirmPassword;
+  String passwordConfirmation;
 }
