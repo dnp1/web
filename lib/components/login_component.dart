@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'package:angular2/angular2.dart';
+import 'package:angular2/router.dart';
+
 import 'package:danilo_info/model/login.dart';
 
 @Component(
   selector: 'dnp1-login',
   templateUrl: "login_component.html",
   styleUrls: const ['login_component.css', "styles/dnp1_page.css"],
-  directives: const [COMMON_DIRECTIVES]
+  directives: const [COMMON_DIRECTIVES, ROUTER_DIRECTIVES]
 )
 class LoginComponent {
   Login login = new Login();

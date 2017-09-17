@@ -10,6 +10,7 @@ import 'package:danilo_info/components/article_page_component.dart';
 import 'package:danilo_info/components/login_component.dart';
 import 'package:danilo_info/components/main_menu_component.dart';
 import 'package:danilo_info/components/retractile_menu_component.dart';
+import 'package:danilo_info/components/sign_up_component.dart';
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/session_service.dart';
@@ -46,8 +47,9 @@ import 'package:danilo_info/services/menu_item_service.dart';
   const Route(path: '/article/:id', name: 'ArticlePage', component: ArticlePageComponent),
   const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),
   const Route(path: '/about', name: 'About', component: AboutComponent),
-  const Route(path: '/login', name: 'Login', component: LoginComponent),
+  const Route(path: '/sign-in', name: 'Login', component: LoginComponent),
   const Route(path: '/logout', name: 'Logout', component: AboutComponent),
+  const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
 ])
 class AppComponent {
   var name = 'Angular';

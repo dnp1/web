@@ -6,6 +6,5 @@
         <input type="text" required autocomplete='off' autofocus placeholder="Entre com seu email" [(ngModel)]="login.email" />
         <input type="password" required placeholder="Entre com sua senha" [(ngModel)]="login.password"  />
         <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
-        {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
-   </form> 
+    </form> 
 </section>
