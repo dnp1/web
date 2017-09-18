@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 
 import 'package:danilo_info/components/comment_component.dart';
 import 'package:danilo_info/services/comment_service.dart';
@@ -9,7 +9,7 @@ import 'package:danilo_info/services/comment_service.dart';
   templateUrl: 'article_comments_component.html',
   styleUrls: const ['article_comments_component.css'],
   directives: const [
-    COMMON_DIRECTIVES,
+    CORE_DIRECTIVES,
     CommentComponent,
   ],
 )

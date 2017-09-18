@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/model/tag.dart';

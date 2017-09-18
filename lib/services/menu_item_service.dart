@@ -1,7 +1,7 @@
 import 'package:danilo_info/model/menu_item.dart';
 import 'dart:async';
 import 'package:danilo_info/services/session_service.dart';
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 
 @Injectable()
 class MenuItemService {
@@ -27,7 +27,7 @@ class MenuItemService {
             MenuItemShowCondition.always),
         new MenuItem(
             "dnp1-login-link",
-            "Login",
+            "SignIn",
             "conecte-se",
             MenuItemShowCondition.unauthenticated),
         new MenuItem(

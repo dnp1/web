@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/services/comment_service.dart';
@@ -13,15 +13,19 @@ import 'package:danilo_info/components/user_name_component.dart';
     directives: const [
       UserAvatarComponent,
       UserNameComponent,
-      COMMON_DIRECTIVES,
+      CORE_DIRECTIVES,
     ]
 )
 class CommentComponent implements OnInit {
   String _id;
 
-  @Input()
+  @Input('id')
   void set id(String id) {
     _id = id;
+  }
+
+  String get id {
+      return _id;
   }
 
   Comment comment;
@@ -30,7 +34,11 @@ class CommentComponent implements OnInit {
 
   CommentComponent(this._commentService);
 
+
+
   Future<Null> ngOnInit() async {
-    comment = await _commentService.get(_id);
+    print("oi");
+    print(_commentService);
+    comment = await (_commentService.get(_id));
   }
 }

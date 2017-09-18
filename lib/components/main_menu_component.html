@@ -1,4 +1,4 @@
-<nav id="dnp1-menu">
+<nav id="dnp1-menu" *ngIf="items != null">
     <ul>
         <li *ngFor="let item of items">
             <a class='dnp1-menu-link {{ item.domClass }}' [routerLink]="[item.route]">

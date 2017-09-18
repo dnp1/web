@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:angular2/angular2.dart';
-import 'package:angular2/router.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_router/angular_router.dart';
 
 import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/model/month.dart';
@@ -11,6 +11,7 @@ import 'package:danilo_info/services/article_service.dart';
 class Year<T> {
   int year;
   List<MonthData<T>> months = new List();
+
   Year(this.year);
 }
 
