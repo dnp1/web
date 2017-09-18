@@ -47,6 +47,29 @@
   height: 3em;
 }
 
+:host ::ng-deep .dnp1-page {
+  background-color: #F5F5F5;
+  border-radius: .15em;
+  color: #444;
+  max-width: 72em;
+  min-width: 16em;
+  min-height: 50%;
+  padding: .5em .25em .5em;
+  position: relative;
+  text-align: justify;
+}
+
+:host ::ng-deep .dnp1-page > header {
+    font-size: 1.8em;
+    font-weight: bolder;
+    border-bottom: solid .06em #d3d3d3;
+    text-decoration: none;
+    display: block;
+    width: auto;
+    padding: 0 1em;
+    color: #444;
+}
+
 @media (max-width: 50em) {
     #dnp1-content-wrapper {
         padding: 3em .06em 0;

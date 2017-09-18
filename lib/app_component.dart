@@ -43,7 +43,7 @@ import 'package:danilo_info/services/user_service.dart';
   const Route(path: '/article/:id', name: 'ArticlePage', component: ArticlePageComponent),
   const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),
   const Route(path: '/about', name: 'About', component: AboutComponent),
-  const Route(path: '/login', name: 'SignIn', component: SignInComponent),
+  const Route(path: '/sign-in', name: 'SignIn', component: SignInComponent),
   const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
   const Route(path: '/logout', name: 'Logout', component: AboutComponent),
 ])

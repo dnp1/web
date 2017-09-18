@@ -1,11 +1,11 @@
 <section class='dnp1-login-content dnp1-page'>
     <header class="dnp1-login-title">
-        Identifique-se 
+        Identifique-se
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
-        <input type="text" required autocomplete='off' autofocus placeholder="Entre com seu email" [(ngModel)]="login.email" />
-        <input type="password" required placeholder="Entre com sua senha" [(ngModel)]="login.password"  />
+        <input type="text" required  autofocus placeholder="Email" [(ngModel)]="login.email" />
+        <input type="password" required placeholder="Senha" [(ngModel)]="login.password"  />
         <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
         {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
-   </form> 
+   </form>
 </section>

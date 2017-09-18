@@ -14,7 +14,7 @@
                     </span>
                     <ul class="dnp1-archive-day-ul">
                         <li *ngFor="let article of month.items">
-                            <a href="/article/{{article.id}}" class="dnp1-archive-article-link">
+                            <a [routerLink]="['ArticlePage', {id: article.id}]" class="dnp1-archive-article-link">
                                 {{article.publishedOn.day}} - {{article.title}}
                             </a>
                         </li>

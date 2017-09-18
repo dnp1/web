@@ -1,56 +1,4 @@
-.dnp1-metadata-share {
-    width: 2.25em;
-    border-radius: 50%;
-    margin-bottom: 1em;
-    background-color: rgba(172, 172, 172, 0.5);
-    cursor: pointer;
-}
-
-.dnp1-metadata-share:hover {
-    background-color: rgba(190, 170, 155, 0.7);
-}
-
-.dnp1-content-metadata {
-    border-radius: .37em 0 0 .12em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 3.75em;
-    text-align: center;
-    padding-top: 1.31em;
-    background: rgba(36,20,10, .95) none repeat scroll 0 0;
-    border: solid .06em #26160A;
-}
-
-
-.dnp1-post-content {
-    padding: 1em .75em;
-    font-size: 1.2em;
-    margin: .25em auto .75em;
-    min-width: 15em;
-    font-family: Georgia, serif;
-    color: #555;
-}
-
-.dnp1-post-footer {
-    min-height: 1.5em;
-    margin: 2em auto .5em;
-    width: 95%
-}
-
-.dnp1-post-header {
-    margin-top: 0;
-    padding: .25em 0 .37em;
-    text-shadow: .2em .12em .12em rgba(229, 242, 217, 0.5);
-}
-
-.dnp1-pubtime {
-    margin-top: 1.25em;
-    margin-left: 1em;
-}
-
-.dnp1-post-title {
+.dnp1-article-title {
     font-size: 1.8em;
     font-weight: bolder;
     border-bottom: solid .06em #d3d3d3;
@@ -62,19 +10,45 @@
     margin-bottom: .37em;
 }
 
-.dnp1-post-title:hover {
+.dnp1-article-content {
+    padding: 1em .75em;
+    font-size: 1.2em;
+    margin: .25em auto .75em;
+    min-width: 15em;
+    font-family: Georgia, serif;
+    color: #555;
+}
+
+.dnp1-article-footer {
+    min-height: 1.5em;
+    margin: 2em auto .5em;
+    width: 95%
+}
+
+.dnp1-article-header {
+    margin-top: 0;
+    padding: .25em 0 .37em;
+    text-shadow: .2em .12em .12em rgba(229, 242, 217, 0.5);
+}
+
+.dnp1-pubtime {
+    margin-top: 1.25em;
+    margin-left: 1em;
+}
+
+.dnp1-article-title:hover {
     color: #344;
     background-color: #D4D4D4;
     border-bottom: solid .06em transparent;
     border-radius: .31em;
 }
 
-.dnp1-post-link:hover {
+.dnp1-article-link:hover {
     color: #808080;
     text-decoration: underline;
 }
 
-.dnp1-post-datetime {
+.dnp1-article-datetime {
     display: inline-block;
     padding: .25em 1em;
     color: #555;
@@ -129,11 +103,11 @@
 
     }
 
-    .dnp1-post {
+    .dnp1-article {
         padding-top: .25em;
     }
 
-    .dnp1-post:not(:first-child) {
+    .dnp1-article:not(:first-child) {
         margin-top: .06em;
     }
 }

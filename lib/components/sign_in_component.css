@@ -1,13 +1,3 @@
-.dnp1-login-title {
-    font-size: 1.8em;
-    font-weight: bolder;
-    border-bottom: solid .06em #d3d3d3;
-    text-decoration: none;
-    display: block;
-    width: auto;
-    padding: 0 1em;
-    color: #444;
-}
 .dnp1-form {
     box-sizing: border-box;
     display: block;
@@ -28,43 +18,3 @@
 .dnp1-form label {
     text-align: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

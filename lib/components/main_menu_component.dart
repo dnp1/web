@@ -26,13 +26,10 @@ class MainMenuComponent implements OnInit {
 
   Future<Null> _getItems() async {
       items = await _menuItemService.getMenuItems();
-      print("items:");
-      print(items);
   }
 
   @override
   void ngOnInit() {
       _getItems();
-    //    window.onResize.listen(); See...
   }
 }

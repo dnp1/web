@@ -11,7 +11,7 @@ class MenuItemService {
     List<MenuItem> _allItems() {
       return [
         new MenuItem(
-            "dnp1-posts-link",
+            "dnp1-articles-link",
             "Articles",
             "postagens",
             MenuItemShowCondition.always),

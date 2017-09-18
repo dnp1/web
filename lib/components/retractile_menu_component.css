@@ -9,7 +9,6 @@
     z-index:21;
 }
 
-
 .dnp1-retractile-menu {
     position: fixed;
     height: auto;
@@ -22,7 +21,6 @@
     overflow: hidden;
     font-family: "Lucida Console", Monaco, monospace;
     line-height: 2em;
-
 }
 
 .dnp1-retractile-menu ul {
@@ -36,7 +34,6 @@
 
 .dnp1-retractile-menu li:first-child .dnp1-retractile-menu-link {
     border-top: none;
-
 }
 
 .dnp1-retractile-menu-link:link,

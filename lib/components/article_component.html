@@ -1,14 +1,14 @@
-<article class='dnp1-post dnp1-page' *ngIf="article != null">
+<article class='dnp1-article' *ngIf="article != null">
     <!-- <div class='dnp1-content-metadata'>-->
         <!--<img class='dnp1-metadata-share' src="/img/social/facebook.png" alt="fb"/>-->
         <!--<img class='dnp1-metadata-share' src="/img/social/googleplus.png" alt="fb"/>-->
         <!--<img class='dnp1-metadata-share' src="/img/social/twitter.png" alt="fb"/>-->
     <!-- </div> -->
-    <header class='dnp1-post-header'>
-        <div class="dnp1-post-datetime">
+    <header class='dnp1-article-header'>
+        <div class="dnp1-article-datetime">
             {{ article.editedOn }}
         </div>
-        <a class='dnp1-post-title' [routerLink]="['ArticlePage', {id: article.id}]">
+        <a class='dnp1-article-title' [routerLink]="['ArticlePage', {id: article.id}]">
             {{ article.title }}
         </a>
         <div class="dnp1-tags">
@@ -17,10 +17,10 @@
             </a>
         </div>
     </header>
-    <div class='dnp1-post-content'>
+    <div class='dnp1-article-content'>
         {{ article.content }}
     </div>
-    <footer class='dnp1-post-footer'>
+    <footer class='dnp1-article-footer'>
 
     </footer>
 </article>

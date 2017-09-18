@@ -1,14 +1,3 @@
-.dnp1-archive-title {
-    font-size: 1.8em;
-    font-weight: bolder;
-    border-bottom: solid .06em #d3d3d3;
-    text-decoration: none;
-    display: block;
-    width: auto;
-    padding: 0 1em;
-    color: #444;
-}
-
 .dnp1-archive-tree {
     display: block;
     margin: 1.25em .31em;
