@@ -53,7 +53,7 @@
   color: #444;
   max-width: 72em;
   min-width: 16em;
-  padding: .5em .25em .5em;
+  padding: .5em .25em 1em;
   position: relative;
   text-align: justify;
 }

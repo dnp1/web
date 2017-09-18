@@ -31,4 +31,8 @@ class ArticleCommentsComponent implements OnInit {
   Future<Null> ngOnInit() async {
     comments = await _commentService.ofArticle(_articleId);
   }
+
+  bool canComment() {
+    return true;
+  }
 }
