@@ -3,6 +3,8 @@ class Comment {
   String articleId;
   String userId;
   String content;
+  DateTime publishedOn;
+  DateTime editedOn;
 
-  Comment(this.id, this.articleId, this.userId, this.content);
+  Comment(this.id, this.articleId, this.userId, this.content, this.publishedOn, this.editedOn);
 }

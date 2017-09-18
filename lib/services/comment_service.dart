@@ -11,13 +11,13 @@ class CommentService {
       dnjiasda
       dsakj daodio d oai jdwq9ie yhkjasc k aha diasjhskj dhaijaksckncjwgfuiwehf aj  asdsadj ddd hduqhwud ds dhudqwu s eesj er fdsfdsf fs
       asmdada dsad
-      '''),
+      ''', new DateTime.utc(2015,06,15), new DateTime.utc(2015,06,15)),
       '2': new Comment('2','1', '1', '''
       Teste final dbhdgauyqwg asdhgsa asjdni wq ehuiadas djahsds whqui hdasjkas dasdqw
       dnjiasda
       dsakj daodio d oai jdwq9ie yhkjasc k aha diasjhskj dhaijaksckncjwgfuiwehf aj  asdsadj ddd hduqhwud ds dhudqwu s eesj er fdsfdsf fs
       asmdada dsad
-      ''')
+      ''',  new DateTime.utc(2015,06,15), new DateTime.utc(2015,06,15))
     };
 
     Future<List<String>> ofArticle(String articleId) async {

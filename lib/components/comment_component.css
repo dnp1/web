@@ -17,16 +17,6 @@
     background-color: inherit;
 }
 
-.dnp1-comment-author {
-    font-size: 1em;
-    font-weight: bolder;
-    margin: .19em .12em;
-    float: left;
-    text-align: center;
-    min-height: 4em;
-    border: solid .06em #d3d3d3;
-    border-radius: .12em;
-}
 
 .dnp1-comment:last-child {
     border-radius: 0 0 .25em .25em;
@@ -50,4 +40,10 @@
     margin-left: 4.37em;
     padding-left: .5em;
     min-height: 4.25em;
+}
+
+.dnp1-comment-datetime {
+    color: #AAA;
+    font-size: .8em;
+    padding: .25em;
 }
