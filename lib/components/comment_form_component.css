@@ -1,0 +1,26 @@
+.dnp1-new-comment {
+    padding: .25em .5em;
+}
+.dnp1-new-comment textarea {
+    display:flex;
+    width:100%;
+    resize:none;
+    min-height:2em;
+    height:auto;
+    overflow-y: auto;
+}
+
+.dnp1-form {
+    box-sizing: border-box;
+    display:block;
+    margin-left:3em;
+}
+
+.dnp1-comment-author-info {
+    float:left;
+    clear: right;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: .12em;
+    overflow: hidden;
+}

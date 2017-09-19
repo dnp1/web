@@ -41,7 +41,7 @@ class MenuItemService {
     Future<List<MenuItem>> getMenuItems() async {
       var session = await _sessionService.getCurrent();
       MenuItemShowCondition condition;
-      if (session.user != null) {
+      if (session.userId != null) {
         condition = MenuItemShowCondition.authenticated;
       } else {
         condition = MenuItemShowCondition.unauthenticated;

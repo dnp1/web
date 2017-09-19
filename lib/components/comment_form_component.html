@@ -1,0 +1,9 @@
+<section class="dnp1-new-comment" *ngIf="canComment()">
+    <div class='dnp1-comment-author-info'>
+        <dnp1-user-avatar [id]="session.userId" [size]="'2em'"></dnp1-user-avatar>
+    </div>
+    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+        <textarea placeholder="Digite seu comentario"></textarea>
+    </form>
+
+</section>

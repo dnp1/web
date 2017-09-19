@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 
 import 'package:danilo_info/components/comment_component.dart';
+import 'package:danilo_info/components/comment_form_component.dart';
+
 import 'package:danilo_info/services/comment_service.dart';
 
 @Component(
@@ -11,15 +13,12 @@ import 'package:danilo_info/services/comment_service.dart';
   directives: const [
     CORE_DIRECTIVES,
     CommentComponent,
+    CommentFormComponent,
   ],
 )
 class ArticleCommentsComponent implements OnInit {
-  String _articleId;
-
   @Input()
-  void set articleId(String id) {
-    _articleId = id;
-  }
+  String articleId;
 
   List<String> comments;
 
@@ -29,10 +28,6 @@ class ArticleCommentsComponent implements OnInit {
 
   @override
   Future<Null> ngOnInit() async {
-    comments = await _commentService.ofArticle(_articleId);
-  }
-
-  bool canComment() {
-    return true;
+    comments = await _commentService.ofArticle(articleId);
   }
 }

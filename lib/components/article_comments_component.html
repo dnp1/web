@@ -6,7 +6,5 @@
     <section class="dnp1-no-comment" *ngIf="comments != null && comments.isEmpty">
         Não há comentários.
     </section>
-    <section class="dnp1-add-comment" *ngIf="canComment()">
-      <textarea></textarea>
-    </section>
+    <dnp1-comment-form articleId="articleId"></dnp1-comment-form>
 </section>
