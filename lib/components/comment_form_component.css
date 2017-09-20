@@ -2,7 +2,8 @@
     padding: .25em .5em;
 }
 .dnp1-new-comment textarea {
-    display:flex;
+    display:block;
+    box-sizing: border-box;
     width:100%;
     resize:none;
     min-height:2em;

@@ -34,11 +34,7 @@ class CommentComponent implements OnInit {
 
   CommentComponent(this._commentService);
 
-
-
   Future<Null> ngOnInit() async {
-    print("oi");
-    print(_commentService);
     comment = await (_commentService.get(_id));
   }
 }
