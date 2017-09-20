@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:html';
 import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
 
 import 'package:danilo_info/components/user_avatar_component.dart';
 import 'package:danilo_info/services/session_service.dart';
@@ -13,9 +15,13 @@ import 'package:danilo_info/model/session.dart';
   directives: const [
     CORE_DIRECTIVES,
     UserAvatarComponent,
+    formDirectives,
   ],
 )
 class CommentFormComponent implements OnInit {
+  bool onSubmit = false;
+
+  String content;
   String _articleId;
 
   @Input()
@@ -46,7 +52,24 @@ class CommentFormComponent implements OnInit {
     return session != null && session.userId != null;
   }
 
-  void onSubmit() {
+  void submit() {
+    if (!onSubmit) {
+      onSubmit = true;
+    }
+  }
 
+  void keypress(KeyboardEvent $event) {
+    if ($event.keyCode != 13) {
+      return;
+    }
+    if (!$event.ctrlKey) {
+      $event.preventDefault();
+    }
+  }
+
+  void keyup(KeyboardEvent $event) {
+    if ($event.keyCode == 13 && !$event.ctrlKey) {
+        submit();
+    }
   }
 }

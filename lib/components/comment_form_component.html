@@ -2,7 +2,8 @@
     <div class='dnp1-comment-author-info'>
         <dnp1-user-avatar [id]="session.userId" [size]="'2em'"></dnp1-user-avatar>
     </div>
-    <form class='dnp1-form' (ngSubmit)="onSubmit()">
-        <textarea placeholder="Digite seu comentario"></textarea>
+    <form class='dnp1-form' (ngSubmit)="submit()">
+        <textarea [(ngModel)]="content" placeholder="Digite seu comentario" required></textarea>
+        <button class=dnp1-button-submit>Enviar</button>
     </form>
 </section>
