@@ -5,6 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 
 import 'package:danilo_info/components/user_avatar_component.dart';
 import 'package:danilo_info/services/session_service.dart';
+import 'package:danilo_info/services/comment_service.dart';
 
 import 'package:danilo_info/model/session.dart';
 
@@ -30,10 +31,11 @@ class CommentFormComponent implements OnInit {
   }
 
   final SessionService _sessionService;
+  final CommentService _commentService;
 
   Session session;
 
-  CommentFormComponent(this._sessionService);
+  CommentFormComponent(this._sessionService, this._commentService);
 
   @override
   Future<Null> ngOnInit() async {
@@ -52,24 +54,14 @@ class CommentFormComponent implements OnInit {
     return session != null && session.userId != null;
   }
 
-  void submit() {
+
+  Future<Null> submit() async {
+    print("on submit");
     if (!onSubmit) {
       onSubmit = true;
-    }
-  }
+    //   await (_commentService.)
 
-  void keypress(KeyboardEvent $event) {
-    if ($event.keyCode != 13) {
-      return;
-    }
-    if (!$event.ctrlKey) {
-      $event.preventDefault();
-    }
-  }
-
-  void keyup(KeyboardEvent $event) {
-    if ($event.keyCode == 13 && !$event.ctrlKey) {
-        submit();
+      onSubmit = false;
     }
   }
 }

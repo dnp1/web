@@ -1,4 +1,5 @@
 class Comment {
+  bool _new;
   String id;
   String articleId;
   String userId;
