@@ -18,3 +18,10 @@
 .dnp1-form label {
     text-align: left;
 }
+
+.dnp1-other-option {
+    padding: .25em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    font-size: .9em;
+}

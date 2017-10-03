@@ -5,8 +5,8 @@
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
         <input type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>
         <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName"/>
-        <input type="text" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
-        <input type="text" required autocomplete='off' autofocus placeholder="Confirmação do Email" [(ngModel)]="signUp.emailConfirmation"/>
+        <input type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
+        <input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email" [(ngModel)]="signUp.emailConfirmation"/>
         <input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
         <input type="password" required placeholder="Confirmação da Senha"  autocomplete='off' [(ngModel)]="signUp.passwordConfirmation"/>
         <input type="submit" class="dnp1-form-submit" value="Cadastrar" [disabled]="sending"/>

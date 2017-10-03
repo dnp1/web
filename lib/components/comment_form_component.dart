@@ -40,18 +40,10 @@ class CommentFormComponent implements OnInit {
   @override
   Future<Null> ngOnInit() async {
     session = await _sessionService.getCurrent();
-    if (session.userId == null) {
-      session.userId = "1"; //TODO:REMOVE_IT;
-    }
   }
 
   bool canComment() {
-    if (session == null) {
-      return false;
-    } else {
-      return true;
-    }
-    return session != null && session.userId != null;
+    return session != null && !session.anonymous();
   }
 
 

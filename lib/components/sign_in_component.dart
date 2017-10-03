@@ -3,7 +3,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:angular_forms/angular_forms.dart';
 
-import 'package:danilo_info/model/login.dart';
+import 'package:danilo_info/model/sign_in.dart';
 
 @Component(
   selector: 'dnp1-sign-in',
@@ -12,7 +12,7 @@ import 'package:danilo_info/model/login.dart';
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives]
 )
 class SignInComponent {
-  Login login = new Login();
+  SignIn login = new SignIn();
   bool sending;
 
   Future<Null> onSubmit() async {
