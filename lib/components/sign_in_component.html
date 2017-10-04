@@ -1,17 +1,17 @@
-<section class='dnp1-sign-in-content dnp1-page'>
-    <header class="dnp1-sign-in-title">
-        Identifique-se
+<section class='dnp1-page'>
+    <header>
+        Identificação de usuário
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
         <input type="email" required  autofocus placeholder="Email" [(ngModel)]="login.email" />
         <input type="password" required placeholder="Senha" [(ngModel)]="login.password" />
+        <dnp1-captcha [captcha]="captcha"></dnp1-captcha>
         <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
-    <div class='dnp1-other-option'>
-        {{ "Se você esqueceu sua senha, clique" }} <a [routerLink]="['SignUp']">aqui</a>
-    </div>
-    <div class='dnp1-other-option'>
-        {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
-    </div>
+        <div class='dnp1-other-option'>
+            {{ "Se você esqueceu sua senha, clique" }} <a [routerLink]="['PasswordReset']">aqui</a>
+        </div>
+        <div class='dnp1-other-option'>
+            {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
+        </div>
    </form>
-
 </section>

@@ -18,7 +18,7 @@ class Year<T> {
 @Component(
   selector: 'dnp1-archive',
   templateUrl: 'archive_component.html',
-  styleUrls: const ["archive_component.css", "styles/dnp1_page.css"],
+  styleUrls: const ["archive_component.css"],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
 )
 class ArchiveComponent implements OnInit {

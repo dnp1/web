@@ -10,6 +10,7 @@ import 'package:danilo_info/components/article_page_component.dart';
 import 'package:danilo_info/components/sign_in_component.dart';
 import 'package:danilo_info/components/sign_up_component.dart';
 import 'package:danilo_info/components/main_menu_component.dart';
+import 'package:danilo_info/components/password_reset_component.dart';
 
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
@@ -19,7 +20,7 @@ import 'package:danilo_info/services/user_service.dart';
 
 
 @Component(
-  selector: 'dnp1-app',
+  selector: 'body[class="dnp1-app"]',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, MainMenuComponent],
@@ -45,6 +46,7 @@ import 'package:danilo_info/services/user_service.dart';
   const Route(path: '/about', name: 'About', component: AboutComponent),
   const Route(path: '/sign-in', name: 'SignIn', component: SignInComponent),
   const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
+  const Route(path: '/password-reset', name: 'PasswordReset', component: PasswordResetComponent),
   const Route(path: '/logout', name: 'Logout', component: AboutComponent),
 ])
 class AppComponent {
