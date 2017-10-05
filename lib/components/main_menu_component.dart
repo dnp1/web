@@ -7,7 +7,7 @@ import 'package:danilo_info/services/menu_item_service.dart';
 
 
 @Component(
-    selector: 'dnp1-main-menu',
+    selector: 'div[class="dnp1-main-menu"]',
     templateUrl: 'main_menu_component.html',
     styleUrls: const['main_menu_component.css'],
     directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
