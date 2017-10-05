@@ -2,11 +2,11 @@
     <header>
         Identificação de usuário
     </header>
-    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+    <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
         <input type="email" required  autofocus placeholder="Email" [(ngModel)]="login.email" />
-        <input type="password" required placeholder="Senha" [(ngModel)]="login.password" />
-        <dnp1-captcha [captcha]="captcha"></dnp1-captcha>
-        <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="sending"/>
+        <input type="password" required placeholder="Senha" [(ngModel)]="login.password"  (minLength)="login.passwordMinLength.toString()"/>
+        <div *ngIf="captcha != null" class='dnp1-component-captcha' [captcha]="captcha"></div>
+        <input type="submit" class="dnp1-form-submit" value="Autenticar" [disabled]="(!signInForm.form.valid) || sending"/>
         <div class='dnp1-other-option'>
             {{ "Se você esqueceu sua senha, clique" }} <a [routerLink]="['PasswordReset']">aqui</a>
         </div>

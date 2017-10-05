@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:danilo_info/model/session.dart';
+import 'package:danilo_info/model/sign_in.dart';
 
 @Injectable()
 class SessionService {
@@ -12,8 +13,8 @@ class SessionService {
     return _currentSession;
   }
 
-  Future<Null> authenticate(String username, password) async {
-    if (username == "user" && password == "password") {
+  Future<Null> authenticate(SignIn signIn) async {
+    if (signIn.email == "user@danilo.info" && signIn.password == "password") {
       _currentSession = new Session('logged', "1");
     }
   }

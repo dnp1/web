@@ -12,4 +12,6 @@ class UserService {
     Future<User> get(String id) async {
       return _users[id];
     }
+
+    Future<int> passwordMinLength() async =>  12;
 }
