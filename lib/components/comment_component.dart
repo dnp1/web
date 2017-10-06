@@ -7,7 +7,7 @@ import 'package:danilo_info/components/user_avatar_component.dart';
 import 'package:danilo_info/components/user_name_component.dart';
 
 @Component(
-    selector: 'dnp1-comment',
+    selector: 'section[dnp1-comment]',
     templateUrl: 'comment_component.html',
     styleUrls: const ['comment_component.css'],
     directives: const [

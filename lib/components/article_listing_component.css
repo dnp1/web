@@ -1,9 +1,9 @@
 .dnp1-article-listing {
     margin-top: 0;
 }
-:host ::ng-deep .dnp1-article {
+:host ::ng-deep article {
     border-bottom: solid .06em #AAA;
 }
-:host ::ng-deep dnp1-article:last-child .dnp1-article {
+:host ::ng-deep dnp1-article:last-child article {
     border-bottom: none;
 }

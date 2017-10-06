@@ -83,13 +83,3 @@
     border-radius: .31em;
     background: #D6D8D6;
 }
-
-@media (max-width: 50em) {
-    .dnp1-article {
-        padding-top: .25em;
-    }
-
-    .dnp1-article:not(:first-child) {
-        margin-top: .06em;
-    }
-}

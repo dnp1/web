@@ -1,16 +1,12 @@
 import 'dart:async';
-import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-
 import 'package:danilo_info/components/user_avatar_component.dart';
-import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/comment_service.dart';
 
-import 'package:danilo_info/model/session.dart';
 
 @Component(
-  selector: 'dnp1-comment-form',
+  selector: 'section[dnp1-comment-form]',
   templateUrl: 'comment_form_component.html',
   styleUrls: const ['comment_form_component.css'],
   directives: const [
@@ -30,21 +26,10 @@ class CommentFormComponent implements OnInit {
     _articleId = id;
   }
 
-  final SessionService _sessionService;
   final CommentService _commentService;
 
-  Session session;
 
-  CommentFormComponent(this._sessionService, this._commentService);
-
-  @override
-  Future<Null> ngOnInit() async {
-    session = await _sessionService.getCurrent();
-  }
-
-  bool canComment() {
-    return session != null && !session.anonymous();
-  }
+  CommentFormComponent(this._commentService);
 
 
   Future<Null> submit() async {
@@ -55,5 +40,9 @@ class CommentFormComponent implements OnInit {
 
       onSubmit = false;
     }
+  }
+  @override
+  ngOnInit() {
+    // TODO: implement ngOnInit
   }
 }

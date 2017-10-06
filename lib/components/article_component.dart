@@ -7,7 +7,7 @@ import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/services/article_service.dart';
 
 @Component(
-  selector: 'dnp1-article',
+  selector: 'article[dnp1-article]',
   templateUrl: 'article_component.html',
   styleUrls: const ['article_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],

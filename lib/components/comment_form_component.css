@@ -1,7 +1,7 @@
-.dnp1-new-comment {
+:host {
     padding: .25em .5em;
 }
-.dnp1-new-comment textarea {
+:host textarea {
     text-rendering: auto;
     display:block;
     box-sizing: border-box;
