@@ -9,7 +9,7 @@ import 'package:danilo_info/components/captcha_component.dart';
 @Component(
   selector: 'dnp1-password-reset',
   templateUrl: "password_reset_component.html",
-  styleUrls: const ['password_reset_component.css'],
+  styleUrls: const ['styles/form.css', 'password_reset_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
 class PasswordResetComponent implements OnInit {

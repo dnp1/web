@@ -6,7 +6,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/model/captcha.dart';
 
 @Component(
-  selector: 'div[class="dnp1-component-captcha"]',
+  selector: 'div[dnp1-component-captcha]',
   templateUrl: "captcha_component.html",
   styleUrls: const ['captcha_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives]

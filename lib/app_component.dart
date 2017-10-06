@@ -15,12 +15,13 @@ import 'package:danilo_info/components/password_reset_component.dart';
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
+import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 
 @Component(
-  selector: 'body[class="dnp1-app"]',
+  selector: 'body[dnp1-app]',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, MainMenuComponent],
@@ -30,7 +31,8 @@ import 'package:danilo_info/services/user_service.dart';
       MenuItemService,
       SessionService,
       UserService,
-      ROUTER_PROVIDERS
+      RegexpService,
+      ROUTER_PROVIDERS,
   ],
 )
 @RouteConfig(

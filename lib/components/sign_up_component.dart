@@ -10,7 +10,7 @@ import 'package:danilo_info/services/user_service.dart';
 @Component(
   selector: 'dnp1-sign-up',
   templateUrl: "sign_up_component.html",
-  styleUrls: const ['sign_up_component.css'],
+  styleUrls: const ['styles/form.css', 'sign_up_component.css'],
   directives: const [CORE_DIRECTIVES, formDirectives, CaptchaComponent]
 )
 class SignUpComponent implements OnInit {

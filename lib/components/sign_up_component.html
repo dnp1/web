@@ -9,7 +9,7 @@
         <input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email" [(ngModel)]="signUp.emailConfirmation"/>
         <input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
         <input type="password" required placeholder="Confirmação da Senha"  autocomplete='off' [(ngModel)]="signUp.passwordConfirmation"/>
-        <div class='dnp1-component-captcha' *ngIf="captcha != null"  [captcha]="captcha"></div>
+        <div dnp1-component-captcha *ngIf="captcha != null"  [captcha]="captcha"></div>
         <input type="submit" class="dnp1-form-submit" value="Cadastrar" [disabled]="sending"/>
     </form>
 </section>

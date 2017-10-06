@@ -1,0 +1,26 @@
+.dnp1-form {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 30em;
+    max-width: 100%;
+    padding: 2em 1em 1em;
+    height: auto;
+    vertical-align: middle;
+}
+.dnp1-form input {
+    width: 100%;
+    display: block;
+    margin-bottom: .5em;
+}
+
+.dnp1-form label {
+    text-align: left;
+}
+
+.dnp1-form input[disabled] {
+    opacity: .95;
+    color: #777;
+    cursor: not-allowed;
+}
