@@ -4,10 +4,14 @@
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
         <input type="email" required  autofocus placeholder="Email"
-               [(ngModel)]="login.email" />
+               [(ngModel)]="login.email"
+               #email="ngForm" [ngClass]="controlStateClasses(email)"
+               ngControl="email" />
         <input type="password" required placeholder="Senha"
                [(ngModel)]="login.password"
-               (minLength)="login.passwordMinLength.toString()"/>
+               (minLength)="login.passwordMinLength.toString()"
+               #password="ngForm" [ngClass]="controlStateClasses(password)"
+               ngControl="password"/>
         <div *ngIf="captcha != null" class='dnp1-component-captcha' [captcha]="captcha"></div>
         <input type="submit" class="dnp1-form-submit" value="Autenticar"
                [disabled]="(!signInForm.form.valid) || sending"/>
