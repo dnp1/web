@@ -3,7 +3,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:angular_forms/angular_forms.dart';
 
-import 'package:danilo_info/components/base/BaseFormComponent.dart';
+import 'package:danilo_info/components/base/base_form-component.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/captcha_component.dart';
