@@ -1,26 +1,25 @@
-<section class='dnp1-archive-content dnp1-page'>
-    <header class="dnp1-archive-title">
-        Arquivo do blog
-    </header>
-    <ul class='dnp1-archive-tree'>
-        <li *ngFor="let year of years">
-            <span class="dnp1-archive-year">
-                {{year.year}}
-            </span>
-            <ul class="dnp1-archive-month-ul">
-                <li *ngFor="let month of year.months">
-                    <span class="dnp1-archive-month">
-                        {{ month.month }}
-                    </span>
-                    <ul class="dnp1-archive-day-ul">
-                        <li *ngFor="let article of month.items">
-                            <a [routerLink]="['ArticlePage', {id: article.id}]" class="dnp1-archive-article-link">
-                                {{article.publishedOn.day}} - {{article.title}}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</section>
+<header class="dnp1-archive-title">
+    Arquivo do blog
+</header>
+<ul class='dnp1-archive-tree'>
+    <li *ngFor="let year of years">
+        <span class="dnp1-archive-year">
+            {{year.year}}
+        </span>
+        <ul class="dnp1-archive-month-ul">
+            <li *ngFor="let month of year.months">
+                <span class="dnp1-archive-month">
+                    {{ month.month }}
+                </span>
+                <ul class="dnp1-archive-day-ul">
+                    <li *ngFor="let article of month.items">
+                        <a [routerLink]="['ArticlePage', {id: article.id}]" class="dnp1-archive-article-link">
+                            {{article.publishedOn.day}} - {{article.title}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+

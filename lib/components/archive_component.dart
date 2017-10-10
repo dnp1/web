@@ -16,7 +16,7 @@ class Year<T> {
 }
 
 @Component(
-  selector: 'dnp1-archive',
+  selector: 'section[dnp1-archive]',
   templateUrl: 'archive_component.html',
   styleUrls: const ["archive_component.css"],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],

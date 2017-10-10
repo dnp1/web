@@ -51,7 +51,7 @@
     display:inline-block;
 }
 
-:host ::ng-deep .dnp1-page {
+:host ::ng-deep #dnp1-inner-content > section {
   background-color: #F5F5F5;
   border-radius: .15em;
   color: #444;
@@ -62,7 +62,7 @@
   text-align: justify;
 }
 
-:host ::ng-deep .dnp1-page > header {
+:host ::ng-deep #dnp1-inner-content > section > header {
     font-size: 1.8em;
     font-weight: bolder;
     border-bottom: solid .06em #d3d3d3;

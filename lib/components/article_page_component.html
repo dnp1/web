@@ -1,4 +1,4 @@
-<section class="dnp1-article-page dnp1-page" *ngIf="articleId != null">
+<template [ngIf]="articleId != null">
     <article dnp1-article [id]="articleId"></article>
     <section dnp1-article-comments [articleId]="articleId"></section>
-</section>
+</template>

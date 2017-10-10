@@ -10,7 +10,7 @@
 
 }
 
-#dnp1-body {
+:host {
     box-sizing: border-box;
     padding: 0;
     text-align: center;
