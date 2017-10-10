@@ -32,8 +32,8 @@ class MenuItemService {
             MenuItemShowCondition.unauthenticated),
         new MenuItem(
             "dnp1-logout-link",
-            "Logout",
-            "sair",
+            "Settings",
+            "preferencias",
             MenuItemShowCondition.authenticated),
       ];
     }

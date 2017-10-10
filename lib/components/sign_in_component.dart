@@ -33,11 +33,10 @@ class SignInComponent extends BaseFormComponent implements OnInit {
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      var duration = const Duration(seconds: 6);
+      final duration = const Duration(seconds: 1);
+      await new Future.delayed(duration, () => print("foi"));
       _sessionService.authenticate(login);
-      var future = new Future.delayed(duration, () => print("foi"));
-      await (future);
-      captcha = new Captcha('1', '/invlaid');
+//      captcha = new Captcha('1', '/invlaid');
       sending = false;
     }
   }

@@ -1,6 +1,7 @@
 // Copyright (c) 2017. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:danilo_info/components/about_component.dart';
@@ -17,6 +18,7 @@ import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
+import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 
@@ -29,6 +31,7 @@ import 'package:danilo_info/services/user_service.dart';
       ArticleService,
       CommentService,
       MenuItemService,
+      StorageService,
       SessionService,
       UserService,
       RegexpService,
@@ -49,7 +52,7 @@ import 'package:danilo_info/services/user_service.dart';
   const Route(path: '/sign-in', name: 'SignIn', component: SignInComponent),
   const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
   const Route(path: '/password-reset', name: 'PasswordReset', component: PasswordResetComponent),
-  const Route(path: '/logout', name: 'Logout', component: AboutComponent),
+  const Route(path: '/settings', name: 'Settings', component: AboutComponent),
 ])
 class AppComponent {
   var name = 'danilo.info';

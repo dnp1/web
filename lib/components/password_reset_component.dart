@@ -20,7 +20,7 @@ class PasswordResetComponent implements OnInit {
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      await (new Future.delayed(const Duration(seconds: 6), () => print("foi")));
+      await (new Future.delayed(const Duration(seconds: 6), () => 1));
       captcha = new Captcha('1', '/invlaid');
       sending = false;
     }
