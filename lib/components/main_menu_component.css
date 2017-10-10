@@ -1,11 +1,11 @@
-#dnp1-menu li {
+:host li {
     display: inline-block;
 }
 
-nav#dnp1-menu {
+:host {
     display: inline-block;
 }
-nav#dnp1-menu ul
+:host ul
 {
     display: block;
     position: relative;
@@ -50,7 +50,7 @@ nav#dnp1-menu ul
 }
 
 @media (max-width: 50em) {
-    nav#dnp1-menu {
+    :host {
         display: none;
     }
 }

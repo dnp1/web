@@ -7,7 +7,7 @@ import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/captcha_component.dart';
 
 @Component(
-  selector: 'dnp1-password-reset',
+  selector: 'section',
   templateUrl: "password_reset_component.html",
   styleUrls: const ['styles/form.css', 'password_reset_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]

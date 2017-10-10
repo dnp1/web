@@ -12,7 +12,7 @@ import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
-    selector: 'dnp1-sign-in',
+    selector: 'section',
     templateUrl: "sign_in_component.html",
     styleUrls: const ['styles/form.css', 'sign_in_component.css'],
     directives: const [

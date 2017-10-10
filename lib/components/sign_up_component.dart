@@ -8,7 +8,7 @@ import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
-  selector: 'dnp1-sign-up',
+  selector: 'section',
   templateUrl: "sign_up_component.html",
   styleUrls: const ['styles/form.css', 'sign_up_component.css'],
   directives: const [CORE_DIRECTIVES, formDirectives, CaptchaComponent]

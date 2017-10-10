@@ -1,29 +1,27 @@
-<section class='dnp1-page'>
-    <header>
-        Identificação de usuário
-    </header>
-    <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
-        <input type="email" required  autofocus placeholder="Email"
-               [attr.pattern]="emailRegexpString"
-               [(ngModel)]="login.email"
-               #email="ngForm" [ngClass]="controlStateClasses(email)"
-               ngControl="email" />
+<header>
+    Identificação de usuário
+</header>
+<form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
+    <input type="email" required  autofocus placeholder="Email"
+           [attr.pattern]="emailRegexpString"
+           [(ngModel)]="login.email"
+           #email="ngForm" [ngClass]="controlStateClasses(email)"
+           ngControl="email" />
 
-        <input type="password" required placeholder="Senha"
-               [(ngModel)]="login.password"
-               [attr.minlength]="passwordMinLength"
-               #password="ngForm" [ngClass]="controlStateClasses(password)  "
-               ngControl="password"/>
+    <input type="password" required placeholder="Senha"
+           [(ngModel)]="login.password"
+           [attr.minlength]="passwordMinLength"
+           #password="ngForm" [ngClass]="controlStateClasses(password)  "
+           ngControl="password"/>
 
-        <div *ngIf="captcha != null" dnp1-component-captcha [captcha]="captcha"></div>
+    <div *ngIf="captcha != null" dnp1-component-captcha [captcha]="captcha"></div>
 
-        <input type="submit" class="dnp1-form-submit" value="Autenticar"
-               [disabled]="!signInForm.form.valid || sending"/>
-        <div class='dnp1-other-option'>
-            {{ "Se você esqueceu sua senha, clique" }} <a [routerLink]="['PasswordReset']">aqui</a>
-        </div>
-        <div class='dnp1-other-option'>
-            {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
-        </div>
-   </form>
-</section>
+    <input type="submit" class="dnp1-form-submit" value="Autenticar"
+           [disabled]="!signInForm.form.valid || sending"/>
+    <div class='dnp1-other-option'>
+        {{ "Se você esqueceu sua senha, clique" }} <a [routerLink]="['PasswordReset']">aqui</a>
+    </div>
+    <div class='dnp1-other-option'>
+        {{ "Se você não tem credenciais, " }} <a [routerLink]="['SignUp']">increva-se</a>
+    </div>
+</form>

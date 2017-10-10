@@ -7,7 +7,7 @@ import 'package:angular_router/angular_router.dart';
 
 
 @Component(
-    selector: 'section[dnp1-settings]',
+    selector: 'section',
     templateUrl: "settings_component.html",
     styleUrls: const ['styles/form.css', 'settings_component.css'],
     directives: const [
