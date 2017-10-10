@@ -33,7 +33,7 @@ class MenuItemService {
         new MenuItem(
             "dnp1-logout-link",
             "Settings",
-            "preferencias",
+            "preferências",
             MenuItemShowCondition.authenticated),
       ];
     }
