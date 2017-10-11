@@ -31,9 +31,14 @@ class MenuItemService {
             "conecte-se",
             MenuItemShowCondition.unauthenticated),
         new MenuItem(
-            "dnp1-logout-link",
+            "dnp1-settins-link",
             "Settings",
             "preferências",
+            MenuItemShowCondition.authenticated),
+        new MenuItem(
+            "dnp1-logout-link",
+            "Logout",
+            "sai",
             MenuItemShowCondition.authenticated),
       ];
     }

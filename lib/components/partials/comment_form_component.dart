@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'package:danilo_info/components/user_avatar_component.dart';
+import 'package:danilo_info/components/partials/user_avatar_component.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/session_service.dart';

@@ -4,15 +4,15 @@
 import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:danilo_info/components/about_component.dart';
-import 'package:danilo_info/components/archive_component.dart';
-import 'package:danilo_info/components/article_listing_component.dart';
-import 'package:danilo_info/components/article_page_component.dart';
-import 'package:danilo_info/components/settings_component.dart';
-import 'package:danilo_info/components/sign_in_component.dart';
-import 'package:danilo_info/components/sign_up_component.dart';
-import 'package:danilo_info/components/main_menu_component.dart';
-import 'package:danilo_info/components/password_reset_component.dart';
+import 'package:danilo_info/components/sections/about_component.dart';
+import 'package:danilo_info/components/sections/archive_component.dart';
+import 'package:danilo_info/components/sections/article_listing_component.dart';
+import 'package:danilo_info/components/sections/article_page_component.dart';
+import 'package:danilo_info/components/sections/settings_component.dart';
+import 'package:danilo_info/components/sections/sign_in_component.dart';
+import 'package:danilo_info/components/sections/sign_up_component.dart';
+import 'package:danilo_info/components/partials/main_menu_component.dart';
+import 'package:danilo_info/components/sections/password_reset_component.dart';
 
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
@@ -54,6 +54,7 @@ import 'package:danilo_info/services/user_service.dart';
   const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
   const Route(path: '/password-reset', name: 'PasswordReset', component: PasswordResetComponent),
   const Route(path: '/settings', name: 'Settings', component: SettingsComponent),
+  const Route(path: '/sign-out', name: 'SignOut', component: SettingsComponent),
 ])
 class AppComponent {
   var name = 'danilo.info';

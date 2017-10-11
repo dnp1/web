@@ -11,6 +11,6 @@ img {
     width:16em;
 }
 
-.dnp1-captcha {
+:host {
     width:100%;
 }

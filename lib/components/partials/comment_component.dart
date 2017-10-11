@@ -3,8 +3,8 @@ import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/services/comment_service.dart';
-import 'package:danilo_info/components/user_avatar_component.dart';
-import 'package:danilo_info/components/user_name_component.dart';
+import 'package:danilo_info/components/partials/user_avatar_component.dart';
+import 'package:danilo_info/components/partials/user_name_component.dart';
 
 @Component(
     selector: 'section[dnp1-comment]',

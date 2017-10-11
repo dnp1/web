@@ -6,7 +6,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/base/base_form-component.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/model/captcha.dart';
-import 'package:danilo_info/components/captcha_component.dart';
+import 'package:danilo_info/components/partials/captcha_component.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/user_service.dart';
@@ -14,7 +14,7 @@ import 'package:danilo_info/services/user_service.dart';
 @Component(
     selector: 'section',
     templateUrl: "sign_in_component.html",
-    styleUrls: const ['styles/form.css', 'sign_in_component.css'],
+    styleUrls: const ['../styles/form.css', 'sign_in_component.css'],
     directives: const [
       CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )

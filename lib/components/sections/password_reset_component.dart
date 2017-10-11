@@ -4,12 +4,12 @@ import 'package:angular_router/angular_router.dart';
 import 'package:angular_forms/angular_forms.dart';
 
 import 'package:danilo_info/model/captcha.dart';
-import 'package:danilo_info/components/captcha_component.dart';
+import 'package:danilo_info/components/partials/captcha_component.dart';
 
 @Component(
   selector: 'section',
   templateUrl: "password_reset_component.html",
-  styleUrls: const ['styles/form.css', 'password_reset_component.css'],
+  styleUrls: const ['../styles/form.css', 'password_reset_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
 class PasswordResetComponent implements OnInit {
