@@ -2,15 +2,9 @@ import 'package:angular/angular.dart';
 import 'package:angular/di.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:danilo_info/components/base/base_form-component.dart';
+import 'package:danilo_info/services/title_service.dart';
 
-//
-//@Component(
-//  selector: 'div[dnp1-form-logout',
-//  template: '<form (ngSubmit)',
-//)
-//class LogoutFormComponent {
-//
-//}
 
 @Component(
     selector: 'section',
@@ -20,6 +14,7 @@ import 'package:angular_router/angular_router.dart';
       CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives
     ]
 )
-class SettingsComponent {
+class SettingsComponent extends BaseRouteComponent {
+  SettingsComponent(TitleService titleService, RouteData data) : super(titleService, data);
 
 }

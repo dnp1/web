@@ -10,6 +10,7 @@ import 'package:danilo_info/components/sections/article_listing_component.dart';
 import 'package:danilo_info/components/sections/article_page_component.dart';
 import 'package:danilo_info/components/sections/settings_component.dart';
 import 'package:danilo_info/components/sections/sign_in_component.dart';
+import 'package:danilo_info/components/sections/sign_out_component.dart';
 import 'package:danilo_info/components/sections/sign_up_component.dart';
 import 'package:danilo_info/components/partials/main_menu_component.dart';
 import 'package:danilo_info/components/sections/password_reset_component.dart';
@@ -20,8 +21,8 @@ import 'package:danilo_info/services/menu_item_service.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/storage_service.dart';
+import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_service.dart';
-
 
 @Component(
   selector: 'body',
@@ -29,32 +30,63 @@ import 'package:danilo_info/services/user_service.dart';
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, MainMenuComponent],
   providers: const [
-      ArticleService,
-      CommentService,
-      MenuItemService,
-      StorageService,
-      SessionService,
-      UserService,
-      RegexpService,
-      ROUTER_PROVIDERS,
+    ArticleService,
+    CommentService,
+    MenuItemService,
+    StorageService,
+    SessionService,
+    UserService,
+    RegexpService,
+    TitleService,
   ],
 )
-@RouteConfig(
-  const [
-
+@RouteConfig(const [
   const Route(
       path: '/article',
       name: 'Articles',
       component: ArticleListingComponent,
-      useAsDefault: true),
-  const Route(path: '/article/:id', name: 'ArticlePage', component: ArticlePageComponent),
-  const Route(path: '/archive', name: 'Archive', component: ArchiveComponent),
-  const Route(path: '/about', name: 'About', component: AboutComponent),
-  const Route(path: '/sign-in', name: 'SignIn', component: SignInComponent),
-  const Route(path: '/sign-up', name: 'SignUp', component: SignUpComponent),
-  const Route(path: '/password-reset', name: 'PasswordReset', component: PasswordResetComponent),
-  const Route(path: '/settings', name: 'Settings', component: SettingsComponent),
-  const Route(path: '/sign-out', name: 'SignOut', component: SettingsComponent),
+      useAsDefault: true,
+      data: const {'title': 'Postagens'}),
+  const Route(
+      path: '/article/:id',
+      name: 'ArticlePage',
+      component: ArticlePageComponent,
+      data: const {'title': 'Postagem'}),
+  const Route(
+      path: '/archive',
+      name: 'Archive',
+      component: ArchiveComponent,
+      data: const {'title': 'Arquivo'}),
+  const Route(
+      path: '/about',
+      name: 'About',
+      component: AboutComponent,
+      data: const {'title': 'Sobre'}),
+  const Route(
+      path: '/sign-in',
+      name: 'SignIn',
+      component: SignInComponent,
+      data: const {'title': 'Autenticação'}),
+  const Route(
+      path: '/sign-up',
+      name: 'SignUp',
+      component: SignUpComponent,
+      data: const {'title': 'Cadastro'}),
+  const Route(
+      path: '/password-reset',
+      name: 'PasswordReset',
+      component: PasswordResetComponent,
+      data: const {'title': 'Recuperar Senha'}),
+  const Route(
+      path: '/settings',
+      name: 'Settings',
+      component: SettingsComponent,
+      data: const {'title': 'Configurações'}),
+  const Route(
+      path: '/sign-out',
+      name: 'SignOut',
+      component: SignOutComponent,
+      data: const {'title': 'Sair'}),
 ])
 class AppComponent {
   var name = 'danilo.info';

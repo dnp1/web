@@ -2,8 +2,10 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'dart:async';
 
+import 'package:danilo_info/components/base/base_form-component.dart';
 import 'package:danilo_info/components/partials/article_component.dart';
 import 'package:danilo_info/components/partials/article_comments_component.dart';
+import 'package:danilo_info/services/title_service.dart';
 
 @Component(
   selector: 'section',
@@ -15,14 +17,18 @@ import 'package:danilo_info/components/partials/article_comments_component.dart'
     ArticleComponent,
   ]
 )
-class ArticlePageComponent implements OnInit {
+class ArticlePageComponent extends BaseRouteComponent implements OnInit {
   String articleId;
   final RouteParams _routeParams;
 
-  ArticlePageComponent(this._routeParams);
+
+  ArticlePageComponent(this._routeParams, TitleService title, RouteData route) : super(title, route) {
+    print(route);
+  }
 
   @override
   Future<Null> ngOnInit() async {
+
     articleId = _routeParams.get('id');
   }
 }

@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
+import 'package:danilo_info/components/base/base_form-component.dart';
 import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/model/month.dart';
 import 'package:danilo_info/services/article_service.dart';
+import 'package:danilo_info/services/title_service.dart';
 
 
 class Year<T> {
@@ -21,11 +23,11 @@ class Year<T> {
   styleUrls: const ["archive_component.css"],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
 )
-class ArchiveComponent implements OnInit {
+class ArchiveComponent extends BaseRouteComponent implements OnInit {
   final ArticleService _articleService;
   List<Year<Article>> years;
 
-  ArchiveComponent(this._articleService);
+  ArchiveComponent(this._articleService, TitleService titleService, RouteData data):super(titleService, data);
 
   Future<Null> ngOnInit() async {
     var articles = (await _articleService.archive()).toList();

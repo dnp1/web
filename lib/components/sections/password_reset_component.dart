@@ -3,8 +3,10 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:angular_forms/angular_forms.dart';
 
+import 'package:danilo_info/components/base/base_form-component.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/partials/captcha_component.dart';
+import 'package:danilo_info/services/title_service.dart';
 
 @Component(
   selector: 'section',
@@ -12,10 +14,12 @@ import 'package:danilo_info/components/partials/captcha_component.dart';
   styleUrls: const ['../styles/form.css', 'password_reset_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
-class PasswordResetComponent implements OnInit {
+class PasswordResetComponent extends  BaseRouteComponent implements OnInit {
   String email;
   Captcha captcha;
   bool sending;
+
+  PasswordResetComponent(TitleService titleService, RouteData data) : super(titleService, data);
 
   Future<Null> onSubmit() async {
     if (!sending) {

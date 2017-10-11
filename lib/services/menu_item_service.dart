@@ -8,39 +8,41 @@ class MenuItemService {
     SessionService _sessionService;
     MenuItemService(this._sessionService);
 
+    static final List<MenuItem> _items = [
+      new MenuItem(
+          "dnp1-articles-link",
+          "Articles",
+          "postagens",
+          MenuItemShowCondition.always),
+      new MenuItem(
+          "dnp1-archive-link",
+          "Archive",
+          "arquivo",
+          MenuItemShowCondition.always),
+      new MenuItem(
+          "dnp1-about-link",
+          "About",
+          "sobre",
+          MenuItemShowCondition.always),
+      new MenuItem(
+          "dnp1-login-link",
+          "SignIn",
+          "conecte-se",
+          MenuItemShowCondition.unauthenticated),
+      new MenuItem(
+          "dnp1-settins-link",
+          "Settings",
+          "preferências",
+          MenuItemShowCondition.authenticated),
+      new MenuItem(
+          "dnp1-logout-link",
+          "SignOut",
+          "sair",
+          MenuItemShowCondition.authenticated),
+    ];
+
     List<MenuItem> _allItems() {
-      return [
-        new MenuItem(
-            "dnp1-articles-link",
-            "Articles",
-            "postagens",
-            MenuItemShowCondition.always),
-        new MenuItem(
-            "dnp1-archive-link",
-            "Archive",
-            "arquivo",
-            MenuItemShowCondition.always),
-        new MenuItem(
-            "dnp1-about-link",
-            "About",
-            "sobre",
-            MenuItemShowCondition.always),
-        new MenuItem(
-            "dnp1-login-link",
-            "SignIn",
-            "conecte-se",
-            MenuItemShowCondition.unauthenticated),
-        new MenuItem(
-            "dnp1-settins-link",
-            "Settings",
-            "preferências",
-            MenuItemShowCondition.authenticated),
-        new MenuItem(
-            "dnp1-logout-link",
-            "Logout",
-            "sai",
-            MenuItemShowCondition.authenticated),
-      ];
+      return _items;
     }
 
     Future<List<MenuItem>> getMenuItems() async {

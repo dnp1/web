@@ -9,33 +9,36 @@ import 'package:danilo_info/services/storage_service.dart';
 @Injectable()
 class SessionService {
   final StorageService _localStorage;
+  static const String _key  = "session";
 
   SessionService(this._localStorage);
 
-  Session _currentSession;
+  Session _session;
 
-  int counter = 0;
 
   Future<Session> getCurrent() async {
-    print(counter++);
-    if (_currentSession == null) {
-      if (_localStorage.containsKey('session')) {
-        var js = JSON.decode(_localStorage['session']);
-        _currentSession = new Session.fromJson(js);
+    if (_session == null) {
+      if (_localStorage.containsKey(_key)) {
+        var js = JSON.decode(_localStorage[_key]);
+        _session = new Session.fromMap(js);
       } else {
-        _currentSession = new Session('anonymous', null);
-        _localStorage["session"] = JSON.encode(_currentSession.toJson());
+        _session = new Session('anonymous', null);
+        _localStorage[_key] = JSON.encode(_session.toMap());
       }
     }
-    return _currentSession;
+    return _session;
   }
 
   Future<Null> authenticate(SignIn signIn) async {
     if (signIn.email == "user@danilo.info" &&
         signIn.password == "passworddanilo") {
-      print("logger");
-      _currentSession = new Session('logged', "1");
-      _localStorage["session"] = JSON.encode(_currentSession.toJson());
+      _session = new Session('logged', "1");
+      _localStorage[_key] = JSON.encode(_session.toMap());
     }
+  }
+
+  Future<Null> clear() async {
+    _localStorage.remove(_key);
+    _session.invalidate();
   }
 }
