@@ -2,8 +2,8 @@
     margin-top: 0;
 }
 :host ::ng-deep article {
-    border-bottom: solid .06em #AAA;
+    border-bottom: dashed .05em #CCC  ;
 }
-:host ::ng-deep dnp1-article:last-child article {
+:host ::ng-deep article:last-child {
     border-bottom: none;
 }

@@ -24,7 +24,7 @@ import 'package:danilo_info/services/user_service.dart';
 
 
 @Component(
-  selector: 'body[dnp1-app]',
+  selector: 'body',
   templateUrl: "app_component.html",
   styleUrls: const ['app_zero.css', 'app_layout.css', 'app_logo.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, MainMenuComponent],

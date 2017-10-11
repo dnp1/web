@@ -1,23 +1,12 @@
-#dnp1-inner-content {
-    position: relative;
-    padding: 0 0 1.25em;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    /*word-break: break-word;*/
-    max-width: 60em;
-    margin: 0 auto;
-    text-align: justify;
-    min-width: 20em;
-}
-#dnp1-content-wrapper {
+.dnp1-content-wrapper {
     position: relative;
     text-align: left;
     box-sizing: border-box;
-    padding: 2em 1em 0;
+    padding: 2em 1em 1.25em;
     margin: 0 auto;
     width: auto;
     min-width: 20em;
-    top:3em;
+    top: 3em;
 }
 
 /**/
@@ -36,41 +25,45 @@
     height: 3em;
     padding: 0;
     overflow: hidden;
-    font-size:1em;
+    font-size: 1em;
     background-color: rgba(34, 61, 52, .15);
     box-shadow: .2em .12em .12em rgba(84, 97, 84, 0.9);
 }
 
 .dnp1-main-bar {
-  /*position:relative;*/
-  background-color: rgba(34, 61, 52, 1);
-  height: 3em;
+    /*position:relative;*/
+    background-color: rgba(34, 61, 52, 1);
+    height: 3em;
 }
 
-:host ::ng-deep #dnp1-inner-content > section {
-  background-color: #F5F5F5;
-  border-radius: .15em;
-  color: #444;
-  max-width: 72em;
-  min-width: 16em;
-  padding: .5em .25em 1em;
-  position: relative;
-  text-align: justify;
+:host ::ng-deep .dnp1-content-wrapper > section {
+    background-color: #F5F5F5;
+    border-radius: .15em;
+    color: #444;
+    margin: 0 auto;
+    max-width: 72em;
+    min-width: 16em;
+    overflow-wrap: break-word;
+    padding: .5em .25em 1em;
+    position: relative;
+    text-align: justify;
+    word-wrap: break-word;
 }
 
-:host ::ng-deep #dnp1-inner-content > section > header {
+:host ::ng-deep .dnp1-content-wrapper > section > header,
+:host ::ng-deep .dnp1-content-wrapper section .dnp1-article-title { /*TODO: improve it*/
     font-size: 1.8em;
     font-weight: bolder;
     border-bottom: solid .06em #d3d3d3;
     text-decoration: none;
     display: block;
     width: auto;
-    padding: 0 1em;
+    padding: 0 .5em;
     color: #444;
 }
 
 @media (max-width: 50em) {
-    #dnp1-content-wrapper {
+    .dnp1-content-wrapper {
         padding: 3em .06em 0;
     }
 }

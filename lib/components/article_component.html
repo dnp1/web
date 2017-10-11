@@ -1,21 +1,20 @@
 <template [ngIf]="article != null">
     <header class='dnp1-article-header'>
-        <div class="dnp1-article-datetime">
-            {{ article.editedOn }}
-        </div>
         <a class='dnp1-article-title' [routerLink]="['ArticlePage', {id: article.id}]">
             {{ article.title }}
         </a>
+    </header>
+    <section class="dnp1-article-meta">
+        <div class="dnp1-article-datetime">
+            {{ article.editedOn }}
+        </div>
         <div class="dnp1-tags">
             <a class='dnp1-tag-link' *ngFor="let tag of article.tags" href='/articles?tag={{tag.name}}'>
                 #{{ tag.name }}
             </a>
         </div>
-    </header>
+    </section>
     <div class='dnp1-article-content'>
         {{ article.content }}
     </div>
-    <footer class='dnp1-article-footer'>
-
-    </footer>
 </template>

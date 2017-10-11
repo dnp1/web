@@ -7,7 +7,7 @@ import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/services/article_service.dart';
 
 @Component(
-  selector: 'article[dnp1-article]',
+  selector: 'article',
   templateUrl: 'article_component.html',
   styleUrls: const ['article_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
@@ -18,7 +18,7 @@ class ArticleComponent implements OnInit  {
   Article article;
 
   String _id;
-  @Input('id')
+  @Input('articleId')
   void set id(String id)  {
     _id = id;
   }

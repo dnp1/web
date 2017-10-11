@@ -1,8 +1,8 @@
-.dnp1-about-section {
+section {
     padding: 0 .62em;
 }
 
-.dnp1-about-section header {
+section > header {
     font-size: 1.1em;
     color: #555;
     letter-spacing: .12em;
@@ -13,7 +13,7 @@
     /*border-bottom: dotted .06em lightgrey;*/
 }
 
-.dnp1-about-section p {
+section p {
     border-radius: .25em;
     background-color: #e5e5e5;
     padding: .25em .37em;

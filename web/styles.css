@@ -12,9 +12,7 @@ html {
 }
 
 body {
-    margin: 0;
     min-height: 100%;
-    padding: 0;
 }
 
 a {
@@ -29,20 +27,8 @@ section,
 article {
     display: block;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-legend {
-    font-size: 1.2em;
-    border-bottom: solid .06em #a9a9a9;
-    padding: .5em;
-    margin-bottom: .62em;
-}
-
-ul {
-    list-style-type: none;
-}
 
 ol, ul {
     list-style-position: inside;
@@ -63,7 +49,6 @@ input[type='password'] {
     box-sizing: border-box;
     color: #444;
     display: inline-block;
-    font-size: .96em;
     font-family: Arial, Helvetica, sans-serif;
     height: 2em;
     padding: .2em .25em;
@@ -76,7 +61,6 @@ button
     color: #444;
     cursor: pointer;
     display: inline-block;
-    font-size: .96em;
     font-family: Arial, Helvetica, sans-serif;
     height: 2em;
     text-align: center;

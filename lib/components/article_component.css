@@ -1,17 +1,9 @@
-.dnp1-article-title {
-    font-size: 1.8em;
-    font-weight: bolder;
-    border-bottom: solid .06em #d3d3d3;
-    text-decoration: none;
-    display: block;
-    width: auto;
-    padding: 0 1em;
-    color: #444;
-    margin-bottom: .37em;
-}
+/*:host:not(:first-child) {*/
+    /*margin-top:1em;*/
+/*}*/
 
 .dnp1-article-content {
-    padding: 1em .75em;
+    padding: .5em;
     font-size: 1.2em;
     margin: .25em auto .75em;
     min-width: 15em;
@@ -19,22 +11,6 @@
     color: #555;
 }
 
-.dnp1-article-footer {
-    min-height: 1.5em;
-    margin: 2em auto .5em;
-    width: 95%
-}
-
-.dnp1-article-header {
-    margin-top: 0;
-    padding: .25em 0 .37em;
-    text-shadow: .2em .12em .12em rgba(229, 242, 217, 0.5);
-}
-
-.dnp1-pubtime {
-    margin-top: 1.25em;
-    margin-left: 1em;
-}
 
 .dnp1-article-title:hover {
     color: #344;
@@ -50,7 +26,7 @@
 
 .dnp1-article-datetime {
     display: inline-block;
-    padding: .25em 1em;
+    padding: .25em 0;
     color: #555;
     font-weight: 300;
     letter-spacing: .12em;
@@ -58,14 +34,14 @@
 
 .dnp1-tags {
     display: inline-block;
-    padding: 0 1em;
 }
 
 .dnp1-tag-link {
+    display: inline-block;
     box-sizing: border-box;
     border-radius: .12em;
     margin: 0 .25em;
-    padding: .2em;
+    padding: .25em .2em;
     color: #777;
     font-weight: 500;
     font-size: 1em;
@@ -75,11 +51,15 @@
 }
 
 .dnp1-tag-link:first-child {
-    margin: 0;
+    margin-left: 0;
 }
 
 .dnp1-tag-link:hover {
     color: #555;
     border-radius: .31em;
     background: #D6D8D6;
+}
+
+.dnp1-article-meta {
+    padding: 0 .5em;
 }
