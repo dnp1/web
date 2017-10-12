@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
-import 'package:danilo_info/components/base/base_form-component.dart';
+import 'package:danilo_info/components/base/base_route_component.dart';
 import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/model/month.dart';
 import 'package:danilo_info/services/article_service.dart';

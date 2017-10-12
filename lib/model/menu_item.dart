@@ -1,4 +1,3 @@
-
 class MenuItem {
   final String domClass;
   final String route;

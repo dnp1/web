@@ -3,12 +3,14 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:angular_forms/angular_forms.dart';
 
-import 'package:danilo_info/components/base/base_form-component.dart';
+import 'package:danilo_info/components/base/base_route_component.dart';
+import 'package:danilo_info/components/base/form_helper.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/partials/captcha_component.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
+import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
@@ -18,16 +20,20 @@ import 'package:danilo_info/services/user_service.dart';
     directives: const [
       CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
-class SignInComponent extends BaseFormComponent implements OnInit {
+class SignInComponent extends BaseRouteComponent implements OnInit {
   SignIn login;
   Captcha captcha;
   bool sending;
+
+  Map<String, bool> controlStateClasses(NgControl control) =>
+      FormHelper.controlStateClasses(control);
 
   final SessionService _sessionService;
   final UserService _userService;
   final RegexpService _regexpService;
 
-  SignInComponent(this._sessionService, this._userService, this._regexpService);
+  SignInComponent(this._sessionService, this._userService, this._regexpService,
+      TitleService titleService, RouteData data) : super(titleService, data);
 
 
   Future<Null> onSubmit() async {
@@ -42,10 +48,12 @@ class SignInComponent extends BaseFormComponent implements OnInit {
   }
 
   int _passwordMinLength;
-  int get passwordMinLength =>  _passwordMinLength;
+
+  int get passwordMinLength => _passwordMinLength;
 
 
   String _emailRegexpString;
+
   String get emailRegexpString => _emailRegexpString;
 
   @override

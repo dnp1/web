@@ -2,7 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:angular/di.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:danilo_info/components/base/base_form-component.dart';
+import 'package:danilo_info/components/base/base_route_component.dart';
 import 'package:danilo_info/services/title_service.dart';
 
 
