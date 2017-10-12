@@ -42,15 +42,16 @@
     background-color: rgb(64, 114, 97);
 }
 
-.dnp1-menu-link:active {
-    border: none;
-    font-weight: lighter;
-    text-decoration: none;
-    background-color: rgba(11, 26, 18, 1);
-}
 
 @media (max-width: 50em) {
     :host {
         display: none;
     }
+}
+
+.router-link-active {
+    pointer-events: none;
+    cursor: default;
+    background-color: rgb(48, 87, 73);
+    border: inset rgb(64, 114, 97) .1em;
 }

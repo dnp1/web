@@ -5,6 +5,12 @@ import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/services/storage_service.dart';
 
+enum AuthenticationReturn {
+  Authenticated,
+  InvalidCredentials,
+  CaptchaNeededInvalidCredentials,
+  BlockedDeTooManyInvalidCredentials,
+}
 
 @Injectable()
 class SessionService {
@@ -29,12 +35,14 @@ class SessionService {
     return _session;
   }
 
-  Future<Null> authenticate(SignIn signIn) async {
+  Future<AuthenticationReturn> authenticate(SignIn signIn) async {
     if (signIn.email == "user@danilo.info" &&
         signIn.password == "passworddanilo") {
       _session = new Session('logged', "1");
       _localStorage[_key] = JSON.encode(_session.toMap());
+      return AuthenticationReturn.Authenticated;
     }
+    return AuthenticationReturn.InvalidCredentials;
   }
 
   Future<Null> clear() async {

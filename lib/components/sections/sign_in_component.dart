@@ -24,36 +24,30 @@ class SignInComponent extends BaseRouteComponent implements OnInit {
   SignIn login;
   Captcha captcha;
   bool sending;
-
-  Map<String, bool> controlStateClasses(NgControl control) =>
-      FormHelper.controlStateClasses(control);
+  Map<String, bool> controlStateClasses(NgControl control) => FormHelper.controlStateClasses(control);
 
   final SessionService _sessionService;
   final UserService _userService;
   final RegexpService _regexpService;
+  final Location _location;
 
-  SignInComponent(this._sessionService, this._userService, this._regexpService,
-      TitleService titleService, RouteData data) : super(titleService, data);
+  SignInComponent(this._sessionService, this._userService, this._regexpService, this._location, TitleService titleService, RouteData data) : super(titleService, data);
 
 
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      final duration = const Duration(seconds: 1);
-      await new Future.delayed(duration, () => print("foi"));
       _sessionService.authenticate(login);
-//      captcha = new Captcha('1', '/invlaid');
       sending = false;
+      _location.back();
     }
   }
 
   int _passwordMinLength;
-
-  int get passwordMinLength => _passwordMinLength;
+  int get passwordMinLength =>  _passwordMinLength;
 
 
   String _emailRegexpString;
-
   String get emailRegexpString => _emailRegexpString;
 
   @override
