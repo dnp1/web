@@ -84,7 +84,7 @@ class ArticleService {
 
   Future<List<Article>> archive() async {
     var _articles = articles.values.toList();
-    _articles.sort((Article a,b) => a.publishedOn.compareTo(b.publishedOn));
+    _articles.sort((Article a,b) => a.publicationDate.compareTo(b.publicationDate));
     return _articles;
   }
 }

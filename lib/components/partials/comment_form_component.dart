@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/partials/user_avatar_component.dart';
+import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/session_service.dart';
@@ -18,9 +19,9 @@ import 'package:danilo_info/services/session_service.dart';
   ],
 )
 class CommentFormComponent implements OnInit {
-  bool onSubmit = false;
+  bool submitting = false;
 
-  String content;
+  Comment comment;
   String _articleId;
 
   @Input()
@@ -35,22 +36,29 @@ class CommentFormComponent implements OnInit {
 
   CommentFormComponent(this._commentService, this._sessionService);
 
-
   Future<Null> submit() async {
-    print("on submit");
-    if (!onSubmit) {
-      onSubmit = true;
-    //   await (_commentService.)
+    if (!submitting) {
+      submitting = true;
 
-      onSubmit = false;
+
+      var errors = await _commentService.save(comment);
+      //TODO treat errors;
+      print(errors);
+      submitting = false;
     }
   }
+
   @override
   Future<Null> ngOnInit() async {
     session = await _sessionService.load();
+    if (comment == null) {
+      comment = new Comment(
+          articleId: _articleId,
+          userId: session.userId);
+    }
   }
 
   bool canComment() {
-    return session != null && !session.anonymous();
+    return session != null && !session.anonymous() && comment != null;
   }
 }

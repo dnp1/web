@@ -1,11 +1,12 @@
 class Comment {
-  bool _new;
+  bool isNew() => id == null;
+
   String id;
   String articleId;
   String userId;
   String content;
-  DateTime publishedOn;
-  DateTime editedOn;
+  DateTime publicationDate;
+  DateTime editionDate;
 
-  Comment(this.id, this.articleId, this.userId, this.content, this.publishedOn, this.editedOn);
+  Comment({this.id: null, this.articleId, this.userId, this.content, this.publicationDate, this.editionDate});
 }

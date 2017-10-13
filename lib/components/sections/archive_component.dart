@@ -39,14 +39,14 @@ class ArchiveComponent extends BaseRouteComponent implements OnInit {
 
     for (var article in articles) {
       if (year == null ||
-          article.publishedOn.year != previous.publishedOn.year) { // Ano mudou
-        year = new Year(article.publishedOn.year);
+          article.publicationDate.year != previous.publicationDate.year) { // Ano mudou
+        year = new Year(article.publicationDate.year);
         list.add(year);
       }
 
-      if (month == null || article.publishedOn.month !=
-          previous.publishedOn.month) { // Mês mudou
-        month = new MonthData(article.publishedOn.month);
+      if (month == null || article.publicationDate.month !=
+          previous.publicationDate.month) { // Mês mudou
+        month = new MonthData(article.publicationDate.month);
         year.months.add(month);
       }
 

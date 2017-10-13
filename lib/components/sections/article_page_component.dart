@@ -22,9 +22,7 @@ class ArticlePageComponent extends BaseRouteComponent implements OnInit {
   final RouteParams _routeParams;
 
 
-  ArticlePageComponent(this._routeParams, TitleService title, RouteData route) : super(title, route) {
-    print(route);
-  }
+  ArticlePageComponent(this._routeParams, TitleService title, RouteData route) : super(title, route);
 
   @override
   Future<Null> ngOnInit() async {

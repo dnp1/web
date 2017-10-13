@@ -1,6 +1,5 @@
 import 'package:danilo_info/model/menu_item.dart';
 import 'dart:async';
-import 'package:danilo_info/services/session_service.dart';
 import 'package:angular/angular.dart';
 
 @Injectable()

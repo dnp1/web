@@ -19,12 +19,16 @@ import 'package:danilo_info/services/title_service.dart';
 class SignOutComponent extends BaseRouteComponent {
 
   final SessionService _sessionService;
+  final Location _location;
 
-  SignOutComponent(this._sessionService, TitleService titleService,
+  SignOutComponent(this._sessionService,
+      this._location,
+      TitleService titleService,
       RouteData data) : super(titleService, data);
 
   Future<Null> onSubmit() async {
     await _sessionService.clear();
+    _location.back();
   }
 
 }

@@ -23,31 +23,49 @@ import 'package:danilo_info/services/user_service.dart';
 class SignInComponent extends BaseRouteComponent implements OnInit {
   SignIn login;
   Captcha captcha;
-  bool sending;
-  Map<String, bool> controlStateClasses(NgControl control) => FormHelper.controlStateClasses(control);
+  bool sending = false;
+  bool invalid = false;
+
+  Map<String, bool> controlStateClasses(NgControl control) =>
+      FormHelper.controlStateClasses(control);
 
   final SessionService _sessionService;
   final UserService _userService;
   final RegexpService _regexpService;
   final Location _location;
 
-  SignInComponent(this._sessionService, this._userService, this._regexpService, this._location, TitleService titleService, RouteData data) : super(titleService, data);
+  SignInComponent(this._sessionService,
+      this._userService,
+      this._regexpService,
+      this._location,
+      TitleService titleService,
+      RouteData data)
+      : super(titleService, data);
 
 
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      _sessionService.authenticate(login);
+      var result = await _sessionService.authenticate(login);
+      if (result == AuthenticationReturn.Authenticated) {
+        _location.back();
+        return;
+      } else if (result == AuthenticationReturn.CaptchaNeededInvalidCredentials) {
+        captcha = new Captcha("sadas", "dsadz");
+      }
+
+      invalid = true;
       sending = false;
-      _location.back();
     }
   }
 
   int _passwordMinLength;
-  int get passwordMinLength =>  _passwordMinLength;
+
+  int get passwordMinLength => _passwordMinLength;
 
 
   String _emailRegexpString;
+
   String get emailRegexpString => _emailRegexpString;
 
   @override

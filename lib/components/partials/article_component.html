@@ -6,7 +6,7 @@
     </header>
     <section class="dnp1-article-meta">
         <div class="dnp1-article-datetime">
-            {{ article.editedOn }}
+            {{ article.editionDate }}
         </div>
         <div class="dnp1-tags">
             <a class='dnp1-tag-link' *ngFor="let tag of article.tags" href='/articles?tag={{tag.name}}'>
