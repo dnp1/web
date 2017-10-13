@@ -1,7 +1,11 @@
-<template [ngIf]="items != null"><ul>
-        <template ngFor [ngForOf]="items" let-item><li>
+<template [ngIf]="items != null">
+    <ul>
+        <template ngFor [ngForOf]="items" let-item>
+            <li>
                 <a class='dnp1-menu-link' [routerLink]="[item.route]">
                     <span>{{item.label}}</span>
                 </a>
-        </li></template>
-    </ul></template>
+            </li>
+        </template>
+    </ul>
+</template>

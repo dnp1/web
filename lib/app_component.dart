@@ -39,6 +39,7 @@ import 'package:danilo_info/services/user_service.dart';
     RegexpService,
     TitleService,
   ],
+  preserveWhitespace: false,
 )
 @RouteConfig(const [
   const Route(
