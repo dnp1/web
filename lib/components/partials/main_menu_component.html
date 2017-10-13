@@ -1,7 +1,7 @@
-<template [ngIf]="items != null">
+<template [ngIf]="items != null && session.valid">
     <ul>
         <template ngFor [ngForOf]="items" let-item>
-            <li>
+            <li *ngIf="visible(item)">
                 <a class='dnp1-menu-link' [routerLink]="[item.route]">
                     <span>{{item.label}}</span>
                 </a>

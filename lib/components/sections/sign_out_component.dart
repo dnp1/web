@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular/di.dart';
 import 'package:angular_forms/angular_forms.dart';
@@ -22,8 +23,8 @@ class SignOutComponent extends BaseRouteComponent {
   SignOutComponent(this._sessionService, TitleService titleService,
       RouteData data) : super(titleService, data);
 
-  void onSubmit() {
-    _sessionService.clear();
+  Future<Null> onSubmit() async {
+    await _sessionService.clear();
   }
 
 }

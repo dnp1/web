@@ -22,8 +22,8 @@ class SessionService {
   Session _session;
 
 
-  Future<Session> getCurrent() async {
-    if (_session == null) {
+  Future<Session> load() async {
+    if (_session == null || !_session.valid) {
       if (_localStorage.containsKey(_key)) {
         var js = JSON.decode(_localStorage[_key]);
         _session = new Session.fromMap(js);
@@ -48,5 +48,6 @@ class SessionService {
   Future<Null> clear() async {
     _localStorage.remove(_key);
     _session.invalidate();
+    load();
   }
 }

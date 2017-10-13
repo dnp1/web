@@ -1,6 +1,3 @@
-import 'package:danilo_info/model/user.dart';
-
-
 class Session {
   bool _valid = false;
 

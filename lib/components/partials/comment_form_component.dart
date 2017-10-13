@@ -47,7 +47,7 @@ class CommentFormComponent implements OnInit {
   }
   @override
   Future<Null> ngOnInit() async {
-    session = await _sessionService.getCurrent();
+    session = await _sessionService.load();
   }
 
   bool canComment() {

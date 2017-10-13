@@ -12,6 +12,7 @@ import 'package:danilo_info/services/session_service.dart';
   templateUrl: 'main_menu_component.html',
   styleUrls: const['main_menu_component.css'],
   directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES],
+  preserveWhitespace: false,
 )
 class MainMenuComponent implements OnInit {
   final MenuItemService _menuItemService;
@@ -19,7 +20,7 @@ class MainMenuComponent implements OnInit {
 
   MainMenuComponent(this._menuItemService, this._sessionService);
 
-  Session session = null;
+  Session session;
   List<MenuItem> items;
 
   double menuLength() {
@@ -28,7 +29,7 @@ class MainMenuComponent implements OnInit {
 
   @override
   Future<Null> ngOnInit() async {
-    session = await _sessionService.getCurrent();
+    session = await _sessionService.load();
     items = await _menuItemService.getMenuItems();
   }
 
@@ -36,9 +37,9 @@ class MainMenuComponent implements OnInit {
     if (item.showCondition == MenuItemShowCondition.always) {
       return true;
     } else if (session.anonymous()) {
-      return item.showCondition == MenuItemShowCondition.authenticated;
-    } else {
       return item.showCondition == MenuItemShowCondition.unauthenticated;
+    } else {
+      return item.showCondition == MenuItemShowCondition.authenticated;
     }
   }
 }
