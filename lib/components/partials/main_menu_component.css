@@ -1,17 +1,16 @@
-:host li {
-    display: inline-block;
-}
-
 :host {
     display: inline-block;
 }
-:host ul
+ul
 {
     display: block;
     position: relative;
     line-height: 3em;
     height: 3em;
 
+}
+li {
+    display: inline-block;
 }
 
 .dnp1-menu-link:hover,
@@ -35,7 +34,7 @@
 
 .dnp1-menu-link span {
     letter-spacing: .12em;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 .dnp1-menu-link:hover {

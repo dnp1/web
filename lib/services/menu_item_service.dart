@@ -5,9 +5,6 @@ import 'package:angular/angular.dart';
 
 @Injectable()
 class MenuItemService {
-    SessionService _sessionService;
-    MenuItemService(this._sessionService);
-
     static final List<MenuItem> _items = [
       new MenuItem(
           "dnp1-articles-link",
@@ -41,21 +38,7 @@ class MenuItemService {
           MenuItemShowCondition.authenticated),
     ];
 
-    List<MenuItem> _allItems() {
-      return _items;
-    }
-
     Future<List<MenuItem>> getMenuItems() async {
-      var session = await _sessionService.getCurrent();
-      MenuItemShowCondition condition;
-      if (session.userId != null) {
-        condition = MenuItemShowCondition.authenticated;
-      } else {
-        condition = MenuItemShowCondition.unauthenticated;
-      }
-
-      return _allItems().where((item) =>
-      item.showCondition ==
-          MenuItemShowCondition.always || item.showCondition == condition);
+      return _items;
     }
 }

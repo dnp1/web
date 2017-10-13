@@ -1,5 +1,4 @@
-<template [ngIf]="article != null">
-    <header class='dnp1-article-header'>
+<template [ngIf]="article != null"><header class='dnp1-article-header'>
         <a class='dnp1-article-title' [routerLink]="['ArticlePage', {id: article.id}]">
             {{ article.title }}
         </a>
@@ -16,5 +15,4 @@
     </section>
     <div class='dnp1-article-content'>
         {{ article.content }}
-    </div>
-</template>
+    </div></template>

@@ -1,5 +1,4 @@
-<template [ngIf]="comment != null">
-    <div class='dnp1-comment-author-info'>
+<template [ngIf]="comment != null"><div class='dnp1-comment-author-info'>
         <dnp1-user-avatar [id]="comment.userId"></dnp1-user-avatar>
     </div>
     <div class='dnp1-comment-content'>
@@ -8,5 +7,4 @@
         <div class="dnp1-comment-datetime">
             {{ comment.editedOn }}
         </div>
-    </div>
-</template>
+    </div></template>
