@@ -39,8 +39,12 @@ class SignInComponent extends BaseRouteComponent implements OnInit {
       this._regexpService,
       this._location,
       TitleService titleService,
-      RouteData data)
-      : super(titleService, data);
+      RouteData data,
+      Router router)
+      : super(titleService, data, router);
+
+  Future<bool> allowed() async =>
+      (await _sessionService.load()).anonymous();
 
 
   Future<Null> onSubmit() async {

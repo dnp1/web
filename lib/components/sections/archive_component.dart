@@ -27,7 +27,7 @@ class ArchiveComponent extends BaseRouteComponent implements OnInit {
   final ArticleService _articleService;
   List<Year<Article>> years;
 
-  ArchiveComponent(this._articleService, TitleService titleService, RouteData data):super(titleService, data);
+  ArchiveComponent(this._articleService, TitleService titleService, RouteData data, Router router):super(titleService, data, router);
 
   Future<Null> ngOnInit() async {
     var articles = (await _articleService.archive()).toList();

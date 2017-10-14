@@ -6,20 +6,29 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/base/base_route_component.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/partials/captcha_component.dart';
+import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 
 @Component(
-  selector: 'section',
-  templateUrl: "password_reset_component.html",
-  styleUrls: const ['../styles/form.css', 'password_reset_component.css'],
-  directives: const [CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
+    selector: 'section',
+    templateUrl: "password_reset_component.html",
+    styleUrls: const ['../styles/form.css', 'password_reset_component.css'],
+    directives: const [
+      CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
-class PasswordResetComponent extends  BaseRouteComponent implements OnInit {
+class PasswordResetComponent extends BaseRouteComponent implements OnInit {
   String email;
   Captcha captcha;
   bool sending;
 
-  PasswordResetComponent(TitleService titleService, RouteData data) : super(titleService, data);
+  final SessionService _sessionService;
+
+  PasswordResetComponent(this._sessionService, TitleService titleService,
+      RouteData data,
+      Router router) : super(titleService, data, router);
+
+  Future<bool> allowed() async =>
+      (await _sessionService.load()).anonymous();
 
   Future<Null> onSubmit() async {
     if (!sending) {

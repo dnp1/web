@@ -8,8 +8,8 @@
 }
 
 .dnp1-comments-header {
-    height: 2.5em;
-    line-height: 1.25em;
+    padding:.2em .5em;
+    border-bottom: solid .06em lightgray;
     margin: 0;
 }
 

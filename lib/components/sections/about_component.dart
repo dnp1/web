@@ -11,5 +11,6 @@ import 'package:danilo_info/services/title_service.dart';
   styleUrls: const ['about_component.css'],
 )
 class AboutComponent extends BaseRouteComponent {
-  AboutComponent(TitleService titleService, RouteData data) : super(titleService, data);
+  AboutComponent(TitleService titleService, RouteData data, Router router)
+      : super(titleService, data, router);
 }

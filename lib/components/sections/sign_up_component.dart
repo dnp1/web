@@ -2,11 +2,13 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 
+import 'package:angular_router/angular_router.dart';
 import 'package:angular_router/src/instruction.dart';
 import 'package:danilo_info/components/base/base_route_component.dart';
 import 'package:danilo_info/components/partials/captcha_component.dart';
 import 'package:danilo_info/model/sign_up.dart';
 import 'package:danilo_info/model/captcha.dart';
+import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 
@@ -22,9 +24,13 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
   bool sending;
 
   final UserService _userService;
+  final SessionService _sessionService;
 
-  SignUpComponent(this._userService, TitleService titleService, RouteData data)
-      : super(titleService, data);
+  SignUpComponent(this._userService,
+      this._sessionService,
+      TitleService titleService,
+      RouteData data,
+      Router router) : super(titleService, data, router);
 
   Future<Null> onSubmit() async {
     if (!sending) {
@@ -40,4 +46,7 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
     signUp = new SignUp(await _userService.passwordMinLength());
     captcha = new Captcha('/wcz', '12');
   }
+
+  Future<bool> allowed() async =>
+      (await _sessionService.load()).anonymous();
 }

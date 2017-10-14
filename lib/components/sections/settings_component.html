@@ -1,3 +1,51 @@
 <header>
     Preferências do usuario
 </header>
+
+<section>
+    <header>
+        Nome e Sobrenome
+    </header>
+    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+        <input type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>
+
+        <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName"/>
+
+        <input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
+
+        <input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>
+    </form>
+</section>
+
+<section>
+    <header>
+        Email
+    </header>
+    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+        <input type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
+
+        <input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email"
+               [(ngModel)]="signUp.emailConfirmation"/>
+
+        <input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
+
+        <input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>
+    </form>
+</section>
+
+<section>
+    <header>
+        Senha
+    </header>
+    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+        <input type="password" required placeholder="Nova senha" autocomplete='off' [(ngModel)]="signUp.password"/>
+
+        <input type="password" required placeholder="Confirmação nova da senha" autocomplete='off'
+               [(ngModel)]="signUp.passwordConfirmation"/>
+
+        <input type="password" required placeholder="Senha atual" autocomplete='off' [(ngModel)]="signUp.password"/>
+
+        <input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>
+    </form>
+</section>
+
