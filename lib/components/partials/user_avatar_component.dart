@@ -5,12 +5,12 @@ import 'package:danilo_info/model/user.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
-  selector: 'dnp1-user-avatar',
+  selector: 'span[dnp1-user-avatar]',
   template: '''
-  <img class='dnp1-comment-avatar' [style.width]="size" [style.height]="size" src='{{ url }}'/>
+  <img [style.width]="size" [style.height]="size" src='{{ url }}'/>
   ''',
   styles: const ['''
-  .dnp1-comment-avatar {
+  img {
       display: block;
       border-radius: .12em;
       margin: .06em .06em .06em .06em;
@@ -24,14 +24,14 @@ import 'package:danilo_info/services/user_service.dart';
 class UserAvatarComponent implements OnInit {
   String url = "/img/author.png";
 
-  String _id;
+  String _userId;
   @Input()
-  void set id(String id) {
-    _id = id;
+  void set userId(String id) {
+    _userId = id;
   }
 
-  String get id {
-    return _id;
+  String get userId {
+    return _userId;
   }
 
   @Input()
@@ -44,9 +44,9 @@ class UserAvatarComponent implements OnInit {
   UserAvatarComponent(this._userService);
 
   Future<Null> ngOnInit() async {
-    user = await _userService.get(_id);
+    user = await _userService.get(_userId);
     if (user != null && user.avatarId != null) {
-      url = "/user/"+id+"/avatar";
+      url = "/user/"+userId+"/avatar";
     }
   }
 }

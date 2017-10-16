@@ -5,7 +5,7 @@ import 'package:danilo_info/model/user.dart';
 import 'package:danilo_info/services/user_service.dart';
 
 @Component(
-  selector: 'dnp1-user-name',
+  selector: 'span[dnp1-user-name]',
   template: '''
   {{ name }}
   ''',
@@ -15,10 +15,10 @@ import 'package:danilo_info/services/user_service.dart';
   ],
 )
 class UserNameComponent implements OnInit {
-  String _id;
+  String _userId;
   @Input()
-  void set id(String id) {
-    _id = id;
+  void set userId(String id) {
+    _userId = id;
   }
 
   PersonNamePart _namePart = PersonNamePart.full;
@@ -33,7 +33,7 @@ class UserNameComponent implements OnInit {
   UserNameComponent(this._userService);
 
   Future<Null> ngOnInit() async {
-    var user = await _userService.get(_id);
+    var user = await _userService.get(_userId);
     if (user  != null) {
       name = user.getName(_namePart);
     }
