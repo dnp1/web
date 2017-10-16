@@ -16,6 +16,7 @@ import 'package:danilo_info/components/sections/password_reset_component.dart';
 
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
+import 'package:danilo_info/services/email_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
@@ -37,6 +38,7 @@ import 'package:danilo_info/services/user_service.dart';
     UserService,
     RegexpService,
     TitleService,
+    EmailService,
   ],
   preserveWhitespace: false,
 )

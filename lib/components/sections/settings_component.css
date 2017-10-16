@@ -1,0 +1,53 @@
+ul {
+    list-style: none;
+    padding:.5em 0;
+}
+
+li {
+    display: block;
+    border-bottom: solid .05em #D5D5D5;
+}
+a {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #555;
+    padding:.5em;
+    min-height: 2em;
+}
+
+a span {
+    line-height: 2em;
+}
+
+a:hover {
+    color: #232;
+    background-color: #bdccc0;
+    cursor: pointer;
+}
+
+a:hover .dnp1-edit {
+    text-decoration: underline;
+}
+
+.dnp1-settings-title-view {
+    display: inline-block;
+    text-align: left;
+    float: left;
+    width:5em;
+    vertical-align: middle;
+    height: auto;
+}
+
+.dnp1-settings-value-view {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    margin-left: 5em;
+    overflow: hidden;
+}
+
+.dnp1-edit {
+    text-decoration: inherit;
+    float:right;
+}
