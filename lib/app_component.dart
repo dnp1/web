@@ -22,7 +22,7 @@ import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/user_service.dart';
+import 'package:danilo_info/services/profile_service.dart';
 
 @Component(
   selector: 'body',
@@ -35,7 +35,7 @@ import 'package:danilo_info/services/user_service.dart';
     MenuItemService,
     StorageService,
     SessionService,
-    UserService,
+    ProfileService,
     RegexpService,
     TitleService,
     EmailService,

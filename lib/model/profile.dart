@@ -4,13 +4,13 @@ enum PersonNamePart {
   full
 }
 
-class User {
+class Profile {
   String id;
   String firstName;
   String lastName;
   String avatarId;
 
-  User(this.id, this.firstName, this.lastName, this.avatarId);
+  Profile(this.id, this.firstName, this.lastName, this.avatarId);
 
   String getName(PersonNamePart part) {
     switch(part) {

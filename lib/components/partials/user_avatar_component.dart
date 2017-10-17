@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 
-import 'package:danilo_info/model/user.dart';
-import 'package:danilo_info/services/user_service.dart';
+import 'package:danilo_info/model/profile.dart';
+import 'package:danilo_info/services/profile_service.dart';
 
 @Component(
   selector: 'span[dnp1-user-avatar]',
@@ -37,9 +37,9 @@ class UserAvatarComponent implements OnInit {
   @Input()
   String size = "4em";
 
-  User user;
+  Profile user;
 
-  UserService _userService;
+  ProfileService _userService;
 
   UserAvatarComponent(this._userService);
 
