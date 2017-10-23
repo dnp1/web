@@ -1,4 +1,3 @@
-
 class Email {
   String id;
   bool primary;

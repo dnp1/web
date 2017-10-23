@@ -1,7 +1,7 @@
 class Captcha {
-    String url;
-    String token;
-    String input;
+  String url;
+  String token;
+  String input;
 
-    Captcha(url, token);
+  Captcha(url, token);
 }
