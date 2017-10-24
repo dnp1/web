@@ -4,6 +4,10 @@ import 'package:angular/di.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:danilo_info/components/base/base_route_component.dart';
+import 'package:danilo_info/components/partials/change_avatar_component.dart';
+import 'package:danilo_info/components/partials/change_email_component.dart';
+import 'package:danilo_info/components/partials/change_name_component.dart';
+import 'package:danilo_info/components/partials/change_password_component.dart';
 import 'package:danilo_info/components/partials/user_avatar_component.dart';
 import 'package:danilo_info/components/partials/user_name_component.dart';
 import 'package:danilo_info/model/email.dart';
@@ -24,6 +28,10 @@ import 'package:danilo_info/services/title_service.dart';
     formDirectives,
     UserNameComponent,
     UserAvatarComponent,
+    ChangePasswordComponent,
+    ChangeEmailComponent,
+    ChangeNameComponent,
+    ChangeAvatarComponent,
   ],
   preserveWhitespace: false,
 )
