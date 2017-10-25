@@ -1,16 +1,18 @@
-<div class="dnp1-user-avatar">
-    <span dnp1-user-avatar [userId]="userId" [size]="'8em'"></span>
-</div>
+<form (ngSubmit)="save()">
+    <div class="dnp1-user-avatar">
+        <span dnp1-user-avatar [userId]="userId" [size]="'8em'"></span>
+    </div>
 
-<button>
-    <label for="file">
-    <input id='file' type="file" required placeholder="Subir avatar novo" autocomplete='off'
-           accept="image/jpeg,image/png"/>
-    Escolha sua imagem
-    </label>
-</button>
+    <button>
+        <label for="file">
+            <input id='file' type="file" required placeholder="Subir avatar novo" autocomplete='off'
+                   accept="image/jpeg,image/png"/>
+            Escolha sua imagem
+        </label>
+    </button>
 
-<label for="password"></label>
-<input id='password' type="password" required placeholder="Senha" autocomplete='off'/>
-<input type="submit" value="Salvar">
-<input type="button" value="Cancelar" (click)="dispose()">
+    <label for="password"></label>
+    <input id='password' type="password" required placeholder="Senha" autocomplete='off'/>
+    <input type="submit" value="Salvar">
+    <input type="button" value="Cancelar" (click)="dispose()">
+</form>

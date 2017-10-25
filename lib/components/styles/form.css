@@ -1,5 +1,5 @@
 .dnp1-form,
-form:host  {
+form  {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;

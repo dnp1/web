@@ -13,7 +13,6 @@ import 'package:danilo_info/services/profile_service.dart';
   img {
       display: block;
       border-radius: .12em;
-      margin: .06em .06em .06em .06em;
   }
   '''],
   // styleUrls: const ['article__component.css'],
