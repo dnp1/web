@@ -2,112 +2,56 @@
     Preferências do usuario
 </header>
 <ul>
-    <li>
-        <a (ngClick)="edit('name')">
+    <li *ngFor="let item of items">
+        <a (click)="edit(item.name)" *ngIf="section != item.name">
             <span class="dnp1-settings-title-view">
-                Nome
+                {{ item.label }}
             </span>
-            <span dnp1-user-name
-                  class="dnp1-settings-value-view"
-                  [userId]="session.userId">
-            </span>
-            <span class="dnp1-edit">
-                Editar
-            </span>
-        </a>
-    </li>
-    <li>
-        <a (ngClick)="edit('avatar')">
-            <span class="dnp1-settings-title-view">
-                Foto
-            </span>
-            <span dnp1-user-avatar
-                  class="dnp1-settings-value-view"
-                  size="2em"
-                  [userId]="session.userId">
-            </span>
-            <span class="dnp1-edit">
-                Editar
-            </span>
-        </a>
-    </li>
-    <li *ngIf="emailList != null">
-        <a (ngClick)="edit('email')">
-            <span class="dnp1-settings-title-view">
-                Email
-            </span>
-            <span class="dnp1-settings-value-view">
-                <template [ngForOf]="emailList" ngFor let-email let-i="index">
-                    <template [ngIf]="i > 0">
-                        {{", "}}
+
+            <span class="dnp1-settings-value-view" [ngSwitch]="item.name">
+                <span dnp1-user-name
+                      [userId]="session.userId"
+                      *ngSwitchCase="'name'">
+                </span>
+                <span dnp1-user-avatar
+                      size="2em"
+                      [userId]="session.userId"
+                      *ngSwitchCase="'avatar'">
+                </span>
+                <span *ngSwitchCase="'email'">
+                    <template [ngForOf]="emailList" ngFor let-email let-i="index">
+                        <template [ngIf]="i > 0">
+                            {{", "}}
+                        </template>
+                        {{email.address}}
                     </template>
-                    {{email.address}}
-                </template>
+                </span>
+                 <span *ngSwitchCase="'password'">
+                    ************
+                </span>
             </span>
             <span class="dnp1-edit">
                 Editar
             </span>
         </a>
+        <template [ngIf]="section == item.name">
+            <h3>
+                {{ item.editionHeader }}
+            </h3>
+            <div [ngSwitch]="item.name">
+                <form dnp1-change-name
+                      *ngSwitchCase="'name'"
+                      (onDispose)="edit(null)"></form>
+                <form dnp1-change-avatar
+                      *ngSwitchCase="'avatar'"
+                      (onDispose)="edit(null)"></form>
+                <form dnp1-change-email
+                      *ngSwitchCase="'email'"
+                      (onDispose)="edit(null)"></form>
+                <form dnp1-change-password
+                      *ngSwitchCase="'password'"
+                      (onDispose)="edit(null)"></form>
+            </div>
+        </template>
     </li>
-    <li>
-        <a (ngClick)="edit('password')">
-            <span class="dnp1-settings-title-view">
-                Senha
-            </span>
-            <span class="dnp1-settings-value-view">
-                ************
-            </span>
-            <span class="dnp1-edit">
-                Editar
-            </span>
-        </a>
-    </li>
-
 </ul>
-
-<!--<section>-->
-<!--<header>-->
-<!--Nome e Sobrenome-->
-<!--</header>-->
-<!--<form class='dnp1-form' (ngSubmit)="onSubmit()">-->
-<!--<input type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>-->
-
-<!--<input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName"/>-->
-
-<!--<input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>-->
-
-<!--<input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>-->
-<!--</form>-->
-<!--</section>-->
-
-<!--<section>-->
-<!--<header>-->
-<!--Email-->
-<!--</header>-->
-<!--<form class='dnp1-form' (ngSubmit)="onSubmit()">-->
-<!--<input type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>-->
-
-<!--<input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email"-->
-<!--[(ngModel)]="signUp.emailConfirmation"/>-->
-
-<!--<input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>-->
-
-<!--<input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>-->
-<!--</form>-->
-<!--</section>-->
-
-<!--<section>-->
-<!--<header>-->
-<!--Senha-->
-<!--</header>-->
-<!--<form class='dnp1-form' (ngSubmit)="onSubmit()">-->
-<!--<input type="password" required placeholder="Nova senha" autocomplete='off' [(ngModel)]="signUp.password"/>-->
-<!--<input type="password" required placeholder="Confirmação nova da senha" autocomplete='off'-->
-<!--[(ngModel)]="signUp.passwordConfirmation"/>-->
-
-<!--<input type="password" required placeholder="Senha atual" autocomplete='off' [(ngModel)]="signUp.password"/>-->
-
-<!--<input type="submit" class="dnp1-form-submit" value="Salvar" [disabled]="sending"/>-->
-<!--</form>-->
-<!--</section>-->
-

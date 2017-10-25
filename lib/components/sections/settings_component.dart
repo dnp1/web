@@ -39,6 +39,15 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
   final SessionService _sessionService;
   final EmailService _emailService;
 
+  final List<SettingsItem> items = const [
+    const SettingsItem('name', 'Nome', 'Alteração do nome'),
+    const SettingsItem('avatar', 'Foto', 'Alteração da foto'),
+    const SettingsItem('email', 'Email', 'Alteração do email'),
+    const SettingsItem('password', 'Senha', 'Alteração da senha'),
+  ];
+
+  String section;
+
   Session session;
   List<Email> emailList;
 
@@ -53,7 +62,7 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
       Router router)
       : super(titleService, data, router);
 
-  Future<bool> allowed() async  {
+  Future<bool> allowed() async {
     session = await _sessionService.load();
     return (session?.anonymous() ?? true) == false;
   }
@@ -61,7 +70,19 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
   onSubmit() => null;
 
   @override
-  Future<Null >ngOnInit() async {
+  Future<Null> ngOnInit() async {
     emailList = await _emailService.ofUser(session.userId);
   }
+
+  void edit(String name) => section = name;
+}
+
+class SettingsItem {
+  final String name;
+  final String label;
+  final String editionHeader;
+
+  const SettingsItem(this.name,
+      this.label,
+      this.editionHeader);
 }
