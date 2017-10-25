@@ -1,5 +1,8 @@
-<input type="text" required placeholder="Nome" autocomplete='off'/>
-<input type="text" required placeholder="Sobrenome" autocomplete='off'/>
-<input type="password" required placeholder="Senha atual" autocomplete='off'/>
+<label for="name">Nome</label>
+<input id='name' type="text" required placeholder="Nome" autocomplete='off'/>
+<label for="family-name">Sobrenome</label>
+<input id='family-name' type="text" required placeholder="Sobrenome" autocomplete='off'/>
+<label for="password">Senha</label>
+<input id='password' type="password" required placeholder="Senha" autocomplete='off'/>
 <input type="submit" value="Salvar">
 <input type="button" value="Cancelar" (click)="dispose()">
