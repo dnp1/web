@@ -3,12 +3,18 @@
         Cadastro do usuário
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
-        <input type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>
+        <label for="name">Nome</label>
+        <input id="name" type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>
+        <label for="name">Sobrenome</label>
         <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName"/>
-        <input type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
         <input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email"
                [(ngModel)]="signUp.emailConfirmation"/>
-        <input type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
+
+        <label for="password">Senha</label>
+        <input id="password" type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
         <input type="password" required placeholder="Confirmação da Senha" autocomplete='off'
                [(ngModel)]="signUp.passwordConfirmation"/>
         <div dnp1-component-captcha *ngIf="captcha != null" [captcha]="captcha"></div>

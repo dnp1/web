@@ -2,7 +2,6 @@
 form:host {
     box-sizing: border-box;
     display: block;
-    text-align: center;
     margin: 0 auto;
     width: 30em;
     max-width: 100%;
@@ -12,12 +11,16 @@ form:host {
 }
 input {
     width: 100%;
-    display: block;
+    display: inline-block;
     margin-bottom: .5em;
 }
 
 label {
+    display: block;
     text-align: left;
+    width: 100%;
+    margin-bottom: .25em;
+    color: #444;
 }
 
 input[disabled] {
