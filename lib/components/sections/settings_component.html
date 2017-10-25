@@ -41,15 +41,19 @@
             <div [ngSwitch]="item.name">
                 <form dnp1-change-name
                       *ngSwitchCase="'name'"
+                      [userId]="session.userId"
                       (onDispose)="edit(null)"></form>
                 <form dnp1-change-avatar
                       *ngSwitchCase="'avatar'"
+                      [userId]="session.userId"
                       (onDispose)="edit(null)"></form>
                 <form dnp1-change-email
                       *ngSwitchCase="'email'"
+                      [userId]="session.userId"
                       (onDispose)="edit(null)"></form>
                 <form dnp1-change-password
                       *ngSwitchCase="'password'"
+                      [userId]="session.userId"
                       (onDispose)="edit(null)"></form>
             </div>
         </template>

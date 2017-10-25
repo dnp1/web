@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 
-import 'package:danilo_info/components/partials/comment_component.dart';
-import 'package:danilo_info/components/partials/comment_form_component.dart';
+import 'package:danilo_info/components/partials/comments/comment_component.dart';
+import 'package:danilo_info/components/partials/comments/comment_form_component.dart';
 
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/services/comment_service.dart';

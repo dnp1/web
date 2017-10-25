@@ -3,8 +3,8 @@ import 'package:angular_router/angular_router.dart';
 import 'dart:async';
 
 import 'package:danilo_info/components/base/base_route_component.dart';
-import 'package:danilo_info/components/partials/article_component.dart';
-import 'package:danilo_info/components/partials/article_comments_component.dart';
+import 'package:danilo_info/components/partials/article/article_component.dart';
+import 'package:danilo_info/components/partials/comments/article_comments_component.dart';
 import 'package:danilo_info/services/title_service.dart';
 
 @Component(
