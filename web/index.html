@@ -1,28 +1,28 @@
-<!DOCTYPE xhtml>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> danilo.info </title>
-  <script>
-    if (typeof navigator.geolocation == "undefined") {
-        navigator.geolocation = {};
-    }
-    // WARNING: DO NOT set the <base href> like this in production!
-    // Details: https://webdev.dartlang.org/angular/guide/router
-    (function () {
-      var m = document.location.pathname.match(/^(\/[-\w]+)+\/web($|\/)/);
-      document.write('<base href="' + (m ? m[0] : '/') + '" />');
-    }());
-  </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> danilo.info </title>
+    <script>
+        if (typeof navigator.geolocation === "undefined") {
+            navigator.geolocation = {};
+        }
+        // WARNING: DO NOT set the <base href> like this in production!
+        // Details: https://webdev.dartlang.org/angular/guide/router
+        (function () {
+            var m = document.location.pathname.match(/^(\/[-\w]+)+\/web($|\/)/);
+            document.write('<base href="' + (m ? m[0] : '/') + '" />');
+        }());
+    </script>
 
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 
-  <script defer src="main.dart" type="application/dart"></script>
-  <script defer src="packages/browser/dart.js"></script>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
 </head>
 
 <body>
