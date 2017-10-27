@@ -14,7 +14,6 @@
             </a>
         </div>
     </section>
-    <div class='dnp1-article-content'>
-        {{ article.content }}
+    <div class='dnp1-article-content' [innerHtml]="article.content">
     </div>
 </template>
