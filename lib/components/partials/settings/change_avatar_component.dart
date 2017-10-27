@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
 import 'package:angular_forms/angular_forms.dart';
@@ -12,8 +13,12 @@ import 'package:danilo_info/components/partials/settings/base_settings_form.dart
     directives: const [CORE_DIRECTIVES, formDirectives, UserAvatarComponent]
 )
 class ChangeAvatarComponent extends BaseSettingsForm {
+  File file;
+
+  void setFile(FileUploadInputElement fileInput) => file = (fileInput.files[0]);
+
   @override
   Future<Null> save() async {
-    // TODO: implement save
+    print(file);
   }
 }
