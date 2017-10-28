@@ -1,6 +1,6 @@
 ## This is my personal website
 
-This repository contains the code portion of my personal website running in a web browser.
+This repository contains the code portion of my personal website that runs on a client web-browser.
 It's written in Dart with Angular.
 
 [Setup for Development](https://webdev.dartlang.org/angular/guide/setup) page.
