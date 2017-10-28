@@ -6,3 +6,19 @@
 [dnp1-user-avatar] img {
     text-align: center;
 }
+
+button {
+    pointer-events: none;
+    height:auto;
+    min-height: 2em;
+}
+
+button img {
+    margin:.1em auto;
+    display: block;
+    pointer-events: none;
+}
+
+label[for='file'] {
+    cursor: pointer;
+}

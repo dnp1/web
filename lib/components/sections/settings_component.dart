@@ -13,7 +13,7 @@ import 'package:danilo_info/components/partials/common/user_name_component.dart'
 import 'package:danilo_info/model/email.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/model/sign_up.dart';
-import 'package:danilo_info/services/email_service.dart';
+import 'package:danilo_info/services/user_email_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 
@@ -37,7 +37,7 @@ import 'package:danilo_info/services/title_service.dart';
 )
 class SettingsComponent extends BaseRouteComponent implements OnInit {
   final SessionService _sessionService;
-  final EmailService _emailService;
+  final UserEmailService _emailService;
 
   final List<SettingsItem> items = const [
     const SettingsItem('name', 'Nome', 'Alteração do nome'),

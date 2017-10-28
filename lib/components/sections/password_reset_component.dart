@@ -5,7 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 
 import 'package:danilo_info/components/base/base_route_component.dart';
 import 'package:danilo_info/model/captcha.dart';
-import 'package:danilo_info/components/partials/captcha_component.dart';
+import 'package:danilo_info/components/partials/common/captcha_component.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 

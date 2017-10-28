@@ -16,13 +16,14 @@ import 'package:danilo_info/components/sections/password_reset_component.dart';
 
 import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
-import 'package:danilo_info/services/email_service.dart';
+import 'package:danilo_info/services/user_email_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_avatar_service.dart';
 
 @Component(
   selector: 'body',
@@ -38,7 +39,8 @@ import 'package:danilo_info/services/profile_service.dart';
     ProfileService,
     RegexpService,
     TitleService,
-    EmailService,
+    UserEmailService,
+    UserAvatarService,
   ],
   preserveWhitespace: false,
 )

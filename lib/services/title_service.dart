@@ -9,7 +9,7 @@ class TitleService {
     return document.title;
   }
 
-  setTitle(String newTitle) {
+  void setTitle(String newTitle) {
     document.title = newTitle;
   }
 

@@ -3,7 +3,7 @@ import 'package:angular/di.dart';
 import 'package:danilo_info/model/email.dart';
 
 @Injectable()
-class EmailService {
+class UserEmailService {
   Future<List<Email>> ofUser(String userId) async {
     if (userId=='1') {
       return [new Email(
