@@ -84,7 +84,7 @@ class ImageEditor {
     ctx.drawImageScaled(img, 0, 0, dim.width, dim.height);
     img.remove();
     var ret =  canvas.toDataUrl(mime, .7);
-    canvas.remove()
+    canvas.remove();
     return ret;
   }
 
