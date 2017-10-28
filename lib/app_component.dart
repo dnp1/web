@@ -24,6 +24,7 @@ import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/profile_service.dart';
 import 'package:danilo_info/services/user_avatar_service.dart';
+import 'package:danilo_info/util/image_editor.dart';
 
 @Component(
   selector: 'body',
@@ -41,6 +42,7 @@ import 'package:danilo_info/services/user_avatar_service.dart';
     TitleService,
     UserEmailService,
     UserAvatarService,
+    ImageEditor,
   ],
   preserveWhitespace: false,
 )

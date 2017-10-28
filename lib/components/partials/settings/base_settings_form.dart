@@ -1,8 +1,12 @@
 import 'dart:async';
 
 import 'package:angular/di.dart';
+import 'package:angular_forms/angular_forms.dart';
+import 'package:danilo_info/components/base/form_helper.dart';
 
 abstract class BaseSettingsForm {
+  Map<String, bool> controlStateClasses(NgControl control) =>
+      FormHelper.controlStateClasses(control);
   @Input()
   String userId;
   final StreamController<Null> _dispose = new StreamController.broadcast();
