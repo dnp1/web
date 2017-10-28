@@ -83,8 +83,9 @@ class ImageEditor {
     ctx = canvas.getContext("2d");
     ctx.drawImageScaled(img, 0, 0, dim.width, dim.height);
     img.remove();
-
-    return canvas.toDataUrl(mime, .7);
+    var ret =  canvas.toDataUrl(mime, .7);
+    canvas.remove()
+    return ret;
   }
 
   String mimeTypeFromDataUrl(String dataURI) =>
