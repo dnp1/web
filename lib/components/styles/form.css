@@ -51,3 +51,8 @@ input[disabled] {
     color: #777;
     cursor: not-allowed;
 }
+
+.dnp1-form-invalid-feedback {
+    color: #e3541f;
+    margin-bottom: .5em;
+}
