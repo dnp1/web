@@ -4,9 +4,9 @@
     </header>
     <form class='dnp1-form' (ngSubmit)="onSubmit()">
         <label for="name">Nome</label>
-        <input id="name" type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.firstName"/>
+        <input id="name" type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.givenName"/>
         <label for="name">Sobrenome</label>
-        <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.lastName"/>
+        <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.familyName"/>
 
         <label for="email">Email</label>
         <input id="email" type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>

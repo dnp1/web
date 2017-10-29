@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/profile.dart';
-import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_profile_service.dart';
 
 @Component(
   selector: 'span[dnp1-user-avatar]',
@@ -36,16 +36,16 @@ class UserAvatarComponent implements OnInit {
   @Input()
   String size = "4em";
 
-  Profile user;
+  UserName profile;
 
-  ProfileService _userService;
+  UserNameService _userService;
 
   UserAvatarComponent(this._userService);
 
   Future<Null> ngOnInit() async {
-    user = await _userService.get(_userId);
-    if (user != null && user.avatarId != null) {
-      url = "/user/"+userId+"/avatar";
-    }
+    profile = await _userService.get(_userId);
+//    if (profile != null && profile.avatarId != null) {
+//      url = "/user/"+userId+"/avatar";
+//    }
   }
 }

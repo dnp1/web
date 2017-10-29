@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/profile.dart';
-import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_profile_service.dart';
 
 @Component(
   selector: 'span[dnp1-user-name]',
@@ -28,7 +28,7 @@ class UserNameComponent implements OnInit {
   }
 
   String name = "";
-  ProfileService _userService;
+  UserNameService _userService;
 
   UserNameComponent(this._userService);
 

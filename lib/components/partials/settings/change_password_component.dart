@@ -3,6 +3,7 @@ import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/partials/settings/base_settings_form.dart';
+import 'package:danilo_info/services/user_password_service.dart';
 
 @Component(
     selector: 'div[dnp1-change-password]',
@@ -11,8 +12,17 @@ import 'package:danilo_info/components/partials/settings/base_settings_form.dart
     directives: const [CORE_DIRECTIVES, formDirectives]
 )
 class ChangePasswordComponent extends BaseSettingsForm {
+  String password, passwordConfirmation, currentPassword;
+  final UserPasswordService _userPasswordService;
+
+  ChangePasswordComponent(this._userPasswordService);
+
   @override
   Future<Null> save() async {
-    // TODO: implement save
+    sending = true;
+    await _userPasswordService.changePassword(
+        password, passwordConfirmation, currentPassword);
+    dispose();
+    sending = false;
   }
 }

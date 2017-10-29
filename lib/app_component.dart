@@ -22,7 +22,8 @@ import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_password_service.dart';
+import 'package:danilo_info/services/user_profile_service.dart';
 import 'package:danilo_info/services/user_avatar_service.dart';
 import 'package:danilo_info/util/image_editor.dart';
 
@@ -37,11 +38,12 @@ import 'package:danilo_info/util/image_editor.dart';
     MenuItemService,
     StorageService,
     SessionService,
-    ProfileService,
     RegexpService,
     TitleService,
+    UserNameService,
     UserEmailService,
     UserAvatarService,
+    UserPasswordService,
     ImageService,
   ],
   preserveWhitespace: false,

@@ -16,7 +16,7 @@ class UserEmailService {
     return const [];
   }
 
-  Future<Null> update(String email, emailConfirmation, password) async {
+  Future<Null> update(String email, String emailConfirmation, String password) async {
 
   }
 }

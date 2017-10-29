@@ -10,7 +10,7 @@ import 'package:danilo_info/model/sign_up.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_profile_service.dart';
 
 @Component(
     selector: 'section',
@@ -23,7 +23,7 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
   Captcha captcha;
   bool sending;
 
-  final ProfileService _userService;
+  final UserNameService _userService;
   final SessionService _sessionService;
 
   SignUpComponent(this._userService,

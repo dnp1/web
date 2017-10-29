@@ -43,7 +43,7 @@ class ChangeAvatarComponent extends BaseSettingsForm {
   Future<Null> save() async {
     sending = true;
     await _userAvatarService.create(file, userId, password);
-    sending = false;
     dispose();
+    sending = false;
   }
 }

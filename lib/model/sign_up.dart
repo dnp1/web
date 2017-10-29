@@ -1,8 +1,8 @@
 class SignUp {
   int passwordMinLength;
 
-  String firstName;
-  String lastName;
+  String givenName;
+  String familyName;
   String email;
   String emailConfirmation;
   String password;

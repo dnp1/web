@@ -4,24 +4,23 @@ enum PersonNamePart {
   full
 }
 
-class Profile {
-  String id;
-  String firstName;
-  String lastName;
-  String avatarId;
+class UserName {
+  String userId;
+  String givenName;
+  String familyName;
 
-  Profile(this.id, this.firstName, this.lastName, this.avatarId);
+  UserName(this.userId, this.givenName, this.familyName);
 
   String getName(PersonNamePart part) {
     switch(part) {
       case PersonNamePart.first:
-        return firstName;
+        return givenName;
       case PersonNamePart.last:
-          return lastName;
+          return familyName;
       break;
       case PersonNamePart.full:
       default:
-        return firstName + " " + lastName;
+        return givenName + " " + familyName;
     }
   }
 }

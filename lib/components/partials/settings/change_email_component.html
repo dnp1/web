@@ -4,7 +4,7 @@
            type="email"
            [(ngModel)]="email"
            #emailInput="ngForm"
-           [ngClass]="controlStateClasses(emailInput)  "
+           [ngClass]="controlStateClasses(emailInput)"
            ngControl="emailInput"
            required
            placeholder="Novo email" autocomplete='off'/>
@@ -32,6 +32,7 @@
            placeholder="Senha" autocomplete='off'/>
 
 
-    <input type="submit" value="Salvar" [disabled]="!setting.form.valid || sending || email != emailConfirmation">
+    <input type="submit" value="Salvar"
+           [disabled]="!setting.form.valid || sending || email != emailConfirmation">
     <input type="button" value="Cancelar" (click)="dispose()">
 </form>

@@ -1,10 +1,35 @@
-<form (ngSubmit)="save()">
+<form (ngSubmit)="save()" #setting="ngForm">
     <label for="name">Nome</label>
-    <input id='name' type="text" required placeholder="Nome" autocomplete='off'/>
+    <input id='name'
+           type="text"
+           [(ngModel)]="givenName"
+           #givenNameInput="ngForm"
+           [ngClass]="controlStateClasses(givenNameInput)"
+           ngControl="givenNameInput"
+           required
+           placeholder="Nome" autocomplete='off'/>
+
     <label for="family-name">Sobrenome</label>
-    <input id='family-name' type="text" required placeholder="Sobrenome" autocomplete='off'/>
+    <input id='family-name'
+           type="text"
+           [(ngModel)]="familyName"
+           #familyNameInput="ngForm"
+           [ngClass]="controlStateClasses(familyNameInput)"
+           ngControl="familyNameInput"
+           required
+           placeholder="Sobrenome" autocomplete='off'/>
+
     <label for="password">Senha</label>
-    <input id='password' type="password" required placeholder="Senha" autocomplete='off'/>
-    <input type="submit" value="Salvar">
+    <input id='password'
+           type="password"
+           [(ngModel)]="password"
+           #passwordInput="ngForm"
+           [ngClass]="controlStateClasses(passwordInput)"
+           ngControl="passwordInput"
+           required
+           placeholder="Senha" autocomplete='off'/>
+
+    <input type="submit" value="Salvar"
+           [disabled]="!setting.form.valid || sending">
     <input type="button" value="Cancelar" (click)="dispose()">
 </form>

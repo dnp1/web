@@ -11,7 +11,7 @@ import 'package:danilo_info/components/partials/common/captcha_component.dart';
 import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/profile_service.dart';
+import 'package:danilo_info/services/user_profile_service.dart';
 
 @Component(
     selector: 'section',
@@ -30,7 +30,7 @@ class SignInComponent extends BaseRouteComponent implements OnInit {
       FormHelper.controlStateClasses(control);
 
   final SessionService _sessionService;
-  final ProfileService _userService;
+  final UserNameService _userService;
   final RegexpService _regexpService;
   final Location _location;
 
