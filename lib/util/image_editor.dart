@@ -11,7 +11,7 @@ class Dimension {
 }
 
 @Injectable()
-class ImageEditor {
+class ImageService {
   Future<File> fileFromDataURI(String dataURI, String filename) async {
     var mime = mimeTypeFromDataUrl(dataURI);
     var data = bytesFromDataUrl(dataURI);

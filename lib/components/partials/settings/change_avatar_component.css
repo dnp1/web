@@ -3,11 +3,8 @@
     width:8em;
     margin:.06em auto .5em;
 }
-[dnp1-user-avatar] img {
-    text-align: center;
-}
 
-button {
+label > button {
     pointer-events: none;
     height:auto;
     min-height: 2em;
@@ -21,4 +18,8 @@ button img {
 
 label[for='file'] {
     cursor: pointer;
+}
+
+.dnp1-use-current-avatar-btn {
+    line-height: 1em;
 }

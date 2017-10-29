@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+import 'dart:html';
 import 'package:angular/di.dart';
 
 @Injectable()

@@ -5,6 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/base/form_helper.dart';
 
 abstract class BaseSettingsForm {
+  bool sending = false;
   Map<String, bool> controlStateClasses(NgControl control) =>
       FormHelper.controlStateClasses(control);
   @Input()

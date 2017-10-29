@@ -1,21 +1,23 @@
-<form (ngSubmit)="save()" #form>
-    <div class="dnp1-user-avatar">
-        <span dnp1-user-avatar [userId]="userId" [size]="'8em'"></span>
+<form (ngSubmit)="save()" #form="ngForm">
+    <div class="dnp1-user-avatar" >
+        <span *ngIf="imgSrc == null" dnp1-user-avatar [userId]="userId" [size]="'8em'"></span>
+        <template [ngIf]="imgSrc != null">
+            <img src="{{imgSrc}}">
+        </template>
     </div>
-    <a *ngIf="imgSrc != null" href="{{imgSrc}}" download="file.png">baixar</a>
+
     <label for="file">
         <button>
-            <img *ngIf="imgSrc != null" src="{{imgSrc}}">
-            <input id='file' type="file" (change)="setFile($event.target)" required autocomplete='off'
+            <input id='file'
+                   type="file"
+                   (change)="setFile($event.target)"
                    accept="image/jpeg,image/png"/>
-
-            Escolha sua imagem
+            Escolha uma nova foto
         </button>
     </label>
+    <button *ngIf="imgSrc != null" class='dnp1-use-current-avatar-btn'(click)="setFileToNull()">Retornar para foto antiga</button>
 
-
-
-    <label for="password"></label>
+    <label for="password">Senha</label>
     <input id='password'
            type="password" [(ngModel)]="password"
            required
@@ -26,6 +28,6 @@
            ngControl="passwordControl"
     />
 
-    <input type="submit" value="Salvar">
-    <input type="button" value="Cancelar" (click)="dispose()">
+    <input type="submit" value="Salvar" [disabled]="!form.form.valid || file == null || sending">
+    <input type="button" value="Cancelar" (click)="dispose()" [disabled]="sending">
 </form>

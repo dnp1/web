@@ -2,15 +2,16 @@
     Identificação de usuário
 </header>
 <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
+    <!--[attr.pattern]="emailRegexpString"-->
     <input type="email" required  autofocus placeholder="Email"
-           [attr.pattern]="emailRegexpString"
            [(ngModel)]="login.email"
            #email="ngForm" [ngClass]="controlStateClasses(email)"
            ngControl="email" />
 
+    <!-- [attr.minlength]="passwordMinLength" -->
     <input type="password" required placeholder="Senha"
            [(ngModel)]="login.password"
-           [attr.minlength]="passwordMinLength"
+           minlength="10"
            #password="ngForm" [ngClass]="controlStateClasses(password)  "
            ngControl="password"/>
 

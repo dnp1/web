@@ -42,7 +42,7 @@ import 'package:danilo_info/util/image_editor.dart';
     TitleService,
     UserEmailService,
     UserAvatarService,
-    ImageEditor,
+    ImageService,
   ],
   preserveWhitespace: false,
 )

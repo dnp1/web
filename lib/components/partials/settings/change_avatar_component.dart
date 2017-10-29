@@ -5,6 +5,7 @@ import 'package:angular/core.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:danilo_info/components/partials/common/user_avatar_component.dart';
 import 'package:danilo_info/components/partials/settings/base_settings_form.dart';
+import 'package:danilo_info/services/user_avatar_service.dart';
 import 'package:danilo_info/util/image_editor.dart';
 
 @Component(
@@ -14,26 +15,35 @@ import 'package:danilo_info/util/image_editor.dart';
   directives: const [CORE_DIRECTIVES, formDirectives, UserAvatarComponent],
 )
 class ChangeAvatarComponent extends BaseSettingsForm {
-  ImageEditor _imageEditor;
-  ChangeAvatarComponent(this._imageEditor);
+  final ImageService _imageService;
+  final UserAvatarService _userAvatarService;
+  ChangeAvatarComponent(this._imageService, this._userAvatarService);
 
   File file;
   String imgSrc = null;
-  File smallFile; // 2x2
-  File mediumFile; // 8x8
-  String password;
+  String password = null;
 
   get base64 => null;
 
   Future<Null> setFile(FileUploadInputElement fileInput) async {
-    File file = fileInput.files[0];
-    file = await _imageEditor.resizeImageFile(file, 128, 128, true);
-    imgSrc = await _imageEditor.dataURIFromFile(file);
+    var files = fileInput.files;
+    if (files.length > 0) {
+      File _file = files[0];
+      file = await _imageService.resizeImageFile(_file, 128, 128, true);
+      imgSrc = await _imageService.dataURIFromFile(file);
+    }
   }
 
+  Future<Null> setFileToNull() async {
+    file = null;
+    imgSrc = null;
+  }
 
   @override
   Future<Null> save() async {
-//  print(file);
+    sending = true;
+    await _userAvatarService.create(file, userId, password);
+    sending = false;
+    dispose();
   }
 }
