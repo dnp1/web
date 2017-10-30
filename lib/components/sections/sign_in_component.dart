@@ -20,8 +20,8 @@ import 'package:danilo_info/services/user_profile_service.dart';
     directives: const [
       CORE_DIRECTIVES, ROUTER_DIRECTIVES, formDirectives, CaptchaComponent]
 )
-class SignInComponent extends BaseRouteComponent implements OnInit {
-  SignIn login;
+class SignInComponent extends BaseRouteComponent {
+  SignIn login = new SignIn();
   Captcha captcha;
   bool sending = false;
   bool invalid = false;
@@ -30,13 +30,9 @@ class SignInComponent extends BaseRouteComponent implements OnInit {
       FormHelper.controlStateClasses(control);
 
   final SessionService _sessionService;
-  final UserNameService _userService;
-  final RegexpService _regexpService;
   final Location _location;
 
   SignInComponent(this._sessionService,
-      this._userService,
-      this._regexpService,
       this._location,
       TitleService titleService,
       RouteData data,
@@ -61,21 +57,5 @@ class SignInComponent extends BaseRouteComponent implements OnInit {
       invalid = true;
       sending = false;
     }
-  }
-
-  int _passwordMinLength;
-
-  int get passwordMinLength => _passwordMinLength;
-
-
-  String _emailRegexpString;
-
-  String get emailRegexpString => _emailRegexpString;
-
-  @override
-  Future<Null> ngOnInit() async {
-    _passwordMinLength = await _userService.passwordMinLength();
-    _emailRegexpString = _regexpService.emailRegexpString;
-    login = new SignIn();
   }
 }

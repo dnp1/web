@@ -5,6 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:angular_router/src/instruction.dart';
 import 'package:danilo_info/components/base/base_route_component.dart';
+import 'package:danilo_info/components/base/form_helper.dart';
 import 'package:danilo_info/components/partials/common/captcha_component.dart';
 import 'package:danilo_info/model/sign_up.dart';
 import 'package:danilo_info/model/captcha.dart';
@@ -23,6 +24,9 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
   Captcha captcha;
   bool sending;
 
+  Map<String, bool> controlStateClasses(NgControl control) =>
+      FormHelper.controlStateClasses(control);
+
   final UserNameService _userService;
   final SessionService _sessionService;
 
@@ -32,11 +36,10 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
       RouteData data,
       Router router) : super(titleService, data, router);
 
-  Future<Null> onSubmit() async {
+  Future<Null> save() async {
     if (!sending) {
       sending = true;
       await (new Future.delayed(const Duration(seconds: 6), () => 1));
-
       sending = false;
     }
   }

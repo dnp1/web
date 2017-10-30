@@ -3,16 +3,19 @@
 </header>
 <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
     <!--[attr.pattern]="emailRegexpString"-->
-    <input type="email" required  autofocus placeholder="Email"
+    <input type="email" required autofocus placeholder="Email"
+           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
            [(ngModel)]="login.email"
-           #email="ngForm" [ngClass]="controlStateClasses(email)"
-           ngControl="email" />
+           #email="ngForm"
+           [ngClass]="controlStateClasses(email)"
+           ngControl="email"/>
 
     <!-- [attr.minlength]="passwordMinLength" -->
     <input type="password" required placeholder="Senha"
            [(ngModel)]="login.password"
            minlength="10"
-           #password="ngForm" [ngClass]="controlStateClasses(password)  "
+           #password="ngForm"
+           [ngClass]="controlStateClasses(password)  "
            ngControl="password"/>
 
     <div *ngIf="captcha != null" dnp1-component-captcha [captcha]="captcha"></div>

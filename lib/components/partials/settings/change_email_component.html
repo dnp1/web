@@ -6,6 +6,7 @@
            #emailInput="ngForm"
            [ngClass]="controlStateClasses(emailInput)"
            ngControl="emailInput"
+           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
            required
            placeholder="Novo email" autocomplete='off'/>
     <input type="email"
@@ -13,11 +14,12 @@
            #emailConfirmationInput="ngForm"
            [ngClass]="controlStateClasses(emailConfirmationInput)  "
            ngControl="emailConfirmationInput"
+           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
            required
            placeholder="Confirmação do novo email" autocomplete='off'/>
 
     <div
-            [hidden]="(emailInput.valid && emailConfirmationInput.valid && email == emailConfirmation)
+            [hidden]="(email == emailConfirmation)
             || (emailInput.pristine && emailConfirmationInput.pristine)"
             class="dnp1-form-invalid-feedback">
         O email deve ser o repetido nas duas caixas de texto.

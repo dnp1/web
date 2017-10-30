@@ -2,22 +2,89 @@
     <header class="dnp1-sign-up-title">
         Cadastro do usuário
     </header>
-    <form class='dnp1-form' (ngSubmit)="onSubmit()">
+    <form class='dnp1-form' (ngSubmit)="save()" #signUpForm="ngForm">
         <label for="name">Nome</label>
-        <input id="name" type="text" required autocomplete='off' autofocus placeholder="Nome" [(ngModel)]="signUp.givenName"/>
+        <input id="name"
+               type="text"
+               required autocomplete='off'
+               autofocus
+               placeholder="Nome"
+               [(ngModel)]="signUp.givenName"
+               #givenName="ngForm"
+               [ngClass]="controlStateClasses(givenName)"
+               ngControl="givenName"
+        />
+
         <label for="name">Sobrenome</label>
-        <input type="text" required autocomplete='off' autofocus placeholder="Sobrenome" [(ngModel)]="signUp.familyName"/>
+        <input type="text"
+               required autocomplete='off'
+               placeholder="Sobrenome"
+               [(ngModel)]="signUp.familyName"
+               #familyName="ngForm"
+               [ngClass]="controlStateClasses(familyName)"
+               ngControl="familyName"
+        />
 
         <label for="email">Email</label>
-        <input id="email" type="email" required autocomplete='off' autofocus placeholder="Email" [(ngModel)]="signUp.email"/>
-        <input type="email" required autocomplete='off' autofocus placeholder="Confirmação do Email"
-               [(ngModel)]="signUp.emailConfirmation"/>
+        <input id="email"
+               type="email"
+               required
+               autocomplete='off'
+               placeholder="Email"
+               pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+               [(ngModel)]="signUp.email"
+               #email="ngForm"
+               [ngClass]="controlStateClasses(email)"
+               ngControl="email"
+        />
+        <input type="email"
+               required
+               autocomplete='off'
+               placeholder="Confirmação do Email"
+               pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+               [(ngModel)]="signUp.emailConfirmation"
+               #emailConfirmation="ngForm"
+               [ngClass]="controlStateClasses(emailConfirmation)"
+               ngControl="emailConfirmation"
+        />
+        <div
+                [hidden]="(signUp.email == signUp.emailConfirmation)
+            || (email.pristine && emailConfirmation.pristine)"
+                class="dnp1-form-invalid-feedback">
+            O email deve ser o repetido nas duas caixas de texto.
+        </div>
 
         <label for="password">Senha</label>
-        <input id="password" type="password" required placeholder="Senha" autocomplete='off' [(ngModel)]="signUp.password"/>
-        <input type="password" required placeholder="Confirmação da Senha" autocomplete='off'
-               [(ngModel)]="signUp.passwordConfirmation"/>
+        <input id="password"
+               type="password"
+               required
+               placeholder="Senha"
+               autocomplete='off'
+               minlength="10"
+               [(ngModel)]="signUp.password"
+               #password="ngForm"
+               [ngClass]="controlStateClasses(password)"
+               ngControl="password"
+        />
+        <input type="password"
+               required
+               placeholder="Confirmação da Senha"
+               autocomplete='off'
+               minlength="10"
+               [(ngModel)]="signUp.passwordConfirmation"
+               #passwordConfirmation="ngForm"
+               [ngClass]="controlStateClasses(passwordConfirmation)"
+               ngControl="passwordConfirmation"
+        />
+        <div
+                [hidden]="(signUp.password == signUp.passwordConfirmation)
+            || (password.pristine && passwordConfirmation.pristine)"
+                class="dnp1-form-invalid-feedback">
+            As senhas estão diferentes
+        </div>
+
+
         <div dnp1-component-captcha *ngIf="captcha != null" [captcha]="captcha"></div>
-        <input type="submit" class="dnp1-form-submit" value="Cadastrar" [disabled]="sending"/>
+        <input type="submit" value="Cadastrar" [disabled]="sending || !signUpForm.form.valid || signUp.passwordConfirmation != signUp.password || signUp.email != signUp.emailConfirmation"/>
     </form>
 </template>

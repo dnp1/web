@@ -13,6 +13,7 @@ class UserNameService {
       return _users[id];
     }
 
+    //TODO: It should be used, but we're waiting for fix in "minLength"
     Future<int> passwordMinLength() async =>  12;
 
 
