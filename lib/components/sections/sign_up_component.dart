@@ -11,7 +11,7 @@ import 'package:danilo_info/model/sign_up.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/user_profile_service.dart';
+import 'package:danilo_info/services/user_service.dart';
 
 @Component(
     selector: 'section',
@@ -27,7 +27,7 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
   Map<String, bool> controlStateClasses(NgControl control) =>
       FormHelper.controlStateClasses(control);
 
-  final UserNameService _userService;
+  final UserService _userService;
   final SessionService _sessionService;
 
   SignUpComponent(this._userService,
@@ -39,14 +39,18 @@ class SignUpComponent extends BaseRouteComponent implements OnInit {
   Future<Null> save() async {
     if (!sending) {
       sending = true;
-      await (new Future.delayed(const Duration(seconds: 6), () => 1));
+      try {
+        await _userService.create(signUp);
+      } catch (e) {
+        // TODO:deal with error
+      }
       sending = false;
     }
   }
 
   @override
   Future<Null> ngOnInit() async {
-    signUp = new SignUp(await _userService.passwordMinLength());
+    signUp = new SignUp();
     captcha = new Captcha('/wcz', '12');
   }
 

@@ -1,6 +1,4 @@
 class SignUp {
-  int passwordMinLength;
-
   String givenName;
   String familyName;
   String email;
@@ -8,5 +6,5 @@ class SignUp {
   String password;
   String passwordConfirmation;
 
-  SignUp(this.passwordMinLength);
+  SignUp();
 }

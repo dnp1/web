@@ -25,6 +25,7 @@ import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_password_service.dart';
 import 'package:danilo_info/services/user_profile_service.dart';
 import 'package:danilo_info/services/user_avatar_service.dart';
+import 'package:danilo_info/services/user_service.dart';
 import 'package:danilo_info/util/image_editor.dart';
 
 @Component(
@@ -40,6 +41,7 @@ import 'package:danilo_info/util/image_editor.dart';
     SessionService,
     RegexpService,
     TitleService,
+    UserService,
     UserNameService,
     UserEmailService,
     UserAvatarService,

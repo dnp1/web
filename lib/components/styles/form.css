@@ -1,5 +1,5 @@
 .dnp1-form,
-form  {
+form {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;
@@ -9,41 +9,42 @@ form  {
     height: auto;
     vertical-align: middle;
 }
+
 input, button {
     width: 100%;
     display: inline-block;
     margin-bottom: .5em;
 }
 
-button  {
-    padding:0;
+button {
+    padding: 0;
 }
 
 input[type='file'] {
-    width:0;
-    height:0;
-    margin:0;
-    padding:0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
     position: absolute;
     opacity: 0;
     overflow: hidden;
     z-index: -1;
 }
 
-
 label {
     display: block;
     text-align: left;
     width: 100%;
     margin-bottom: .25em;
+    margin-top: .5em;
     color: #444;
 }
 
 button > label {
     text-align: inherit;
-    color:inherit;
-    margin:0;
-    padding:0;
+    color: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 input[disabled] {
@@ -55,4 +56,8 @@ input[disabled] {
 .dnp1-form-invalid-feedback {
     color: #e3541f;
     margin-bottom: .5em;
+}
+
+.ng-invalid:not(.ng-pristine) {
+    outline: #e3411b auto 5px;
 }

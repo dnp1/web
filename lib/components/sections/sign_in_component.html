@@ -4,7 +4,7 @@
 <form class='dnp1-form' (ngSubmit)="onSubmit()" *ngIf="login != null" #signInForm="ngForm">
     <!--[attr.pattern]="emailRegexpString"-->
     <input type="email" required autofocus placeholder="Email"
-           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+           pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
            [(ngModel)]="login.email"
            #email="ngForm"
            [ngClass]="controlStateClasses(email)"

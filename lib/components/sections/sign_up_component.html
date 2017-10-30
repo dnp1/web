@@ -31,7 +31,7 @@
                required
                autocomplete='off'
                placeholder="Email"
-               pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+               pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                [(ngModel)]="signUp.email"
                #email="ngForm"
                [ngClass]="controlStateClasses(email)"
@@ -41,7 +41,7 @@
                required
                autocomplete='off'
                placeholder="Confirmação do Email"
-               pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+               pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                [(ngModel)]="signUp.emailConfirmation"
                #emailConfirmation="ngForm"
                [ngClass]="controlStateClasses(emailConfirmation)"

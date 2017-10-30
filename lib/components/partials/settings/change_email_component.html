@@ -6,7 +6,7 @@
            #emailInput="ngForm"
            [ngClass]="controlStateClasses(emailInput)"
            ngControl="emailInput"
-           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+           pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
            required
            placeholder="Novo email" autocomplete='off'/>
     <input type="email"
@@ -14,7 +14,7 @@
            #emailConfirmationInput="ngForm"
            [ngClass]="controlStateClasses(emailConfirmationInput)  "
            ngControl="emailConfirmationInput"
-           pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+           pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
            required
            placeholder="Confirmação do novo email" autocomplete='off'/>
 
