@@ -53,7 +53,7 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
 
   bool sending = false;
 
-  SignUp signUp = new SignUp(12);
+  SignUp signUp = new SignUp();
 
   SettingsComponent(this._sessionService,
       this._emailService,
