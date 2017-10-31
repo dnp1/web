@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 
-import 'package:danilo_info/model/profile.dart';
+import 'package:danilo_info/model/user_name.dart';
 import 'package:danilo_info/services/user_name_service.dart';
 
 @Component(

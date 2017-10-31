@@ -1,19 +1,25 @@
 import 'dart:async';
 import 'package:angular/angular.dart';
 
-import 'package:danilo_info/model/profile.dart';
+import 'package:danilo_info/model/user_name.dart';
+import 'package:danilo_info/services/base_http_service.dart';
+import 'package:danilo_info/util/auth_client.dart';
 
 @Injectable()
-class UserNameService {
-    final Map<String, UserName> _users = {
-      '1': new UserName('1', 'Danilo', 'Pereira')
-    };
+class UserNameService extends BaseHttpService {
+  UserNameService(AuthClient http) : super(http);
 
-    Future<UserName> get(String id) async {
-      return _users[id];
+  Future<UserName> read(String userId) async {
+    try {
+      final resp = await http.get("/user/$userId/name");
+      return new UserName.fromJson(extractData(resp));
+    } catch (e) {
+      throw handleError(e);
     }
+  }
 
-    Future<Null> update(String userId, String givenName, String familyName) async {
+  Future<Null> update(String userId, String givenName,
+      String familyName) async {
 
-    }
+  }
 }

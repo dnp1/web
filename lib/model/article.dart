@@ -11,23 +11,20 @@ class Article {
   String content;
 
   Article.fromJson(Map<String, dynamic> data) {
-    id = data['id'];
     _setFromJson(data);
   }
 
-  Article._(this.id);
-
   void _setFromJson(Map<String, dynamic> data) {
-    publicationDate = data['publicationDate'];
-    editionDate = data['editionDate'];
+    id = data['id'];
+    publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDate']);
+    editionDate = new JsonEncodableDatetime.fromJson(data['editionDate']);
     title = data['title'];
     content = data['content'];
   }
 
   factory Article.cachedFromJson(Map<String, dynamic> data) {
     String id = data['id'];
-    var article =  _cache.putIfAbsent(id, () => new Article._(id));
-    article._setFromJson(data);
+    var article =  _cache.putIfAbsent(id, () => new Article.fromJson(data));
     return article;
   }
 }

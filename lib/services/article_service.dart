@@ -39,7 +39,7 @@ class ArticleService extends BaseHttpService {
     }
   }
 
-  Future<List<String>> getTags(articleId) async {
+  Future<List<String>> getTags(String articleId) async {
     try {
       final resp = await http.get('/article/$articleId/tag');
       return extractDataList(resp).map((data) => JSON.decode(data));
