@@ -19,10 +19,7 @@
                       *ngSwitchCase="'avatar'">
                 </span>
                 <span *ngSwitchCase="'email'">
-                    <template [ngForOf]="emailList" ngFor let-email let-i="index">
-                        <template [ngIf]="i > 0">
-                            {{", "}}
-                        </template>
+                    <template [ngIf]="email != null">
                         {{email.address}}
                     </template>
                 </span>

@@ -32,7 +32,7 @@ class ArticleCommentsComponent implements OnInit {
 
   @override
   Future<Null> ngOnInit() async {
-    comments = await _commentService.ofArticle(articleId);
+    comments = await _commentService.list(articleId);
     session = await _sessionService.load();
   }
 

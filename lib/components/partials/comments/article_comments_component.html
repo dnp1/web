@@ -1,7 +1,7 @@
 <header class='dnp1-comments-header'>
         Comentários:
 </header>
-<section dnp1-comment *ngFor="let comment of comments" [id]="comment"></section>
+<section dnp1-comment *ngFor="let comment of comments" [commentId]="comment" [articleId]="articleId"></section>
 
 <section class="dnp1-no-comment" *ngIf="comments != null && comments.isEmpty">
     Não há comentários.

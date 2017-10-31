@@ -8,10 +8,8 @@ import 'package:danilo_info/components/base/form_helper.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/model/captcha.dart';
 import 'package:danilo_info/components/partials/common/captcha_component.dart';
-import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/title_service.dart';
-import 'package:danilo_info/services/user_profile_service.dart';
 
 @Component(
     selector: 'section',
@@ -46,15 +44,13 @@ class SignInComponent extends BaseRouteComponent {
   Future<Null> onSubmit() async {
     if (!sending) {
       sending = true;
-      var result = await _sessionService.authenticate(login);
-      if (result == AuthenticationReturn.Authenticated) {
+      try {
+        await _sessionService.authenticate(login);
         _location.back();
-        return;
-      } else if (result == AuthenticationReturn.CaptchaNeededInvalidCredentials) {
-        captcha = new Captcha("sadas", "dsadz");
+      } catch(e) {
+        invalid = true;
+        //TODO:
       }
-
-      invalid = true;
       sending = false;
     }
   }

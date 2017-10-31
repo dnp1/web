@@ -20,8 +20,7 @@ class ChangePasswordComponent extends BaseSettingsForm {
   @override
   Future<Null> save() async {
     sending = true;
-    await _userPasswordService.changePassword(
-        password, passwordConfirmation, currentPassword);
+    await _userPasswordService.createChangeRequest(password, userId, currentPassword);
     dispose();
     sending = false;
   }

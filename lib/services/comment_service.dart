@@ -1,52 +1,38 @@
 import 'dart:async';
 
+import 'dart:convert';
 import 'package:angular/angular.dart';
 import 'package:danilo_info/model/comment.dart';
+import 'package:danilo_info/services/base_http_service.dart';
+import 'package:danilo_info/util/auth_client.dart';
 
 @Injectable()
-class CommentService {
-  final Map<String, Comment> _comments = {
-    '1': new Comment(
-        id: '1',
-        articleId: '1',
-        userId: '1',
-        content: '''
-      Teste final dbhdgauyqwg asdhgsa asjdni wq ehuiadas djahsds whqui hdasjkas dasdqw
-      dnjiasda
-      dsakj daodio d oai jdwq9ie yhkjasc k aha diasjhskj dhaijaksckncjwgfuiwehf aj  asdsadj ddd hduqhwud ds dhudqwu s eesj er fdsfdsf fs
-      asmdada dsad
-      ''',
-        publicationDate: new DateTime.utc(2015, 06, 15),
-        editionDate: new DateTime.utc(2015, 06, 15)
-    ),
-    '2': new Comment(
-        id: '2',
-        articleId: '1',
-        userId: '1',
-        content: '''
-      Teste final dbhdgauyqwg asdhgsa asjdni wq ehuiadas djahsds whqui hdasjkas dasdqw
-      dnjiasda
-      dsakj daodio d oai jdwq9ie yhkjasc k aha diasjhskj dhaijaksckncjwgfuiwehf aj  asdsadj ddd hduqhwud ds dhudqwu s eesj er fdsfdsf fs
-      asmdada dsad
-      ''',
-        publicationDate: new DateTime.utc(2015, 06, 15),
-        editionDate: new DateTime.utc(2015, 06, 15)
-    )
-  };
+class CommentService extends BaseHttpService {
+  CommentService(AuthClient http) : super(http);
 
-  Future<List<String>> ofArticle(String articleId) async {
-    return _comments.values
-        .where((comment) => comment.articleId == articleId)
-        .map((comment) => comment.id).toList();
+  Future<List<String>> list(String articleId) async {
+    try {
+      final resp = await http.get('/article/$articleId/comment');
+      return extractDataList(resp);
+    } catch (e) {
+      throw handleError(e);
+    }
   }
 
-  Future<Comment> get(String id) async {
-    return _comments[id];
+  Future<Comment> read(String articleId, String commentId) async {
+    try {
+      final resp = await http.get('/article/$articleId/comment/$commentId');
+      return new Comment.cachedFromJson(extractData(resp));
+    } catch (e) {
+      throw handleError(e);
+    }
   }
 
-
-  Future<Map<String, String>> save(Comment comment) {
-    print("TODO:MISSING_IMPLEMENT");
-    return null;
+  Future<Null> save(Comment comment) async {
+    try {
+      await http.post("/article/${comment.articleId}/comment", body: JSON.encode(comment));
+    } catch(e) {
+      throw handleError(e);
+    }
   }
 }

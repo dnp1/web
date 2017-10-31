@@ -13,6 +13,7 @@ import 'package:danilo_info/services/user_email_service.dart';
 )
 class ChangeEmailComponent extends BaseSettingsForm {
   final UserEmailService _userEmailService;
+
   String email, emailConfirmation, password;
 
   ChangeEmailComponent(this._userEmailService);
@@ -20,7 +21,7 @@ class ChangeEmailComponent extends BaseSettingsForm {
   @override
   Future<Null> save() async {
     sending = true;
-    await _userEmailService.update(email, emailConfirmation, password);
+    await _userEmailService.createChangeRequest(email, userId, password);
     dispose();
     sending = false;
   }

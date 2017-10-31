@@ -33,7 +33,7 @@ class ArticleComponent implements OnInit  {
 
   @override
   Future<Null> ngOnInit() async {
-    article = await _articleService.get(_id);
+    article = await _articleService.read(_id);
     if (fullPage) {
       _titleService.setTitle(article.title);
     }

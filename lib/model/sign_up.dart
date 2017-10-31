@@ -7,4 +7,13 @@ class SignUp {
   String passwordConfirmation;
 
   SignUp();
+
+  toJson() {
+    return {
+      'givenName': givenName,
+      'familyName': familyName,
+      'email': email,
+      'password': password,
+    };
+  }
 }

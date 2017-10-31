@@ -18,12 +18,11 @@ import "package:danilo_info/services/article_service.dart";
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/user_email_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
-import 'package:danilo_info/services/regexp_string_service.dart';
 import 'package:danilo_info/services/session_service.dart';
 import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_password_service.dart';
-import 'package:danilo_info/services/user_profile_service.dart';
+import 'package:danilo_info/services/user_name_service.dart';
 import 'package:danilo_info/services/user_avatar_service.dart';
 import 'package:danilo_info/services/user_service.dart';
 import 'package:danilo_info/util/image_editor.dart';
@@ -39,7 +38,6 @@ import 'package:danilo_info/util/image_editor.dart';
     MenuItemService,
     StorageService,
     SessionService,
-    RegexpService,
     TitleService,
     UserService,
     UserNameService,

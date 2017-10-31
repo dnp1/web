@@ -12,7 +12,7 @@ class MenuItem {
     final fontSize = 1.3;
     final fontRatio = .72;
     final charWidth = fontSize * fontRatio;
-    final textWidth = this.label.length * charWidth;
+    final textWidth = label.length * charWidth;
     return textWidth + padding + border;
   }
 }

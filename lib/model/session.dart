@@ -45,6 +45,5 @@ class Session {
     var userId = js['userId'];
     return new Session(id, userId);
   }
-  
 }
 

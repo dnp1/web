@@ -17,16 +17,11 @@ import 'package:danilo_info/components/partials/common/user_name_component.dart'
     ]
 )
 class CommentComponent implements OnInit {
-  String _id;
+  @Input()
+  String articleId;
 
-  @Input('id')
-  void set id(String id) {
-    _id = id;
-  }
-
-  String get id {
-      return _id;
-  }
+  @Input()
+  String commentId;
 
   Comment comment;
 
@@ -35,6 +30,6 @@ class CommentComponent implements OnInit {
   CommentComponent(this._commentService);
 
   Future<Null> ngOnInit() async {
-    comment = await (_commentService.get(_id));
+    comment = await (_commentService.read(articleId, commentId));
   }
 }

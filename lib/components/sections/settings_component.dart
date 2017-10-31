@@ -49,7 +49,7 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
   String section;
 
   Session session;
-  List<Email> emailList;
+  Email email;
 
   bool sending = false;
 
@@ -71,7 +71,7 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
 
   @override
   Future<Null> ngOnInit() async {
-    emailList = await _emailService.find(session.userId);
+    email = await _emailService.find(session.userId);
   }
 
   void edit(String name) => section = name;
