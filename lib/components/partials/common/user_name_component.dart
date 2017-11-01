@@ -33,7 +33,7 @@ class UserNameComponent implements OnInit {
   UserNameComponent(this._userService);
 
   Future<Null> ngOnInit() async {
-    var user = await _userService.get(_userId);
+    var user = await _userService.read(_userId);
     if (user  != null) {
       name = user.getName(_namePart);
     }

@@ -22,10 +22,6 @@ abstract class BaseRouteComponent implements OnActivate {
     }
     _titleService.setTitle(getTitle());
   }
-
-
-
-
 }
 
 

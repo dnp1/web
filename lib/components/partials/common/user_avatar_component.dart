@@ -43,7 +43,7 @@ class UserAvatarComponent implements OnInit {
   UserAvatarComponent(this._userService);
 
   Future<Null> ngOnInit() async {
-    profile = await _userService.get(_userId);
+    profile = await _userService.read(_userId);
 //    if (profile != null && profile.avatarId != null) {
 //      url = "/user/"+userId+"/avatar";
 //    }
