@@ -27,7 +27,7 @@ class UserPasswordService extends BaseHttpService {
     }
   }
 
-  Future<Null> putEmail(String password, String userId, String key) async {
+  Future<Null> updateEmail(String password, String userId, String key) async {
     try {
       await http.put(
           '/user/$userId/password',
