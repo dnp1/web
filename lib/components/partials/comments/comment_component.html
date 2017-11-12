@@ -7,7 +7,9 @@
             <span dnp1-user-name [userId]="comment.userId"></span>
             {{" "}}
         </b>
-        {{ comment.content }}
+        <div *ngIf="comment != null">
+            {{ content }}
+        </div>
         <div class="dnp1-comment-datetime">
             {{ comment.editionDate }}
         </div>

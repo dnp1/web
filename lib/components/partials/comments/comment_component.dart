@@ -42,7 +42,6 @@ class CommentComponent implements OnInit {
       comment = await (_commentService.read(articleId, commentId));
     } else {
       commentId = comment.id;
-      articleId = comment.articleId;
     }
     loadContent();
   }
