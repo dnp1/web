@@ -6,14 +6,12 @@ class Comment {
   bool isNew() => id == null;
 
   String id;
-  String articleId;
   String userId;
-  String content;
   JsonEncodableDatetime publicationDate;
   JsonEncodableDatetime editionDate;
 
   Comment(
-      {this.id: null, this.articleId, this.userId, this.content, this.publicationDate, this.editionDate});
+      {this.id: null, this.userId, this.content, this.publicationDate, this.editionDate});
 
   Comment._(this.id);
 
@@ -21,7 +19,6 @@ class Comment {
   factory Comment.cachedFromJson(Map<String, dynamic> data) {
     String id = data['id'];
     var comment = _cache.putIfAbsent(id, () => new Comment._(id));
-    comment.articleId = data['articleId'];
     comment.userId = data['userId'];
     comment.publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDatetime']);
     comment.editionDate = new JsonEncodableDatetime.fromJson(data['editionDatetime']);

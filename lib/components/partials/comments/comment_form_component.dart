@@ -52,8 +52,8 @@ class CommentFormComponent implements OnInit {
     session = await _sessionService.load();
     if (comment == null) {
       comment = new Comment(
-          articleId: _articleId,
-          userId: session.userId);
+          userId: session.userId
+      );
     }
   }
 
