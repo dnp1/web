@@ -37,9 +37,9 @@ class CommentService extends BaseHttpService {
     }
   }
 
-  Future<Null> save(Comment comment) async {
+  Future<Null> save(String articleId, Comment comment, String content) async {
     try {
-      await http.post("/article/${comment.articleId}/comment", body: JSON.encode(comment));
+      await http.post("/article/$articleId/comment", body: JSON.encode(comment));
     } catch(e) {
       throw handleError(e);
     }

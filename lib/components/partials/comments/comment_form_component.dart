@@ -22,6 +22,7 @@ class CommentFormComponent implements OnInit {
   bool submitting = false;
 
   Comment comment;
+  String content;
   String _articleId;
 
   @Input()
@@ -40,8 +41,7 @@ class CommentFormComponent implements OnInit {
     if (!submitting) {
       submitting = true;
 
-
-      var errors = await _commentService.save(comment);
+      var errors = await _commentService.save(_articleId, comment, content);
       //TODO treat errors;
       submitting = false;
     }

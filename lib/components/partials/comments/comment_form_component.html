@@ -3,7 +3,7 @@
         <span dnp1-user-avatar [userId]="session.userId" [size]="'2em'"></span>
     </div>
     <form class='dnp1-form' (ngSubmit)="submit()">
-        <textarea [(ngModel)]="comment.content" placeholder="Digite seu comentario" required></textarea>
+        <textarea [(ngModel)]="comment" placeholder="Digite seu comentario" required></textarea>
         <button class=dnp1-button-submit>Enviar</button>
     </form>
 </template>

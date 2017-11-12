@@ -11,7 +11,7 @@ class Comment {
   JsonEncodableDatetime editionDate;
 
   Comment(
-      {this.id: null, this.userId, this.content, this.publicationDate, this.editionDate});
+      {this.id: null, this.userId, this.publicationDate, this.editionDate});
 
   Comment._(this.id);
 
@@ -28,9 +28,7 @@ class Comment {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'articleId': articleId,
       'userId': userId,
-      'content': content,
       'publicationDate': publicationDate,
       'editionDate': editionDate,
     };
