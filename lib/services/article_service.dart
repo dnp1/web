@@ -42,7 +42,7 @@ class ArticleService extends BaseHttpService {
 
   Future<List<Article>> archive() async {
     try {
-      final resp = await http.get('/article/archive');
+      final resp = await http.get('/article'); //TODO:pass too large fetch
       return extractDataList(resp).map( //TODO:missing cache
               (element) => new Article.fromJson(element)).toList();
     } catch (e) {
