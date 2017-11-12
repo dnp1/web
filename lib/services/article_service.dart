@@ -10,16 +10,6 @@ import 'package:danilo_info/util/auth_client.dart';
 class ArticleService extends BaseHttpService {
   ArticleService(AuthClient http) : super(http);
 
-  Future<String> readContent(String id) async {
-    try {
-      final resp = await http.get('/article/$id');
-      final article = JSON.decode(resp.body)['content'];
-      return article;
-    } catch (e) {
-      throw handleError(e);
-    }
-  }
-
   Future<Article> read(String id) async {
     try {
       final resp = await http.get('/article/$id');
@@ -30,11 +20,23 @@ class ArticleService extends BaseHttpService {
     }
   }
 
+  Future<String> readContent(String id) async {
+    try {
+      final resp = await http.get('/article/$id/content');
+      return extractData(resp)['content'];
+    } catch (e) {
+      throw handleError(e);
+    }
+  }
+
   Future<List<Article>> list() async {
     try {
       final resp = await http.get('/article');
       return extractDataList(resp).map( //TODO:missing cache
-              (element) => new Article.fromJson(element)).toList();
+              (element) {
+                print(element);
+                return new Article.cachedFromJson(element);
+              }).toList();
     } catch (e) {
       throw handleError(e);
     }

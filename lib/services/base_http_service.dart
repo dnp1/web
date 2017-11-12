@@ -6,8 +6,10 @@ import 'package:http/http.dart';
 class BaseHttpService {
   BaseHttpService(this._http);
 
-  Map<String, dynamic> extractData(Response resp) => JSON.decode(resp.body)['data'];
-  List<dynamic> extractDataList(Response resp) => JSON.decode(resp.body)['dataList'];
+  Map<String, dynamic> extractData(Response resp) => JSON.decode(resp.body);
+  List<dynamic> extractDataList(Response resp) {
+    return JSON.decode(resp.body);
+  }
 
   final AuthClient _http;
   AuthClient get http => _http;

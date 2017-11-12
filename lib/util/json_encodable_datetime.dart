@@ -1,10 +1,12 @@
 class JsonEncodableDatetime extends DateTime {
   JsonEncodableDatetime(int year) : super(year);
 
-  JsonEncodableDatetime.fromJson(int milliseconds)
-      : super.fromMillisecondsSinceEpoch(milliseconds, isUtc: true);
+  JsonEncodableDatetime.fromJson(String dt)
+      : super.fromMillisecondsSinceEpoch(DateTime.parse(dt).millisecondsSinceEpoch) {
+
+  }
 
   String toJson() {
-    return millisecondsSinceEpoch.toString();
+    return toIso8601String();
   }
 }

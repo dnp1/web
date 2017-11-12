@@ -34,7 +34,7 @@ class SessionService extends BaseHttpService {
       try {
         _loading = true;
         _session =  new Session.fromMap(extractData(await http.get("/session")));
-        loaded.add(null);
+        loaded.add(true);
       } catch(e) {
         throw handleError(e);
       } finally {

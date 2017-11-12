@@ -25,6 +25,6 @@ class ArticleListingComponent extends BaseRouteComponent implements OnInit {
       Router router) :super(titleService, data, router);
 
   Future<Null> ngOnInit() async {
-    articles = (await _articleService.list()).toList();
+    articles = await _articleService.list();
   }
 }

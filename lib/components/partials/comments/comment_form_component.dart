@@ -43,7 +43,6 @@ class CommentFormComponent implements OnInit {
 
       var errors = await _commentService.save(comment);
       //TODO treat errors;
-      print(errors);
       submitting = false;
     }
   }

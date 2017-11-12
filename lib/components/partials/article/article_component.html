@@ -14,6 +14,6 @@
             </a>
         </div>
     </section>
-    <div class='dnp1-article-content' [innerHtml]="article.content">
+    <div class='dnp1-article-content' *ngIf="content != null" [innerHtml]="content">
     </div>
 </template>

@@ -8,7 +8,6 @@ class Article {
   JsonEncodableDatetime editionDate;
   String title;
   List<Tag> tags;
-  String content;
 
   Article.fromJson(Map<String, dynamic> data) {
     _setFromJson(data);
@@ -16,10 +15,9 @@ class Article {
 
   void _setFromJson(Map<String, dynamic> data) {
     id = data['id'];
-    publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDate']);
-    editionDate = new JsonEncodableDatetime.fromJson(data['editionDate']);
+    publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDatetime']);
+    editionDate = new JsonEncodableDatetime.fromJson(data['editionDatetime']);
     title = data['title'];
-    content = data['content'];
   }
 
   factory Article.cachedFromJson(Map<String, dynamic> data) {
