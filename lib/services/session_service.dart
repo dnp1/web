@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:html' show window, Storage;
 import 'package:angular/angular.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/services/base_http_service.dart';
-import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/util/auth_client.dart';
 import 'package:http/http.dart';
 
@@ -17,12 +17,10 @@ enum AuthenticationReturn {
 
 @Injectable()
 class SessionService extends BaseHttpService {
-  final StorageService _localStorage;
   static const String _key = "session";
-  final Client _anonymousClient;
+  Storage _localStorage = window.localStorage;
 
-  SessionService(this._localStorage, this._anonymousClient,
-      AuthClient authClient) : super(authClient);
+  SessionService(AuthClient authClient) : super(authClient);
   Session _session;
 
   bool _loading = false;
@@ -35,10 +33,8 @@ class SessionService extends BaseHttpService {
     if (_session == null) {
       try {
         _loading = true;
-        final resp = await _anonymousClient.post("/session");
-        _localStorage[_key] = JSON.encode(extractData(resp));
-        _session = new Session.fromMap(JSON.decode(_localStorage[_key]));
-        loaded.add(loaded);
+        _session =  new Session.fromMap(extractData(await http.get("/session")));
+        loaded.add(null);
       } catch(e) {
         throw handleError(e);
       } finally {
@@ -50,10 +46,9 @@ class SessionService extends BaseHttpService {
 
   Future<Null> authenticate(SignIn signIn) async {
     try {
-      final resp = await http.post('/session', body: JSON.encode(signIn));
+      final resp = await http.post('/session', body: JSON.encode(signIn.toJson()));
       var data = extractData(resp);
       _session = new Session.fromMap(data);
-      _localStorage[_key] = JSON.encode(_session.toMap());
     } catch (e) {
       handleError(e);
     }

@@ -19,12 +19,12 @@ import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/user_email_service.dart';
 import 'package:danilo_info/services/menu_item_service.dart';
 import 'package:danilo_info/services/session_service.dart';
-import 'package:danilo_info/services/storage_service.dart';
 import 'package:danilo_info/services/title_service.dart';
 import 'package:danilo_info/services/user_password_service.dart';
 import 'package:danilo_info/services/user_name_service.dart';
 import 'package:danilo_info/services/user_avatar_service.dart';
 import 'package:danilo_info/services/user_service.dart';
+import 'package:danilo_info/util/auth_client.dart';
 import 'package:danilo_info/util/image_editor.dart';
 
 @Component(
@@ -36,7 +36,6 @@ import 'package:danilo_info/util/image_editor.dart';
     ArticleService,
     CommentService,
     MenuItemService,
-    StorageService,
     SessionService,
     TitleService,
     UserService,
@@ -45,6 +44,7 @@ import 'package:danilo_info/util/image_editor.dart';
     UserAvatarService,
     UserPasswordService,
     ImageService,
+    AuthClient,
   ],
   preserveWhitespace: false,
 )

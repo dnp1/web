@@ -16,7 +16,7 @@ import 'package:danilo_info/services/title_service.dart';
 class ArticleComponent implements OnInit  {
   final ArticleService _articleService;
   final TitleService _titleService;
-
+  @Input()
   Article article;
 
   @Input()
@@ -33,9 +33,14 @@ class ArticleComponent implements OnInit  {
 
   @override
   Future<Null> ngOnInit() async {
-    article = await _articleService.read(_id);
+    if (article == null) {
+      article = await _articleService.read(_id);
+    }
+
     if (fullPage) {
       _titleService.setTitle(article.title);
     }
+
+
   }
 }

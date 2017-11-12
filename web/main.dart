@@ -12,7 +12,6 @@ void main() {
   bootstrap(AppComponent,
       [
         ROUTER_PROVIDERS,
-        provide(Client, useFactory: () => new BrowserClient(), deps: []),
-        AuthClient,
+        provide(Client, useFactory: () => new BrowserClient(), deps: [])
       ]);
 }

@@ -4,6 +4,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
 import 'package:danilo_info/components/base/base_route_component.dart';
+import 'package:danilo_info/model/article.dart';
 import 'package:danilo_info/services/article_service.dart';
 import 'package:danilo_info/components/partials/article/article_component.dart';
 import 'package:danilo_info/services/title_service.dart';
@@ -16,7 +17,7 @@ import 'package:danilo_info/services/title_service.dart';
 )
 class ArticleListingComponent extends BaseRouteComponent implements OnInit {
   final ArticleService _articleService;
-  List<String> articles;
+  List<Article> articles;
 
   ArticleListingComponent(this._articleService,
       TitleService titleService,

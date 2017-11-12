@@ -5,26 +5,16 @@ class Session {
     return _valid;
   }
 
-  String _id;
+  String userId;
 
-  String get id {
-    return _id;
-  }
-
-  String _userId;
-
-  String get userId {
-    return _userId;
-  }
 
   Session._();
 
   static final Session instance = new Session._();
 
-  factory Session(id, userId) {
+  factory Session(userId) {
     instance
-      .._userId = userId
-      .._id = id
+      ..userId = userId
       .._valid = true;
     return instance;
   }
@@ -35,15 +25,13 @@ class Session {
 
 
   bool anonymous() {
-    return _userId == null;
+    return userId == null;
   }
 
-  Map<String, dynamic> toMap() => {'id': id, 'userId': userId};
 
   factory Session.fromMap(Map<String, dynamic> js) {
-    var id = js['id'];
     var userId = js['userId'];
-    return new Session(id, userId);
+    return new Session(userId);
   }
 }
 
