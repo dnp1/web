@@ -44,5 +44,6 @@ class CommentComponent implements OnInit {
       commentId = comment.id;
       articleId = comment.articleId;
     }
+    loadContent();
   }
 }
