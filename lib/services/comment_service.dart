@@ -10,10 +10,10 @@ import 'package:danilo_info/util/auth_client.dart';
 class CommentService extends BaseHttpService {
   CommentService(AuthClient http) : super(http);
 
-  Future<List<String>> list(String articleId) async {
+  Future<List<Comment>> list(String articleId) async {
     try {
       final resp = await http.get('/article/$articleId/comment');
-      return extractDataList(resp);
+      return extractDataList(resp).map((e) => new Comment.cachedFromJson(e)).toList();
     } catch (e) {
       throw handleError(e);
     }
@@ -23,6 +23,15 @@ class CommentService extends BaseHttpService {
     try {
       final resp = await http.get('/article/$articleId/comment/$commentId');
       return new Comment.cachedFromJson(extractData(resp));
+    } catch (e) {
+      throw handleError(e);
+    }
+  }
+
+  Future<String> readContent(String articleId, String commentId) async {
+    try {
+      final resp = await http.get('/article/$articleId/comment/$commentId/content');
+      return extractData(resp)['content'];
     } catch (e) {
       throw handleError(e);
     }

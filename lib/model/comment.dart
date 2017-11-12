@@ -23,9 +23,8 @@ class Comment {
     var comment = _cache.putIfAbsent(id, () => new Comment._(id));
     comment.articleId = data['articleId'];
     comment.userId = data['userId'];
-    comment.content = data['content'];
-    comment.publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDate']);
-    comment.editionDate = new JsonEncodableDatetime.fromJson(data['publicationDate']);
+    comment.publicationDate = new JsonEncodableDatetime.fromJson(data['publicationDatetime']);
+    comment.editionDate = new JsonEncodableDatetime.fromJson(data['editionDatetime']);
     return comment;
   }
 

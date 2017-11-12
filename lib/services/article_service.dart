@@ -33,10 +33,8 @@ class ArticleService extends BaseHttpService {
     try {
       final resp = await http.get('/article');
       return extractDataList(resp).map( //TODO:missing cache
-              (element) {
-                print(element);
-                return new Article.cachedFromJson(element);
-              }).toList();
+              (element) => new Article.cachedFromJson(element)
+              ).toList();
     } catch (e) {
       throw handleError(e);
     }

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:html' show window, Storage;
 import 'package:angular/di.dart';
 import 'package:collection/collection.dart';
-import 'package:danilo_info/services/session_service.dart';
 import 'package:http/browser_client.dart' as base;
 import 'package:http/http.dart';
 

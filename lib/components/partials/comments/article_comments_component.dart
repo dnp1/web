@@ -4,6 +4,7 @@ import 'package:angular/angular.dart';
 import 'package:danilo_info/components/partials/comments/comment_component.dart';
 import 'package:danilo_info/components/partials/comments/comment_form_component.dart';
 
+import 'package:danilo_info/model/comment.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/services/comment_service.dart';
 import 'package:danilo_info/services/session_service.dart';
@@ -22,7 +23,7 @@ class ArticleCommentsComponent implements OnInit {
   @Input()
   String articleId;
 
-  List<String> comments;
+  List<Comment> comments;
   Session session;
 
   final CommentService _commentService;
