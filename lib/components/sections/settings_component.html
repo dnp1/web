@@ -1,7 +1,7 @@
 <header>
     Preferências do usuario
 </header>
-<ul>
+<ul *ngIf="session != null">
     <li *ngFor="let item of items">
         <a (click)="edit(item.name)" *ngIf="section != item.name">
             <span class="dnp1-settings-title-view">

@@ -65,4 +65,9 @@ class AuthClient extends base.BrowserClient {
     }
     return _token;
   }
+
+  void clearToken() {
+    _token = null;
+    _localStorage.remove(header);
+  }
 }

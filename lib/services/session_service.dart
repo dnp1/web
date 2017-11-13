@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:html' show window;
 import 'package:angular/angular.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/model/sign_in.dart';
@@ -61,8 +60,8 @@ class SessionService extends BaseHttpService {
   }
 
   Future<Null> clear() async {
-    window.localStorage.remove(AuthClient.header);
     _session = null;
+    http.clearToken();
     load();
   }
 }

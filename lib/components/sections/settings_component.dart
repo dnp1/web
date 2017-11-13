@@ -71,7 +71,10 @@ class SettingsComponent extends BaseRouteComponent implements OnInit {
 
   @override
   Future<Null> ngOnInit() async {
-    email = await _emailService.read(session.userId);
+    session = await _sessionService.load();
+    if (session != null) {
+      email = await _emailService.read(session.userId);
+    }
   }
 
   void edit(String name) => section = name;
