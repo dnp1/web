@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:html' show window, Storage;
+import 'dart:html' show window;
 import 'package:angular/angular.dart';
 import 'package:danilo_info/model/session.dart';
 import 'package:danilo_info/model/sign_in.dart';
 import 'package:danilo_info/services/base_http_service.dart';
 import 'package:danilo_info/util/auth_client.dart';
-import 'package:http/http.dart';
+import "dart:io" show  HttpStatus;
 
 enum AuthenticationReturn {
   Authenticated,
@@ -15,11 +15,12 @@ enum AuthenticationReturn {
   BlockedDeTooManyInvalidCredentials,
 }
 
+class InvalidCredentials implements Exception {
+
+}
+
 @Injectable()
 class SessionService extends BaseHttpService {
-  static const String _key = "session";
-  Storage _localStorage = window.localStorage;
-
   SessionService(AuthClient authClient) : super(authClient);
   Session _session;
 
@@ -34,28 +35,33 @@ class SessionService extends BaseHttpService {
       try {
         _loading = true;
         _session =  new Session.fromMap(extractData(await http.get("/session")));
-        loaded.add(true);
       } catch(e) {
         throw handleError(e);
       } finally {
         _loading = false;
+        loaded.add(true);
       }
     }
     return _session;
   }
 
   Future<Null> authenticate(SignIn signIn) async {
-    try {
-      final resp = await http.post('/session', body: JSON.encode(signIn.toJson()));
-      var data = extractData(resp);
-      _session = new Session.fromMap(data);
-    } catch (e) {
-      handleError(e);
-    }
+      final resp = await http.post('/authenticate', body: JSON.encode(signIn.toJson()));
+      switch (resp.statusCode) {
+        case HttpStatus.OK:
+          var data = extractData(resp);
+          _session = new Session.fromMap(data);
+        break;
+        case HttpStatus.UNAUTHORIZED:
+          throw new InvalidCredentials();
+        break;
+        default:
+          throw new Exception();
+      }
   }
 
   Future<Null> clear() async {
-    _localStorage.remove(_key);
+    window.localStorage.remove(AuthClient.header);
     _session = null;
     load();
   }

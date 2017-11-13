@@ -5,3 +5,9 @@
     font-size: .9em;
     text-align: center;
 }
+.dnp1-failed-sign-in {
+    padding: .2em .25em;
+    text-align: center;
+    font-size: .9em;
+    color: #cb3f30;
+}

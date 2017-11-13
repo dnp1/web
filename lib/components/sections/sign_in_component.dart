@@ -47,9 +47,8 @@ class SignInComponent extends BaseRouteComponent {
       try {
         await _sessionService.authenticate(login);
         _location.back();
-      } catch(e) {
+      } on InvalidCredentials catch(_) {
         invalid = true;
-        //TODO:
       }
       sending = false;
     }

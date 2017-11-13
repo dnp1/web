@@ -17,6 +17,9 @@
            #password="ngForm"
            [ngClass]="controlStateClasses(password)  "
            ngControl="password"/>
+    <div *ngIf="invalid" class="dnp1-failed-sign-in">
+        Usuário ou senha inválidos
+    </div>
 
     <div *ngIf="captcha != null" dnp1-component-captcha [captcha]="captcha"></div>
 

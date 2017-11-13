@@ -9,7 +9,7 @@ import 'package:danilo_info/util/auth_client.dart';
 class UserEmailService extends BaseHttpService {
   UserEmailService(AuthClient http) : super(http);
 
-  Future<Email> find(String userId) async {
+  Future<Email> read(String userId) async {
     final resp = await http.get('/user/$userId/email');
     return new Email.fromJson(extractData(resp));
   }
