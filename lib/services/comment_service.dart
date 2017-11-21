@@ -30,7 +30,7 @@ class CommentService extends BaseHttpService {
 
   Future<String> readContent(String articleId, String commentId) async {
     try {
-      final resp = await http.get('/article/$articleId/comment/$commentId/content');
+      final resp = await http.get(urlPrefix + '/article/$articleId/comment/$commentId/content');
       return extractData(resp)['content'];
     } catch (e) {
       throw handleError(e);
