@@ -34,7 +34,11 @@ class CommentComponent implements OnInit {
   CommentComponent(this._commentService);
 
   Future<Null> loadContent() async {
-    content = await _commentService.readContent(articleId, commentId);
+    try {
+      content = await _commentService.readContent(articleId, commentId);
+    } catch (e) {
+      content = "Ocorreu um erro inesperado";
+    }
   }
 
   Future<Null> ngOnInit() async {
