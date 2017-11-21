@@ -39,14 +39,15 @@ class AuthClient extends base.BrowserClient {
     }
     if (_loaded == false) {
       _loading = true;
-      if (_hasToken()) {
-        var resp = await _inner.get(urlPrefix + "/session");
-        if (resp.statusCode == HttpStatus.OK) {
-          _loaded = true;
-          _loading = false;
-          loaded.add(true);
-        }
+
+      var resp = await _inner.get(urlPrefix + "/session");
+      if (resp.statusCode == HttpStatus.OK) {
+        _loaded = true;
+        _loading = false;
+        loaded.add(true);
+        return;
       }
+
       try {
         final resp = await _inner.post(urlPrefix + "/session");
         if (resp.statusCode == HttpStatus.OK) {
