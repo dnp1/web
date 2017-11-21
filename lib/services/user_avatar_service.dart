@@ -13,7 +13,7 @@ class UserAvatarService extends BaseHttpService {
     try {
       var formData = new FormData();
       formData.appendBlob('file', file, file.name);
-      final resp = await http.post('/file', body: formData);
+      final resp = await http.post(urlPrefix + '/file', body: formData);
       var data = extractData(resp);
       await http.put(
         '/user/$userId/avatar',

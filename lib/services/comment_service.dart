@@ -12,7 +12,7 @@ class CommentService extends BaseHttpService {
 
   Future<List<Comment>> list(String articleId) async {
     try {
-      final resp = await http.get('/article/$articleId/comment');
+      final resp = await http.get(urlPrefix + '/article/$articleId/comment');
       return extractDataList(resp).map((e) => new Comment.cachedFromJson(e)).toList();
     } catch (e) {
       throw handleError(e);
@@ -21,7 +21,7 @@ class CommentService extends BaseHttpService {
 
   Future<Comment> read(String articleId, String commentId) async {
     try {
-      final resp = await http.get('/article/$articleId/comment/$commentId');
+      final resp = await http.get(urlPrefix + '/article/$articleId/comment/$commentId');
       return new Comment.cachedFromJson(extractData(resp));
     } catch (e) {
       throw handleError(e);
@@ -39,7 +39,7 @@ class CommentService extends BaseHttpService {
 
   Future<Null> save(String articleId, Comment comment, String content) async {
     try {
-      await http.post("/article/$articleId/comment", body: JSON.encode(comment));
+      await http.post(urlPrefix + "/article/$articleId/comment", body: JSON.encode(comment));
     } catch(e) {
       throw handleError(e);
     }

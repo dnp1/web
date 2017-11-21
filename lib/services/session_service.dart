@@ -33,7 +33,7 @@ class SessionService extends BaseHttpService {
     if (_session == null) {
       try {
         _loading = true;
-        _session =  new Session.fromMap(extractData(await http.get("/session")));
+        _session =  new Session.fromMap(extractData(await http.get(urlPrefix + "/session")));
       } catch(e) {
         throw handleError(e);
       } finally {
@@ -45,7 +45,7 @@ class SessionService extends BaseHttpService {
   }
 
   Future<Null> authenticate(SignIn signIn) async {
-      final resp = await http.post('/authenticate', body: JSON.encode(signIn.toJson()));
+      final resp = await http.post(urlPrefix + '/authenticate', body: JSON.encode(signIn.toJson()));
       switch (resp.statusCode) {
         case HttpStatus.OK:
           var data = extractData(resp);

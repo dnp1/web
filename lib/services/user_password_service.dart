@@ -12,7 +12,7 @@ class UserPasswordService extends BaseHttpService {
       String currentPassword) async {
     try {
       final resp = await http.post(
-          '/user/$userId/password/change',
+          urlPrefix + '/user/$userId/password/change',
           body: JSON.encode(
               {
                 "newPassword": newPassword,

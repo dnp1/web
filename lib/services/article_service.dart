@@ -12,7 +12,7 @@ class ArticleService extends BaseHttpService {
 
   Future<Article> read(String id) async {
     try {
-      final resp = await http.get('/article/$id');
+      final resp = await http.get(urlPrefix + '/article/$id');
       final article = new Article.cachedFromJson(extractData(resp));
       return article;
     } catch (e) {
@@ -22,7 +22,7 @@ class ArticleService extends BaseHttpService {
 
   Future<String> readContent(String id) async {
     try {
-      final resp = await http.get('/article/$id/content');
+      final resp = await http.get(urlPrefix + '/article/$id/content');
       return extractData(resp)['content'];
     } catch (e) {
       throw handleError(e);
@@ -31,7 +31,7 @@ class ArticleService extends BaseHttpService {
 
   Future<List<Article>> list() async {
     try {
-      final resp = await http.get('/article');
+      final resp = await http.get(urlPrefix + '/article');
       return extractDataList(resp).map( //TODO:missing cache
               (element) => new Article.cachedFromJson(element)
               ).toList();
@@ -42,7 +42,7 @@ class ArticleService extends BaseHttpService {
 
   Future<List<Article>> archive() async {
     try {
-      final resp = await http.get('/article'); //TODO:pass too large fetch
+      final resp = await http.get(urlPrefix + '/article'); //TODO:pass too large fetch
       return extractDataList(resp).map( //TODO:missing cache
               (element) => new Article.fromJson(element)).toList();
     } catch (e) {
@@ -52,7 +52,7 @@ class ArticleService extends BaseHttpService {
 
   Future<List<String>> getTags(String articleId) async {
     try {
-      final resp = await http.get('/article/$articleId/tag');
+      final resp = await http.get(urlPrefix + '/article/$articleId/tag');
       return extractDataList(resp).map((data) => JSON.decode(data));
     } catch (e) {
       throw handleError(e);

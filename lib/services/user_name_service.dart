@@ -11,7 +11,7 @@ class UserNameService extends BaseHttpService {
 
   Future<UserName> read(String userId) async {
     try {
-      final resp = await http.get("/user/$userId/name");
+      final resp = await http.get(urlPrefix + "/user/$userId/name");
       return new UserName.fromJson(extractData(resp));
     } catch (e) {
       throw handleError(e);

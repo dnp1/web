@@ -11,7 +11,7 @@ class UserService extends BaseHttpService {
 
   Future<Null> create(SignUp model) async {
     try {
-      http.post('/user', body: JSON.encode(model));
+      http.post(urlPrefix + '/user', body: JSON.encode(model));
     } catch(e) {
       throw handleError(e);
     }

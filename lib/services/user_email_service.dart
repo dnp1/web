@@ -10,7 +10,7 @@ class UserEmailService extends BaseHttpService {
   UserEmailService(AuthClient http) : super(http);
 
   Future<Email> read(String userId) async {
-    final resp = await http.get('/user/$userId/email');
+    final resp = await http.get(urlPrefix + '/user/$userId/email');
     return new Email.fromJson(extractData(resp));
   }
 
