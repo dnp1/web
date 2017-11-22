@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
+import 'dart:typed_data';
 import 'package:angular/di.dart';
 import 'package:danilo_info/services/base_http_service.dart';
 import 'package:danilo_info/util/auth_client.dart';
@@ -11,18 +12,21 @@ import 'package:http_parser/http_parser.dart';
 class UserAvatarService extends BaseHttpService {
   UserAvatarService(AuthClient http) : super(http);
 
-  Future<Null> create(String value, String filename, String contentType, String userId, String password) async {
+  Future<Null> create(File file, String userId, String password) async {
     try {
-      var uri = Uri.parse(urlPrefix + "/file");
-      var request = new MultipartRequest("POST", uri);
-      var _type = new MediaType.parse(contentType);
-      request.files.add(new MultipartFile.fromString("file", value, filename: filename, contentType: _type));
-
-      var send = await http.send(request);
-      window.alert("dshada");
+      var formData = new FormData();
+      formData.appendBlob('file', file, file.name);
+      var req = await HttpRequest
+          .request(
+          urlPrefix + '/file',
+          method: "POST",
+          withCredentials: true,
+          sendData: formData)
+          .asStream()
+          .first;
+      var data = JSON.decode(req.responseText);
 //      final resp = await http.post(urlPrefix + '/file', body: formData);
-      final resp = await send.stream.first;
-      var data = JSON.decode(UTF8.decode(resp));
+//      var data = extractData(resp);
       await http.put(
         '/user/$userId/avatar',
         body: JSON.encode({
@@ -31,7 +35,7 @@ class UserAvatarService extends BaseHttpService {
           'password': password,
         }),
       );
-    } catch(e) {
+    } catch (e) {
       throw handleError(e);
     }
   }

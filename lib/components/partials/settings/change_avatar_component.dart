@@ -42,7 +42,7 @@ class ChangeAvatarComponent extends BaseSettingsForm {
   @override
   Future<Null> save() async {
     sending = true;
-    await _userAvatarService.create(imgSrc, file.name, file.type, userId, password);
+    await _userAvatarService.create(file, userId, password);
     dispose();
     sending = false;
   }
