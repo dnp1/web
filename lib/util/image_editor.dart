@@ -63,7 +63,7 @@ class ImageService {
   Future<String> resizeImageDataUrl(String dataURI,
       final int maxWidth,
       final int maxHeight,
-      [bool ensureRatio = null]) async {
+      [bool ensureRatio = false]) async {
     var mime = mimeTypeFromDataUrl(dataURI);
     ImageElement img = document.createElement("img");
     img.src = dataURI;

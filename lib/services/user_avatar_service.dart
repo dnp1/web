@@ -1,12 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
-import 'dart:typed_data';
 import 'package:angular/di.dart';
 import 'package:danilo_info/services/base_http_service.dart';
 import 'package:danilo_info/util/auth_client.dart';
-import 'package:http/http.dart';
-import 'package:http_parser/http_parser.dart';
 
 @Injectable()
 class UserAvatarService extends BaseHttpService {
@@ -24,11 +21,10 @@ class UserAvatarService extends BaseHttpService {
           sendData: formData)
           .asStream()
           .first;
+
       var data = JSON.decode(req.responseText);
-//      final resp = await http.post(urlPrefix + '/file', body: formData);
-//      var data = extractData(resp);
       await http.put(
-        '/user/$userId/avatar',
+        urlPrefix + '/user/$userId/avatar',
         body: JSON.encode({
           'userId': userId,
           'fileId': data['id'],
@@ -38,5 +34,10 @@ class UserAvatarService extends BaseHttpService {
     } catch (e) {
       throw handleError(e);
     }
+  }
+
+  Future<String> read(String userId) async  {
+    var resp = await http.get(urlPrefix + '/user/$userId/avatar');
+    return extractData(resp)["id"];
   }
 }
