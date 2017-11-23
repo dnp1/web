@@ -36,8 +36,13 @@ class UserAvatarService extends BaseHttpService {
     }
   }
 
-  Future<String> read(String userId) async  {
+  Future<String> readAvatarUrl(String userId) async  {
     var resp = await http.get(urlPrefix + '/user/$userId/avatar');
-    return extractData(resp)["id"];
+    var data = extractData(resp);
+    if (data.containsKey("fileId")) {
+      return urlPrefix + "/file/${data["fileId"]}";
+    } else {
+      return null;
+    }
   }
 }

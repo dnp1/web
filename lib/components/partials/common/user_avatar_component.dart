@@ -2,12 +2,15 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/user_name.dart';
+import 'package:danilo_info/services/user_avatar_service.dart';
 import 'package:danilo_info/services/user_name_service.dart';
 
 @Component(
   selector: 'span[dnp1-user-avatar]',
   template: '''
-  <img [style.width]="size" [style.height]="size" src='{{ url }}'/>
+  <template [ngIf]="url != null">
+    <img [style.width]="size" [style.height]="size" src='{{ url }}'/>
+  </template>
   ''',
   styles: const ['''
   img {
@@ -21,7 +24,7 @@ import 'package:danilo_info/services/user_name_service.dart';
   ],
 )
 class UserAvatarComponent implements OnInit {
-  String url = "/img/author.png";
+  String url = null;
 
   String _userId;
   @Input()
@@ -36,16 +39,18 @@ class UserAvatarComponent implements OnInit {
   @Input()
   String size = "4em";
 
-  UserName profile;
 
-  UserNameService _userService;
+  UserAvatarService _userAvatarService;
 
-  UserAvatarComponent(this._userService);
+  UserAvatarComponent(this._userAvatarService);
 
   Future<Null> ngOnInit() async {
-    profile = await _userService.read(_userId);
-//    if (profile != null && profile.avatarId != null) {
-//      url = "/user/"+userId+"/avatar";
-//    }
+    var _url = await _userAvatarService.readAvatarUrl(_userId);
+    if (_url != null) {
+      print(_url);
+      url = _url;
+    } else {
+      url = "/img/author.png";
+    }
   }
 }
