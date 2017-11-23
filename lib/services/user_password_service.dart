@@ -8,20 +8,18 @@ import 'package:danilo_info/util/auth_client.dart';
 class UserPasswordService extends BaseHttpService {
   UserPasswordService(AuthClient http) : super(http);
 
-  Future<String> updatePassword(String newPassword, String userId,
+  Future<Null> updatePassword(String newPassword, String userId,
       String currentPassword) async {
     try {
-      final resp = await http.post(
-          urlPrefix + '/user/$userId/password/change',
+      await http.put(
+          urlPrefix + '/user/$userId/password',
           body: JSON.encode(
               {
                 "newPassword": newPassword,
-                "userId": userId,
-                "password": String
+                "password": currentPassword
               }
           )
       );
-      return extractData(resp)['id'].toString();
     } catch (e) {
       throw handleError(e);
     }
