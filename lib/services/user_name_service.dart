@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:angular/angular.dart';
 
 import 'package:danilo_info/model/user_name.dart';
@@ -19,7 +20,15 @@ class UserNameService extends BaseHttpService {
   }
 
   Future<Null> update(String userId, String givenName,
-      String familyName) async {
-
+      String familyName, String password) async {
+    try {
+      await http.put(urlPrefix + "/user/$userId/name", body: JSON.encode({
+        "givenName": givenName,
+        "familyName": familyName,
+        "password": password,
+      }));
+    } catch (e) {
+      throw handleError(e);
+    }
   }
 }

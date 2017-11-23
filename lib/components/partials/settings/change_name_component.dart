@@ -21,7 +21,7 @@ class ChangeNameComponent extends BaseSettingsForm {
   @override
   Future<Null> save() async {
     sending = true;
-    await _userNameService.update(userId, givenName, familyName);
+    await _userNameService.update(userId, givenName, familyName, password);
     dispose();
     sending = false;
   }
