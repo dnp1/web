@@ -1,9 +1,10 @@
 import 'dart:async';
-import 'dart:html' show window, Storage;
+import 'dart:html' show Document, Storage, window;
 import 'dart:io';
 import 'package:angular/di.dart';
 import 'package:http/browser_client.dart' as base;
 import 'package:http/http.dart';
+import 'package:cookie/cookie.dart' as cookie;
 
 @Injectable()
 class AuthClient extends base.BrowserClient {
@@ -57,7 +58,7 @@ class AuthClient extends base.BrowserClient {
   }
 
   void clearToken() {
+    cookie.remove(tokenName);
     _loaded = null;
-//    cookie.remove(tokenName);
   }
 }
